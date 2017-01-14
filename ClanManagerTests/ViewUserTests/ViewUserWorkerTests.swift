@@ -54,6 +54,23 @@ class ViewUserWorkerTests: XCTestCase
     // Then
     XCTAssertTrue(storeSpy.fetchUserCalled, "Should make a request to the store to fetch the user")
   }
+    
+    func testFetchUserReturnsWithAUser()
+    {
+        // Given
+        let storeSpy = userWorker.userStore as! UserMemStoreSpy
+        
+        // When
+        let exp = expectation(description: "Wait for fetch user to return")
+        userWorker.fetchUser { (_) in
+            exp.fulfill()
+        }
+        
+        // Then
+        waitForExpectations(timeout: Double(storeSpy.asyncDelaySeconds) + 0.1) { (error) in
+            XCTAssert(true, "Calling fetchUser with handler should get the completion handler called")
+        }
+    }
 }
 
 
