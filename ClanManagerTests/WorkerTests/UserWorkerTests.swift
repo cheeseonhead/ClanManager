@@ -1,5 +1,5 @@
 //
-//  ViewUserWorkerTests.swift
+//  UserWorkerTests.swift
 //  ClanManager
 //
 //  Created by Jeffrey Wu on 2017-01-13.
@@ -12,7 +12,7 @@
 @testable import ClanManager
 import XCTest
 
-class ViewUserWorkerTests: XCTestCase
+class UserWorkerTests: XCTestCase
 {
     // MARK: - Subject under test
 
@@ -23,7 +23,7 @@ class ViewUserWorkerTests: XCTestCase
     override func setUp()
     {
         super.setUp()
-        setupViewUserWorker()
+        setupUserWorker()
     }
 
     override func tearDown()
@@ -33,7 +33,7 @@ class ViewUserWorkerTests: XCTestCase
 
     // MARK: - Test setup
 
-    func setupViewUserWorker()
+    func setupUserWorker()
     {
         userWorker = UserWorker(userStore: UserMemStoreSpy())
     }
