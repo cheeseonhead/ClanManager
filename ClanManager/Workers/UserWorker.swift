@@ -7,7 +7,7 @@ import Foundation
 
 protocol UserStoreProtocol
 {
-    func fetchUser(completionHandler: (_: User) -> Void)
+    func fetchUser(completionHandler: @escaping (_: User) -> Void)
 }
 
 class UserWorker

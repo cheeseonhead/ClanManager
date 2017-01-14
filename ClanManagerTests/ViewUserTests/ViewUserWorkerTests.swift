@@ -57,7 +57,7 @@ fileprivate class UserMemStoreSpy : UserMemStore
 {
     var fetchUserCalled = false
 
-    override func fetchUser(completionHandler: (_: User) -> Void)
+    override func fetchUser(completionHandler: @escaping (_: User) -> Void)
     {
         fetchUserCalled = true
         let oneSecondAfter = DispatchTime.now() + 1
