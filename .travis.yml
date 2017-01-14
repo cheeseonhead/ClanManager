@@ -1,0 +1,5 @@
+language: objective-c
+xcode_project: ClanManager.xcodeproj # path to your xcodeproj folder
+xcode_scheme: ClanManagerTests
+osx_image: xcode8.2
+xcode_sdk: iphonesimulator10.2
