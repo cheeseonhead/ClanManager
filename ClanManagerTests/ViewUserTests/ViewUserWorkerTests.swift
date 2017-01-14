@@ -42,13 +42,17 @@ class ViewUserWorkerTests: XCTestCase
   
   // MARK: - Tests
   
-  func testSomething()
+  func testFetchUserShouldMakeRequestToStore()
   {
     // Given
+    let storeSpy = userWorker.userStore as! UserMemStoreSpy
     
     // When
+    userWorker.fetchUser { (_) in
+    }
     
     // Then
+    XCTAssertTrue(storeSpy.fetchUserCalled, "Should make a request to the store to fetch the user")
   }
 }
 
