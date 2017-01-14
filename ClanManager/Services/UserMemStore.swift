@@ -5,5 +5,9 @@
 
 import Foundation
 
-class UserMemStore {
+class UserMemStore : UserStoreProtocol
+{
+    func fetchUser(completionHandler: (_: User) -> Void) {
+
+    }
 }
