@@ -12,6 +12,11 @@ protocol UserStoreProtocol
 
 class UserWorker
 {
+    var userStore:UserStoreProtocol
+
+    init(userStore:UserStoreProtocol) {
+        self.userStore = userStore
+    }
 
     func fetchUser(completionHandler: (_: User) -> Void)
     {
