@@ -72,7 +72,7 @@ class ViewUserViewControllerSpy : ViewUserViewControllerOutput
 {
     fileprivate var fetchUserCalled = false
     
-    func fetchUser(request: ViewUser_FetchUser_Request) {
+    func fetchUser(request: ViewUser.FetchUser.Request) {
         fetchUserCalled = true
     }
 }

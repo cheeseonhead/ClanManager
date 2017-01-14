@@ -15,7 +15,7 @@ protocol ViewUserViewControllerInput {
 }
 
 protocol ViewUserViewControllerOutput {
-    func fetchUser(request: ViewUser_FetchUser_Request)
+    func fetchUser(request: ViewUser.FetchUser.Request)
 }
 
 class ViewUserViewController: UIViewController, ViewUserViewControllerInput {
@@ -49,7 +49,7 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput {
     
     func fetchUserOnLoad()
     {
-        let request = ViewUser_FetchUser_Request()
+        let request = ViewUser.FetchUser.Request()
         output.fetchUser(request: request)
     }
     

@@ -11,11 +11,11 @@
 import UIKit
 
 protocol ViewUserInteractorInput {
-    func fetchUser(request: ViewUser_FetchUser_Request)
+    func fetchUser(request: ViewUser.FetchUser.Request)
 }
 
 protocol ViewUserInteractorOutput {
-    func presentUser(response: ViewUser_PresentUser_Response)
+    func presentUser(response: ViewUser.FetchUser.Response)
 }
 
 protocol ViewUserDataSource {
@@ -32,9 +32,9 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
     
     // MARK: Business logic
     
-    func fetchUser(request: ViewUser_FetchUser_Request)
+    func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        let response = ViewUser_PresentUser_Response()
+        let response = ViewUser.FetchUser.Response()
         output.presentUser(response: response)
     }
 }

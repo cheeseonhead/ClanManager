@@ -44,7 +44,7 @@ class ViewUserInteractorTests: XCTestCase
     sut.output = spy
     
     // When
-    sut.fetchUser(request: ViewUser_FetchUser_Request())
+    sut.fetchUser(request: ViewUser.FetchUser.Request())
     
     // Then
     XCTAssertTrue(spy.presentUserCalled, "Present User should be called on the output")
@@ -56,7 +56,7 @@ class ViewUserInteractorSpy:ViewUserInteractorOutput
 {
     var presentUserCalled = false
     
-    func presentUser(response: ViewUser_PresentUser_Response) {
+    func presentUser(response: ViewUser.FetchUser.Response) {
         presentUserCalled = true
     }
 }
