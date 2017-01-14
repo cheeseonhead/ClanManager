@@ -18,7 +18,7 @@ TAR_BRANCH_SHORT=$(echo $TARGET_BRANCH | sed -e 's,.*/\(.*\),\1,')
 
 echo -e "Open PR to merge ${CYAN}$CUR_BRANCH${NC} into ${CYAN}$TAR_BRANCH_SHORT${NC}"
 
-echo -e "$CUR_BRANCH[→$TAR_BRANCH_SHORT]
+echo -e "ISSUE #$CUR_BRANCH → $TAR_BRANCH_SHORT
 Item         | Status  | Build Status
 ------------ | ------- | ------------
 [IOS-$CUR_BRANCH](https://github.com/cheeseonhead/ClanManager/issues/$CUR_BRANCH) | Done    | [![IOS-$CUR_BRANCH](https://dashboard.buddybuild.com/api/statusImage?appID=5879f9377457550100e35017&branch=$CUR_BRANCH&build=latest)](https://dashboard.buddybuild.com/apps/5879f9377457550100e35017/build/latest?branch=$CUR_BRANCH)" > testfile
