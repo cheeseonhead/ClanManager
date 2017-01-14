@@ -12,13 +12,24 @@
 import UIKit
 
 
+struct ViewUser
+{
+    struct FetchUser {
 
-struct ViewUserScene {
-    
+        struct Request
+        {
+
+        }
+
+        struct Response
+        {
+
+        }
+
+        struct ViewModel
+        {
+
+        }
+    }
 }
 
-struct ViewUser_FetchUser_Request {
-}
-
-struct ViewUser_PresentUser_Response {
-}
