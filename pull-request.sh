@@ -4,8 +4,6 @@
 CYAN='\033[0;36m'
 NC='\033[0m' # No Color
 
-JIRA_TICKET=`./scripts/ticket_extractor.rb`
-
 # select branch
 if [ $# -eq 0 ]
     then # no branch provided
@@ -22,5 +20,5 @@ echo -e "Open PR to merge ${CYAN}$CUR_BRANCH${NC} into ${CYAN}$TAR_BRANCH_SHORT$
 
 echo -e "Merge $CUR_BRANCH into $TAR_BRANCH_SHORT" > testfile
 
-hub pull-request -F testFile -b tophatmonocle:$TARGET_BRANCH
+hub pull-request -F testFile -b cheeseonhead:$TARGET_BRANCH
 rm testFile
