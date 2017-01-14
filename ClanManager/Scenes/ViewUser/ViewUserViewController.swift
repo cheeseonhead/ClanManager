@@ -23,23 +23,31 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput {
     var output: ViewUserViewControllerOutput!
     var router: ViewUserRouter!
     
-    // MARK: Object lifecycle
+    
+    // MARK: - Outlets
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var infoLabel: UILabel!
+    
+    
+    // MARK: - Object lifecycle
     
     override func awakeFromNib() {
         super.awakeFromNib()
         ViewUserConfigurator.sharedInstance.configure(viewController: self)
     }
     
-    // MARK: View lifecycle
+    
+    // MARK: - View lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
-    // MARK: Event handling
+    // MARK: - Event handling
     
     
-    // MARK: Display logic
+    // MARK: - Display logic
     
 }
 
