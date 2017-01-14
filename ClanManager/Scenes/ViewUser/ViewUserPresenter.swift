@@ -11,7 +11,7 @@
 import UIKit
 
 protocol ViewUserPresenterInput {
-    
+    func presentUser(response: ViewUser_PresentUser_Response)
 }
 
 protocol ViewUserPresenterOutput: class {
@@ -24,4 +24,7 @@ class ViewUserPresenter: ViewUserPresenterInput {
     
     // MARK: Presentation logic
     
+    func presentUser(response: ViewUser_PresentUser_Response) {
+        
+    }
 }

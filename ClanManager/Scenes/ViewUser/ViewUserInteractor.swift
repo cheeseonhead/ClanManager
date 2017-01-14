@@ -15,7 +15,7 @@ protocol ViewUserInteractorInput {
 }
 
 protocol ViewUserInteractorOutput {
-    
+    func presentUser(response: ViewUser_PresentUser_Response)
 }
 
 protocol ViewUserDataSource {
