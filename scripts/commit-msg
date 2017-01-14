@@ -9,7 +9,7 @@ if !$regex.match(message)
   head = File.read("./.git/HEAD")
   branch = $regex.match(head)
   if (branch && branch.length == 3)
-    File.open(message_file, "w") {|f| f.write(branch[2] + " | " + message) }
+    File.open(message_file, "w") {|f| f.write("#" + branch[2] + " | " + message) }
     exit 0
   end
 
