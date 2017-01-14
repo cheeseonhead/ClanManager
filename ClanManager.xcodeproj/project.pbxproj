@@ -13,6 +13,12 @@
 		56407BBA1E29864000970F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB81E29864000970F81 /* LaunchScreen.storyboard */; };
 		56407BC51E29864100970F81 /* ClanManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BC41E29864100970F81 /* ClanManagerTests.swift */; };
 		56407BD01E29864100970F81 /* ClanManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BCF1E29864100970F81 /* ClanManagerUITests.swift */; };
+		564A821A1E29A0A4007B3E45 /* ViewUserConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82141E29A0A4007B3E45 /* ViewUserConfigurator.swift */; };
+		564A821B1E29A0A4007B3E45 /* ViewUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82151E29A0A4007B3E45 /* ViewUserInteractor.swift */; };
+		564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82161E29A0A4007B3E45 /* ViewUserModels.swift */; };
+		564A821D1E29A0A4007B3E45 /* ViewUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82171E29A0A4007B3E45 /* ViewUserPresenter.swift */; };
+		564A821E1E29A0A4007B3E45 /* ViewUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */; };
+		564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		56407BCB1E29864100970F81 /* ClanManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClanManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56407BCF1E29864100970F81 /* ClanManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanManagerUITests.swift; sourceTree = "<group>"; };
 		56407BD11E29864100970F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		564A82141E29A0A4007B3E45 /* ViewUserConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserConfigurator.swift; sourceTree = "<group>"; };
+		564A82151E29A0A4007B3E45 /* ViewUserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractor.swift; sourceTree = "<group>"; };
+		564A82161E29A0A4007B3E45 /* ViewUserModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserModels.swift; sourceTree = "<group>"; };
+		564A82171E29A0A4007B3E45 /* ViewUserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserPresenter.swift; sourceTree = "<group>"; };
+		564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserRouter.swift; sourceTree = "<group>"; };
+		564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +107,7 @@
 		56407BAC1E29864000970F81 /* ClanManager */ = {
 			isa = PBXGroup;
 			children = (
+				56407BE01E299F7B00970F81 /* Scenes */,
 				56407BAD1E29864000970F81 /* AppDelegate.swift */,
 				56407BB31E29864000970F81 /* Main.storyboard */,
 				56407BB61E29864000970F81 /* Assets.xcassets */,
@@ -120,6 +133,27 @@
 				56407BD11E29864100970F81 /* Info.plist */,
 			);
 			path = ClanManagerUITests;
+			sourceTree = "<group>";
+		};
+		56407BE01E299F7B00970F81 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				56407BE11E299F7B00970F81 /* ViewUser */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		56407BE11E299F7B00970F81 /* ViewUser */ = {
+			isa = PBXGroup;
+			children = (
+				564A82141E29A0A4007B3E45 /* ViewUserConfigurator.swift */,
+				564A82151E29A0A4007B3E45 /* ViewUserInteractor.swift */,
+				564A82161E29A0A4007B3E45 /* ViewUserModels.swift */,
+				564A82171E29A0A4007B3E45 /* ViewUserPresenter.swift */,
+				564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */,
+				564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */,
+			);
+			path = ViewUser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +293,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				564A821B1E29A0A4007B3E45 /* ViewUserInteractor.swift in Sources */,
+				564A821D1E29A0A4007B3E45 /* ViewUserPresenter.swift in Sources */,
+				564A821E1E29A0A4007B3E45 /* ViewUserRouter.swift in Sources */,
+				564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */,
+				564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */,
+				564A821A1E29A0A4007B3E45 /* ViewUserConfigurator.swift in Sources */,
 				56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,6 +550,7 @@
 				56407BD61E29864100970F81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56407BD71E29864100970F81 /* Build configuration list for PBXNativeTarget "ClanManagerTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +559,7 @@
 				56407BD91E29864100970F81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		56407BDA1E29864100970F81 /* Build configuration list for PBXNativeTarget "ClanManagerUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +568,7 @@
 				56407BDC1E29864100970F81 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
