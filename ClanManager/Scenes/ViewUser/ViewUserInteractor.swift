@@ -29,12 +29,15 @@ protocol ViewUserDataDestination {
 class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination {
     
     var output: ViewUserInteractorOutput!
+    var worker: UserWorker! = UserWorker()
     
     // MARK: Business logic
     
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        let response = ViewUser.FetchUser.Response()
-        output.presentUser(response: response)
+        worker.fetchUser(completionHandler: { (user:User) -> Void in
+            let response = ViewUser.FetchUser.Response()
+            output.presentUser(response: response)
+        })
     }
 }
