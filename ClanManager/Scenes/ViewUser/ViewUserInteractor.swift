@@ -34,5 +34,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
     
     func fetchUser(request: ViewUser_FetchUser_Request)
     {
+        let response = ViewUser_PresentUser_Response()
+        output.presentUser(response: response)
     }
 }
