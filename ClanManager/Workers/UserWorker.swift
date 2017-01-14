@@ -14,11 +14,6 @@ class UserWorker {
 
 
 
-
-
-
-
-
     func fetchUser(completionHandler: (_: User) -> Void) {
         let user = User()
         completionHandler(user)
