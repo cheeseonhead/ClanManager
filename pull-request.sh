@@ -18,7 +18,10 @@ TAR_BRANCH_SHORT=$(echo $TARGET_BRANCH | sed -e 's,.*/\(.*\),\1,')
 
 echo -e "Open PR to merge ${CYAN}$CUR_BRANCH${NC} into ${CYAN}$TAR_BRANCH_SHORT${NC}"
 
-echo -e "Merge $CUR_BRANCH into $TAR_BRANCH_SHORT" > testfile
+echo -e "$CUR_BRANCH[→$TAR_BRANCH_SHORT]
+Item         | Status
+------------ | -------------
+#$CUR_BRANCH | Done" > testfile
 
 hub pull-request -F testFile -b cheeseonhead:$TARGET_BRANCH
 rm testFile
