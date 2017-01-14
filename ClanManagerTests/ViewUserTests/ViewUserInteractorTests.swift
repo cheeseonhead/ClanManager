@@ -60,3 +60,15 @@ class ViewUserInteractorSpy:ViewUserInteractorOutput
         presentUserCalled = true
     }
 }
+
+
+class UserWorkerSpy:UserWorker
+{
+    var fetchUserCalled = false
+
+    override func fetchUser(completionHandler:(_:User)->Void)
+    {
+        fetchUserCalled = true
+        completionHandler(User())
+    }
+}
