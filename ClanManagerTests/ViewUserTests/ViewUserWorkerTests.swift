@@ -61,9 +61,9 @@ class ViewUserWorkerTests: XCTestCase
         let storeSpy = userWorker.userStore as! UserMemStoreSpy
         
         // When
-        let exp = expectation(description: "Wait for fetch user to return")
+        let expect = expectation(description: "Wait for fetch user to return")
         userWorker.fetchUser { (_) in
-            exp.fulfill()
+            expect.fulfill()
         }
         
         // Then
