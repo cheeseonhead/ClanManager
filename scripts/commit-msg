@@ -3,7 +3,7 @@ require 'colorize'
 # borrowed from gitpro book http://git-scm.com/book/en/Customizing-Git-An-Example-Git-Enforced-Policy
 message_file = ARGV[0]
 message = File.read(message_file)
-$regex = /^(?!#)(.*?)([A-Z0-9]+-\d+)/
+$regex = /^(?!#)(.*?)(\d+)/
 
 if !$regex.match(message)
   head = File.read("./.git/HEAD")
