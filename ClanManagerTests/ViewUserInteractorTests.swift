@@ -37,12 +37,26 @@ class ViewUserInteractorTests: XCTestCase
   
   // MARK: - Tests
   
-  func testSomething()
+  func testFetchUserTriggersPresnetUser()
   {
     // Given
+    let spy = ViewUserInteractorSpy()
+    sut.output = spy
     
     // When
+    sut.fetchUser(request: ViewUser_FetchUser_Request())
     
     // Then
+    XCTAssertTrue(spy.presentUserCalled, "Present User should be called on the output")
   }
+}
+
+
+class ViewUserInteractorSpy:ViewUserInteractorOutput
+{
+    var presentUserCalled = false
+    
+    func presentUser(response: ViewUser_PresentUser_Response) {
+        presentUserCalled = true
+    }
 }
