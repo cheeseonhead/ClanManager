@@ -51,3 +51,18 @@ class ViewUserWorkerTests: XCTestCase
     // Then
   }
 }
+
+
+fileprivate class UserMemStoreSpy : UserMemStore
+{
+    var fetchUserCalled = false
+
+    override func fetchUser(completionHandler: (_: User) -> Void)
+    {
+        fetchUserCalled = true
+        let oneSecondAfter = DispatchTime.now() + 1
+        DispatchQueue.main.asyncAfter(deadline: oneSecondAfter, execute: {
+            completionHandler(User())
+        })
+    }
+}
