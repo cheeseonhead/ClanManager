@@ -29,7 +29,7 @@ protocol ViewUserDataDestination {
 class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination {
     
     var output: ViewUserInteractorOutput!
-    var worker: UserWorker! = UserWorker()
+    var worker: UserWorker! = UserWorker(userStore: UserMemStore())
     
     // MARK: Business logic
     

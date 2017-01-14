@@ -42,7 +42,7 @@ class ViewUserInteractorTests: XCTestCase
     // Given
     let outputSpy = ViewUserInteractorSpy()
     interactor.output = outputSpy
-    let workerSpy = UserWorkerSpy()
+    let workerSpy = UserWorkerSpy(userStore: UserMemStore())
     interactor.worker = workerSpy
 
     // When
