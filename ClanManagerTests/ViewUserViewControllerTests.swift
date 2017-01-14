@@ -53,12 +53,26 @@ class ViewUserViewControllerTests: XCTestCase
   
   // MARK: - Tests
   
-  func testSomething()
+  func testFetchUserCalledOnViewLoad()
   {
     // Given
+    let viewUserControllerSpy = ViewUserViewControllerSpy()
+    sut.output = viewUserControllerSpy
     
     // When
+    loadView()
     
     // Then
+    XCTAssertTrue(viewUserControllerSpy.fetchUserCalled, "Fetch user should be called on view load")
   }
+}
+
+
+class ViewUserViewControllerSpy : ViewUserViewControllerOutput
+{
+    fileprivate var fetchUserCalled = false
+    
+    func fetchUser(request: ViewUser_FetchUser_Request) {
+        fetchUserCalled = true
+    }
 }
