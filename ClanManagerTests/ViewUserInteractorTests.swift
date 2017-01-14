@@ -16,7 +16,7 @@ class ViewUserInteractorTests: XCTestCase
 {
   // MARK: - Subject under test
   
-  var sut: ViewUserInteractor!
+  var interactor: ViewUserInteractor!
   
   // MARK: - Test lifecycle
   
@@ -30,21 +30,21 @@ class ViewUserInteractorTests: XCTestCase
   
   func setupViewUserInteractor()
   {
-    sut = ViewUserInteractor()
+    interactor = ViewUserInteractor()
   }
   
   // MARK: - Test doubles
   
   // MARK: - Tests
   
-  func testFetchUserTriggersPresnetUser()
+  func testFetchUserTriggersPresentUser()
   {
     // Given
     let spy = ViewUserInteractorSpy()
-    sut.output = spy
+    interactor.output = spy
     
     // When
-    sut.fetchUser(request: ViewUser.FetchUser.Request())
+    interactor.fetchUser(request: ViewUser.FetchUser.Request())
     
     // Then
     XCTAssertTrue(spy.presentUserCalled, "Present User should be called on the output")
