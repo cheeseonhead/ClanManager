@@ -55,7 +55,7 @@ class ViewUserInteractorTests: XCTestCase
 }
 
 
-class ViewUserInteractorSpy:ViewUserInteractorOutput
+fileprivate class ViewUserInteractorSpy:ViewUserInteractorOutput
 {
     var presentUserCalled = false
 
@@ -66,7 +66,7 @@ class ViewUserInteractorSpy:ViewUserInteractorOutput
 }
 
 
-class UserWorkerSpy:UserWorker
+fileprivate class UserWorkerSpy:UserWorker
 {
     var fetchUserCalled = false
 
