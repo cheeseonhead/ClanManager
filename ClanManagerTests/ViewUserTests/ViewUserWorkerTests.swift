@@ -16,7 +16,7 @@ class ViewUserWorkerTests: XCTestCase
 {
   // MARK: - Subject under test
   
-//  var sut: ViewUserWorker!
+  var userWorker: UserWorker!
   
   // MARK: - Test lifecycle
   
@@ -35,7 +35,7 @@ class ViewUserWorkerTests: XCTestCase
   
   func setupViewUserWorker()
   {
-//    sut = ViewUserWorker()
+
   }
   
   // MARK: - Test doubles
