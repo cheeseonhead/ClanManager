@@ -15,39 +15,42 @@ import XCTest
 class ViewUserInteractorTests: XCTestCase
 {
   // MARK: - Subject under test
-  
+
   var interactor: ViewUserInteractor!
-  
+
   // MARK: - Test lifecycle
-  
+
   override func setUp()
   {
     super.setUp()
     setupViewUserInteractor()
   }
-  
+
   // MARK: - Test setup
-  
+
   func setupViewUserInteractor()
   {
     interactor = ViewUserInteractor()
   }
-  
+
   // MARK: - Test doubles
-  
+
   // MARK: - Tests
-  
+
   func testFetchUserTriggersPresentUser()
   {
     // Given
-    let spy = ViewUserInteractorSpy()
-    interactor.output = spy
-    
+    let outputSpy = ViewUserInteractorSpy()
+    interactor.output = outputSpy
+    let workerSpy = UserWorkerSpy()
+    interactor.worker = workerSpy
+
     // When
     interactor.fetchUser(request: ViewUser.FetchUser.Request())
-    
+
     // Then
-    XCTAssertTrue(spy.presentUserCalled, "Present User should be called on the output")
+      XCTAssertTrue(workerSpy.fetchUserCalled, "Should call the worker to fetch the user.")
+    XCTAssertTrue(outputSpy.presentUserCalled, "Present User should be called on the output.")
   }
 }
 
@@ -55,8 +58,9 @@ class ViewUserInteractorTests: XCTestCase
 class ViewUserInteractorSpy:ViewUserInteractorOutput
 {
     var presentUserCalled = false
-    
-    func presentUser(response: ViewUser.FetchUser.Response) {
+
+    func presentUser(response: ViewUser.FetchUser.Response)
+    {
         presentUserCalled = true
     }
 }
