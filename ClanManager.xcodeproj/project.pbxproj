@@ -28,6 +28,7 @@
 		781C3A10152C9B257A05B3D5 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF9949BEF6AD680B8E958F46 /* CoreVideo.framework */; };
 		8405C09005D95917C313B881 /* ViewUserInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405CDB79A6F111E700302F0 /* ViewUserInteractorTests.swift */; };
 		8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405CDE4331F74804BC466B5 /* ViewUserPresenterTests.swift */; };
+		8405C2F47D5D83113E8ED56D /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C0214034D8703B93C136 /* UserWorker.swift */; };
 		8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C0BA59D4C44F1D5E77D6 /* ViewUserViewControllerTests.swift */; };
 		8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C810D46350FC56BB6766 /* User.swift */; };
 		8405CE5093868A238C558F9E /* ViewUserWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C2A518CB5713186FDFC0 /* ViewUserWorkerTests.swift */; };
@@ -73,6 +74,7 @@
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		7B6A7C3B3DC41D7406C8B92D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		8405C0214034D8703B93C136 /* UserWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
 		8405C0BA59D4C44F1D5E77D6 /* ViewUserViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserViewControllerTests.swift; sourceTree = "<group>"; };
 		8405C2A518CB5713186FDFC0 /* ViewUserWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserWorkerTests.swift; sourceTree = "<group>"; };
 		8405C810D46350FC56BB6766 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				56407BB81E29864000970F81 /* LaunchScreen.storyboard */,
 				56407BBB1E29864000970F81 /* Info.plist */,
 				8405C82591AEE12E55199FA3 /* Models */,
+				8405C10AEDE158B5185719AD /* Workers */,
 			);
 			path = ClanManager;
 			sourceTree = "<group>";
@@ -194,6 +197,14 @@
 				564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */,
 			);
 			path = ViewUser;
+			sourceTree = "<group>";
+		};
+		8405C10AEDE158B5185719AD /* Workers */ = {
+			isa = PBXGroup;
+			children = (
+				8405C0214034D8703B93C136 /* UserWorker.swift */,
+			);
+			path = Workers;
 			sourceTree = "<group>";
 		};
 		8405C7D97BB039C9AF7AF744 /* ViewUserTests */ = {
@@ -377,6 +388,7 @@
 				564A821A1E29A0A4007B3E45 /* ViewUserConfigurator.swift in Sources */,
 				56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */,
 				8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */,
+				8405C2F47D5D83113E8ED56D /* UserWorker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
