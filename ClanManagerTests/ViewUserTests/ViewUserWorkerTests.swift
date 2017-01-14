@@ -35,7 +35,7 @@ class ViewUserWorkerTests: XCTestCase
   
   func setupViewUserWorker()
   {
-
+      userWorker = UserWorker(userStore: UserMemStoreSpy())
   }
   
   // MARK: - Test doubles
