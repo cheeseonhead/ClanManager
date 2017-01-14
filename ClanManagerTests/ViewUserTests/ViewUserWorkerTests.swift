@@ -56,11 +56,12 @@ class ViewUserWorkerTests: XCTestCase
 fileprivate class UserMemStoreSpy : UserMemStore
 {
     var fetchUserCalled = false
+    var asyncDelay = DispatchTimeInterval.seconds(1)
 
     override func fetchUser(completionHandler: @escaping (_: User) -> Void)
     {
         fetchUserCalled = true
-        let oneSecondAfter = DispatchTime.now() + 1
+        let oneSecondAfter = DispatchTime.now() + asyncDelay
         DispatchQueue.main.asyncAfter(deadline: oneSecondAfter, execute: {
             completionHandler(User())
         })
