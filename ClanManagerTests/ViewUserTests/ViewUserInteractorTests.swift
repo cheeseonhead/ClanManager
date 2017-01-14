@@ -70,7 +70,7 @@ fileprivate class UserWorkerSpy:UserWorker
 {
     var fetchUserCalled = false
 
-    override func fetchUser(completionHandler:(_:User)->Void)
+    override func fetchUser(completionHandler:@escaping (_:User)->Void)
     {
         fetchUserCalled = true
         completionHandler(User())

@@ -18,9 +18,10 @@ class UserWorker
         self.userStore = userStore
     }
 
-    func fetchUser(completionHandler: (_: User) -> Void)
+    func fetchUser(completionHandler: @escaping (_: User) -> Void)
     {
-        let user = User()
-        completionHandler(user)
+        userStore.fetchUser { (user) in
+            completionHandler(user)
+        }
     }
 }

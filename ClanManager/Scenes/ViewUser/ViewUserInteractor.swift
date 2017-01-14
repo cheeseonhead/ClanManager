@@ -37,7 +37,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
     {
         worker.fetchUser(completionHandler: { (user:User) -> Void in
             let response = ViewUser.FetchUser.Response()
-            output.presentUser(response: response)
+            self.output.presentUser(response: response)
         })
     }
 }
