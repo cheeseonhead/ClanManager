@@ -26,11 +26,6 @@ class ViewUserInteractorTests: XCTestCase
     setupViewUserInteractor()
   }
   
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
   // MARK: - Test setup
   
   func setupViewUserInteractor()

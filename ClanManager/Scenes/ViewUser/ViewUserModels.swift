@@ -16,3 +16,6 @@ import UIKit
 struct ViewUserScene {
     
 }
+
+struct ViewUser_FetchUser_Request {
+}

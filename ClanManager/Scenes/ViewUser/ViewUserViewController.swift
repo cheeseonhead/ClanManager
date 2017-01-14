@@ -15,7 +15,7 @@ protocol ViewUserViewControllerInput {
 }
 
 protocol ViewUserViewControllerOutput {
-    
+    func fetchUser(request: ViewUser_FetchUser_Request)
 }
 
 class ViewUserViewController: UIViewController, ViewUserViewControllerInput {
@@ -42,10 +42,16 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchUserOnLoad()
     }
     
     // MARK: - Event handling
     
+    func fetchUserOnLoad()
+    {
+        let request = ViewUser_FetchUser_Request()
+        output.fetchUser(request: request)
+    }
     
     // MARK: - Display logic
     

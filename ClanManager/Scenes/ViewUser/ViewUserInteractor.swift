@@ -11,7 +11,7 @@
 import UIKit
 
 protocol ViewUserInteractorInput {
-    
+    func fetchUser(request: ViewUser_FetchUser_Request)
 }
 
 protocol ViewUserInteractorOutput {
@@ -32,5 +32,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
     
     // MARK: Business logic
     
-
+    func fetchUser(request: ViewUser_FetchUser_Request)
+    {
+    }
 }
