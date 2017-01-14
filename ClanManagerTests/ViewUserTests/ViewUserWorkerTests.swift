@@ -14,67 +14,67 @@ import XCTest
 
 class ViewUserWorkerTests: XCTestCase
 {
-  // MARK: - Subject under test
-  
-  var userWorker: UserWorker!
-  
-  // MARK: - Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    setupViewUserWorker()
-  }
-  
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
-  // MARK: - Test setup
-  
-  func setupViewUserWorker()
-  {
-      userWorker = UserWorker(userStore: UserMemStoreSpy())
-  }
-  
-  // MARK: - Test doubles
-  
-  // MARK: - Tests
-  
-  func testFetchUserShouldMakeRequestToStore()
-  {
-    // Given
-    let storeSpy = userWorker.userStore as! UserMemStoreSpy
-    
-    // When
-    userWorker.fetchUser { (_) in
+    // MARK: - Subject under test
+
+    var userWorker: UserWorker!
+
+    // MARK: - Test lifecycle
+
+    override func setUp()
+    {
+        super.setUp()
+        setupViewUserWorker()
     }
-    
-    // Then
-    XCTAssertTrue(storeSpy.fetchUserCalled, "Should make a request to the store to fetch the user")
-  }
-    
+
+    override func tearDown()
+    {
+        super.tearDown()
+    }
+
+    // MARK: - Test setup
+
+    func setupViewUserWorker()
+    {
+        userWorker = UserWorker(userStore: UserMemStoreSpy())
+    }
+
+    // MARK: - Tests
+
+    func testFetchUserShouldMakeRequestToStore()
+    {
+        // Given
+        let storeSpy = userWorker.userStore as! UserMemStoreSpy
+
+        // When
+        userWorker.fetchUser
+        { _ in
+        }
+
+        // Then
+        XCTAssertTrue(storeSpy.fetchUserCalled, "Should make a request to the store to fetch the user")
+    }
+
     func testFetchUserReturnsWithAUser()
     {
         // Given
         let storeSpy = userWorker.userStore as! UserMemStoreSpy
-        
+
         // When
         let expect = expectation(description: "Wait for fetch user to return")
-        userWorker.fetchUser { (_) in
+        userWorker.fetchUser
+        { _ in
             expect.fulfill()
         }
-        
+
         // Then
-        waitForExpectations(timeout: Double(storeSpy.asyncDelaySeconds) + 0.1) { (error) in
+        waitForExpectations(timeout: Double(storeSpy.asyncDelaySeconds) + 0.1)
+        { _ in
             XCTAssert(true, "Calling fetchUser with handler should get the completion handler called")
         }
     }
 }
 
-
-fileprivate class UserMemStoreSpy : UserMemStore
+fileprivate class UserMemStoreSpy: UserMemStore
 {
     var fetchUserCalled = false
     var asyncDelaySeconds = 1

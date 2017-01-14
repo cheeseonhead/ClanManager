@@ -1,4 +1,5 @@
 #!/bin/sh
+PATH=$PATH:/usr/local/bin:/usr/local/sbin
 
 # prepare the formatter
 swiftformat
