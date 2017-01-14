@@ -5,16 +5,16 @@
 
 import Foundation
 
-protocol UserStoreProtocol {
+protocol UserStoreProtocol
+{
     func fetchUser(completionHandler: (_: User) -> Void)
 }
 
-class UserWorker {
+class UserWorker
+{
 
-
-
-
-    func fetchUser(completionHandler: (_: User) -> Void) {
+    func fetchUser(completionHandler: (_: User) -> Void)
+    {
         let user = User()
         completionHandler(user)
     }
