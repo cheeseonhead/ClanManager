@@ -52,9 +52,11 @@ class ViewUserPresenterTests: XCTestCase
 fileprivate class ViewUserPresenterOutputSpy: ViewUserPresenterOutput
 {
     var displayUserCalled = false
+    var viewUser_fetchUser_viewModel : ViewUser.FetchUser.ViewModel
 
-    func displayUser(viewModel _: ViewUser.FetchUser.ViewModel)
+    func displayUser(viewModel viewModel: ViewUser.FetchUser.ViewModel)
     {
         displayUserCalled = true
+        viewUser_fetchUser_viewModel = viewModel
     }
 }
