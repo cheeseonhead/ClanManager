@@ -48,7 +48,7 @@ class ViewUserPresenterTests: XCTestCase
         XCTAssertTrue(outputSpy.displayUserCalled, "Should trigger display user on the output")
     }
 
-    func testPresenterSendsCorrectViewModel
+    func testPresenterSendsCorrectViewModel()
     {
         // Given
         let outputSpy = ViewUserPresenterOutputSpy()
@@ -59,7 +59,7 @@ class ViewUserPresenterTests: XCTestCase
         presenter.presentUser(response: response)
 
         // Then
-        let result = outputSpy.viewUser_fetchUser_viewModel
+        let result = outputSpy.viewUser_fetchUser_viewModel!
         XCTAssertEqual(result.name, "John Doe")
         XCTAssertEqual(result.info, "Town Hall Level 4")
     }
@@ -68,9 +68,9 @@ class ViewUserPresenterTests: XCTestCase
 fileprivate class ViewUserPresenterOutputSpy: ViewUserPresenterOutput
 {
     var displayUserCalled = false
-    var viewUser_fetchUser_viewModel: ViewUser.FetchUser.ViewModel
+    var viewUser_fetchUser_viewModel: ViewUser.FetchUser.ViewModel!
 
-    func displayUser(viewModel viewModel: ViewUser.FetchUser.ViewModel)
+    func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
         displayUserCalled = true
         viewUser_fetchUser_viewModel = viewModel
