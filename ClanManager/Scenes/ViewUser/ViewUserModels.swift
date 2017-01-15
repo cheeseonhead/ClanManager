@@ -11,10 +11,10 @@
 
 import UIKit
 
-
 struct ViewUser
 {
-    struct FetchUser {
+    struct FetchUser
+    {
 
         struct Request
         {
@@ -23,13 +23,15 @@ struct ViewUser
 
         struct Response
         {
-
+            var firstName: String
+            var lastName: String
+            var townHallLevel: Int
         }
 
         struct ViewModel
         {
-
+            var name: String
+            var info: String
         }
     }
 }
-
