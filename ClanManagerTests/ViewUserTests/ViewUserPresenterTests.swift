@@ -14,40 +14,52 @@ import XCTest
 
 class ViewUserPresenterTests: XCTestCase
 {
-  // MARK: - Subject under test
-  
-  var sut: ViewUserPresenter!
-  
-  // MARK: - Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    setupViewUserPresenter()
-  }
-  
-  override func tearDown()
-  {
-    super.tearDown()
-  }
-  
-  // MARK: - Test setup
-  
-  func setupViewUserPresenter()
-  {
-    sut = ViewUserPresenter()
-  }
-  
-  // MARK: - Test doubles
-  
-  // MARK: - Tests
-  
-  func testSomething()
-  {
-    // Given
-    
-    // When
-    
-    // Then
-  }
+    // MARK: - Subject under test
+
+    var presenter: ViewUserPresenter!
+
+    // MARK: - Test lifecycle
+
+    override func setUp()
+    {
+        super.setUp()
+        setupViewUserPresenter()
+    }
+
+    override func tearDown()
+    {
+        super.tearDown()
+    }
+
+    // MARK: - Test setup
+
+    func setupViewUserPresenter()
+    {
+        presenter = ViewUserPresenter()
+    }
+
+    // MARK: - Tests
+
+    func tetPresentUserTriggersDisplayUser()
+    {
+        // Given
+        let outputSpy = ViewUserPresenterOutputSpy()
+        presenter.output = outputSpy
+
+        // When
+        presenter.presentUser(response: ViewUser.FetchUser.Response())
+
+        // Then
+        XCTAssertTrue(outputSpy.displayUserCalled, "Should trigger display user on the output")
+    }
+}
+
+fileprivate class ViewUserPresenterOutputSpy: ViewUserPresenterOutput
+{
+    var displayUserCalled = false
+
+    func displayUser(viewModel _: ViewUser.FetchUser.ViewModel)
+    {
+        displayUserCalled = true
+    }
 }
