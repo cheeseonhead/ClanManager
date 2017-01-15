@@ -62,12 +62,3 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 
     }
 }
-
-// This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
-extension ViewUserViewController: ViewUserPresenterOutput
-{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        router.passDataToNextScene(for: segue)
-    }
-}
