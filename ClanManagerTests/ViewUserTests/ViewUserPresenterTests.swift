@@ -40,7 +40,7 @@ class ViewUserPresenterTests: XCTestCase
 
     // MARK: - Tests
 
-    func tetPresentUserTriggersDisplayUser()
+    func testPresentUserTriggersDisplayUser()
     {
         // Given
         let outputSpy = ViewUserPresenterOutputSpy()
