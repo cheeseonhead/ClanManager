@@ -10,33 +10,38 @@
 
 import UIKit
 
-protocol ViewUserInteractorInput {
+protocol ViewUserInteractorInput
+{
     func fetchUser(request: ViewUser.FetchUser.Request)
 }
 
-protocol ViewUserInteractorOutput {
+protocol ViewUserInteractorOutput
+{
     func presentUser(response: ViewUser.FetchUser.Response)
 }
 
-protocol ViewUserDataSource {
-    
+protocol ViewUserDataSource
+{
+
 }
 
-protocol ViewUserDataDestination {
-    
+protocol ViewUserDataDestination
+{
+
 }
 
-class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination {
-    
+class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination
+{
+
     var output: ViewUserInteractorOutput!
     var worker: UserWorker! = UserWorker(userStore: UserMemStore())
-    
+
     // MARK: Business logic
-    
-    func fetchUser(request: ViewUser.FetchUser.Request)
+
+    func fetchUser(request _: ViewUser.FetchUser.Request)
     {
-        worker.fetchUser(completionHandler: { (user:User) -> Void in
-            let response = ViewUser.FetchUser.Response()
+        worker.fetchUser(completionHandler: { (_: User) in
+            let response = ViewUser.FetchUser.Response(firstName: "", lastName: "", townHallLevel: 0)
             self.output.presentUser(response: response)
         })
     }
