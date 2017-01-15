@@ -30,7 +30,8 @@ struct ViewUser
 
         struct ViewModel
         {
-
+            var name: String
+            var info: String
         }
     }
 }
