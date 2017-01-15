@@ -26,11 +26,6 @@ class ViewUserPresenterTests: XCTestCase
         setupViewUserPresenter()
     }
 
-    override func tearDown()
-    {
-        super.tearDown()
-    }
-
     // MARK: - Test setup
 
     func setupViewUserPresenter()

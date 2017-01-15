@@ -29,6 +29,6 @@ class ViewUserPresenter: ViewUserPresenterInput
 
     func presentUser(response _: ViewUser.FetchUser.Response)
     {
-
+        output.displayUser(viewModel: ViewUser.FetchUser.ViewModel())
     }
 }
