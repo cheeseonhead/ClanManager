@@ -42,7 +42,7 @@ class ViewUserPresenterTests: XCTestCase
         presenter.output = outputSpy
 
         // When
-        presenter.presentUser(response: ViewUser.FetchUser.Response())
+        presenter.presentUser(response: ViewUser.FetchUser.Response(firstName: "", lastName: "", townHallLevel: 0))
 
         // Then
         XCTAssertTrue(outputSpy.displayUserCalled, "Should trigger display user on the output")
