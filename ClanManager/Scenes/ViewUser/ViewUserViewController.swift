@@ -10,56 +10,55 @@
 
 import UIKit
 
-protocol ViewUserViewControllerInput {
-    
+protocol ViewUserViewControllerInput
+{
+    func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
 }
 
-protocol ViewUserViewControllerOutput {
+protocol ViewUserViewControllerOutput
+{
     func fetchUser(request: ViewUser.FetchUser.Request)
 }
 
-class ViewUserViewController: UIViewController, ViewUserViewControllerInput {
-    
+class ViewUserViewController: UIViewController, ViewUserViewControllerInput
+{
+
     var output: ViewUserViewControllerOutput!
     var router: ViewUserRouter!
-    
-    
+
     // MARK: - Outlets
-    
+
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
-    
-    
+
     // MARK: - Object lifecycle
-    
-    override func awakeFromNib() {
+
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         ViewUserConfigurator.sharedInstance.configure(viewController: self)
     }
-    
-    
+
     // MARK: - View lifecycle
-    
-    override func viewDidLoad() {
+
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         fetchUserOnLoad()
     }
-    
+
     // MARK: - Event handling
-    
+
     func fetchUserOnLoad()
     {
         let request = ViewUser.FetchUser.Request()
         output.fetchUser(request: request)
     }
-    
-    // MARK: - Display logic
-    
-}
 
-//This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
-extension ViewUserViewController: ViewUserPresenterOutput {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        router.passDataToNextScene(for: segue)
+    // MARK: - Display logic
+
+    func displayUser(viewModel _: ViewUser.FetchUser.ViewModel)
+    {
+
     }
 }

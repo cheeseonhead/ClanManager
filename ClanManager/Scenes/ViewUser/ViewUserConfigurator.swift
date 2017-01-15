@@ -12,31 +12,43 @@ import UIKit
 
 // MARK: Connect View, Interactor, and Presenter
 
-extension ViewUserInteractor: ViewUserViewControllerOutput, ViewUserRouterDataSource, ViewUserRouterDataDestination {
+extension ViewUserViewController: ViewUserPresenterOutput
+{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        router.passDataToNextScene(for: segue)
+    }
 }
 
-extension ViewUserPresenter: ViewUserInteractorOutput {
+extension ViewUserInteractor: ViewUserViewControllerOutput, ViewUserRouterDataSource, ViewUserRouterDataDestination
+{
 }
 
-class ViewUserConfigurator {
+extension ViewUserPresenter: ViewUserInteractorOutput
+{
+}
+
+class ViewUserConfigurator
+{
     // MARK: Object lifecycle
-    
+
     static let sharedInstance = ViewUserConfigurator()
-    
+
     private init() {}
-    
+
     // MARK: Configuration
-    
-    func configure(viewController: ViewUserViewController) {
-        
+
+    func configure(viewController: ViewUserViewController)
+    {
+
         let presenter = ViewUserPresenter()
         presenter.output = viewController
-        
+
         let interactor = ViewUserInteractor()
         interactor.output = presenter
-        
-        let router = ViewUserRouter(viewController:viewController, dataSource:interactor, dataDestination:interactor)
-        
+
+        let router = ViewUserRouter(viewController: viewController, dataSource: interactor, dataDestination: interactor)
+
         viewController.output = interactor
         viewController.router = router
     }

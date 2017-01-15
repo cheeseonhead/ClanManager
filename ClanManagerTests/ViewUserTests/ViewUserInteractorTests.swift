@@ -14,63 +14,59 @@ import XCTest
 
 class ViewUserInteractorTests: XCTestCase
 {
-  // MARK: - Subject under test
+    // MARK: - Subject under test
 
-  var interactor: ViewUserInteractor!
+    var interactor: ViewUserInteractor!
 
-  // MARK: - Test lifecycle
+    // MARK: - Test lifecycle
 
-  override func setUp()
-  {
-    super.setUp()
-    setupViewUserInteractor()
-  }
+    override func setUp()
+    {
+        super.setUp()
+        setupViewUserInteractor()
+    }
 
-  // MARK: - Test setup
+    // MARK: - Test setup
 
-  func setupViewUserInteractor()
-  {
-    interactor = ViewUserInteractor()
-  }
+    func setupViewUserInteractor()
+    {
+        interactor = ViewUserInteractor()
+    }
 
-  // MARK: - Test doubles
+    // MARK: - Tests
 
-  // MARK: - Tests
+    func testFetchUserTriggersPresentUser()
+    {
+        // Given
+        let outputSpy = ViewUserInteractorSpy()
+        interactor.output = outputSpy
+        let workerSpy = UserWorkerSpy(userStore: UserMemStore())
+        interactor.worker = workerSpy
 
-  func testFetchUserTriggersPresentUser()
-  {
-    // Given
-    let outputSpy = ViewUserInteractorSpy()
-    interactor.output = outputSpy
-    let workerSpy = UserWorkerSpy(userStore: UserMemStore())
-    interactor.worker = workerSpy
+        // When
+        interactor.fetchUser(request: ViewUser.FetchUser.Request())
 
-    // When
-    interactor.fetchUser(request: ViewUser.FetchUser.Request())
-
-    // Then
-      XCTAssertTrue(workerSpy.fetchUserCalled, "Should call the worker to fetch the user.")
-    XCTAssertTrue(outputSpy.presentUserCalled, "Present User should be called on the output.")
-  }
+        // Then
+        XCTAssertTrue(workerSpy.fetchUserCalled, "Should call the worker to fetch the user.")
+        XCTAssertTrue(outputSpy.presentUserCalled, "Present User should be called on the output.")
+    }
 }
 
-
-fileprivate class ViewUserInteractorSpy:ViewUserInteractorOutput
+fileprivate class ViewUserInteractorSpy: ViewUserInteractorOutput
 {
     var presentUserCalled = false
 
-    func presentUser(response: ViewUser.FetchUser.Response)
+    func presentUser(response _: ViewUser.FetchUser.Response)
     {
         presentUserCalled = true
     }
 }
 
-
-fileprivate class UserWorkerSpy:UserWorker
+fileprivate class UserWorkerSpy: UserWorker
 {
     var fetchUserCalled = false
 
-    override func fetchUser(completionHandler:@escaping (_:User)->Void)
+    override func fetchUser(completionHandler: @escaping (_: User) -> Void)
     {
         fetchUserCalled = true
         completionHandler(User())

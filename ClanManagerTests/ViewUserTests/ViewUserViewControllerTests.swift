@@ -14,65 +14,63 @@ import XCTest
 
 class ViewUserViewControllerTests: XCTestCase
 {
-  // MARK: - Subject under test
-  
-  var sut: ViewUserViewController!
-  var window: UIWindow!
-  
-  // MARK: - Test lifecycle
-  
-  override func setUp()
-  {
-    super.setUp()
-    window = UIWindow()
-    setupViewUserViewController()
-  }
-  
-  override func tearDown()
-  {
-    window = nil
-    super.tearDown()
-  }
-  
-  // MARK: - Test setup
-  
-  func setupViewUserViewController()
-  {
-    let bundle = Bundle.main
-    let storyboard = UIStoryboard(name: "Main", bundle: bundle)
-    sut = storyboard.instantiateViewController(withIdentifier: "ViewUserViewController") as! ViewUserViewController
-  }
-  
-  func loadView()
-  {
-    window.addSubview(sut.view)
-    RunLoop.current.run(until: Date())
-  }
-  
-  // MARK: - Test doubles
-  
-  // MARK: - Tests
-  
-  func testFetchUserCalledOnViewLoad()
-  {
-    // Given
-    let viewUserControllerSpy = ViewUserViewControllerSpy()
-    sut.output = viewUserControllerSpy
-    
-    // When
-    loadView()
-    
-    // Then
-    XCTAssertTrue(viewUserControllerSpy.fetchUserCalled, "Fetch user should be called on view load")
-  }
+    // MARK: - Subject under test
+
+    var viewController: ViewUserViewController!
+    var window: UIWindow!
+
+    // MARK: - Test lifecycle
+
+    override func setUp()
+    {
+        super.setUp()
+        window = UIWindow()
+        setupViewUserViewController()
+    }
+
+    override func tearDown()
+    {
+        window = nil
+        super.tearDown()
+    }
+
+    // MARK: - Test setup
+
+    func setupViewUserViewController()
+    {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        viewController = storyboard.instantiateViewController(withIdentifier: "ViewUserViewController") as! ViewUserViewController
+    }
+
+    func loadView()
+    {
+        window.addSubview(viewController.view)
+        RunLoop.current.run(until: Date())
+    }
+
+    // MARK: - Tests
+
+    func testFetchUserCalledOnViewLoad()
+    {
+        // Given
+        let viewUserControllerSpy = ViewUserViewControllerSpy()
+        viewController.output = viewUserControllerSpy
+
+        // When
+        loadView()
+
+        // Then
+        XCTAssertTrue(viewUserControllerSpy.fetchUserCalled, "Fetch user should be called on view load")
+    }
 }
 
-
-fileprivate class ViewUserViewControllerSpy : ViewUserViewControllerOutput
+fileprivate class ViewUserViewControllerSpy: ViewUserViewControllerOutput
 {
     fileprivate var fetchUserCalled = false
-    
-    func fetchUser(request: ViewUser.FetchUser.Request) {
+
+    func fetchUser(request _: ViewUser.FetchUser.Request)
+    {
         fetchUserCalled = true
     }
 }

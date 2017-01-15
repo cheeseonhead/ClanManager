@@ -26,11 +26,6 @@ class UserWorkerTests: XCTestCase
         setupUserWorker()
     }
 
-    override func tearDown()
-    {
-        super.tearDown()
-    }
-
     // MARK: - Test setup
 
     func setupUserWorker()
