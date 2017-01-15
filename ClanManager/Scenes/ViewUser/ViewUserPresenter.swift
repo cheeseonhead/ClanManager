@@ -10,21 +10,25 @@
 
 import UIKit
 
-protocol ViewUserPresenterInput {
+protocol ViewUserPresenterInput
+{
     func presentUser(response: ViewUser.FetchUser.Response)
 }
 
-protocol ViewUserPresenterOutput: class {
-    
+protocol ViewUserPresenterOutput: class
+{
+    func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
 }
 
-class ViewUserPresenter: ViewUserPresenterInput {
-    
+class ViewUserPresenter: ViewUserPresenterInput
+{
+
     weak var output: ViewUserPresenterOutput!
-    
+
     // MARK: Presentation logic
-    
-    func presentUser(response: ViewUser.FetchUser.Response) {
-        
+
+    func presentUser(response _: ViewUser.FetchUser.Response)
+    {
+
     }
 }
