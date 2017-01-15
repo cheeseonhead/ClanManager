@@ -57,8 +57,9 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 
     // MARK: - Display logic
 
-    func displayUser(viewModel _: ViewUser.FetchUser.ViewModel)
+    func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
-
+        nameLabel.text = viewModel.name
+        infoLabel.text = viewModel.info
     }
 }
