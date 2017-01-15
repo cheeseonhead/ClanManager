@@ -68,7 +68,7 @@ class ViewUserViewControllerTests: XCTestCase
 }
 
 
-class ViewUserViewControllerSpy : ViewUserViewControllerOutput
+fileprivate class ViewUserViewControllerSpy : ViewUserViewControllerOutput
 {
     fileprivate var fetchUserCalled = false
     

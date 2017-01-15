@@ -1,2 +1,9 @@
 ClanManager.xcodeproj/xcuserdata/*
 UserInterfaceState.xcuserstate
+.idea/ClanManager.iml
+.idea/modules.xml
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/xcode.xml
+.idea/runConfigurations/ClanManager.xml
+ClanManager.xcodeproj/project.xcworkspace/xcuserdata/Cheeseonhead.xcuserdatad/xcschemes/xcschememanagement.plist

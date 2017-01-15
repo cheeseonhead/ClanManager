@@ -42,7 +42,7 @@ class ViewUserInteractorTests: XCTestCase
     // Given
     let outputSpy = ViewUserInteractorSpy()
     interactor.output = outputSpy
-    let workerSpy = UserWorkerSpy()
+    let workerSpy = UserWorkerSpy(userStore: UserMemStore())
     interactor.worker = workerSpy
 
     // When
@@ -55,7 +55,7 @@ class ViewUserInteractorTests: XCTestCase
 }
 
 
-class ViewUserInteractorSpy:ViewUserInteractorOutput
+fileprivate class ViewUserInteractorSpy:ViewUserInteractorOutput
 {
     var presentUserCalled = false
 
@@ -66,11 +66,11 @@ class ViewUserInteractorSpy:ViewUserInteractorOutput
 }
 
 
-class UserWorkerSpy:UserWorker
+fileprivate class UserWorkerSpy:UserWorker
 {
     var fetchUserCalled = false
 
-    override func fetchUser(completionHandler:(_:User)->Void)
+    override func fetchUser(completionHandler:@escaping (_:User)->Void)
     {
         fetchUserCalled = true
         completionHandler(User())

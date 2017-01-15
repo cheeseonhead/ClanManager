@@ -29,7 +29,7 @@ protocol ViewUserDataDestination {
 class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination {
     
     var output: ViewUserInteractorOutput!
-    var worker: UserWorker! = UserWorker()
+    var worker: UserWorker! = UserWorker(userStore: UserMemStore())
     
     // MARK: Business logic
     
@@ -37,7 +37,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
     {
         worker.fetchUser(completionHandler: { (user:User) -> Void in
             let response = ViewUser.FetchUser.Response()
-            output.presentUser(response: response)
+            self.output.presentUser(response: response)
         })
     }
 }
