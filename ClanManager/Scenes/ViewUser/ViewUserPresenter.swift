@@ -27,8 +27,10 @@ class ViewUserPresenter: ViewUserPresenterInput
 
     // MARK: Presentation logic
 
-    func presentUser(response _: ViewUser.FetchUser.Response)
+    func presentUser(response: ViewUser.FetchUser.Response)
     {
-        output.displayUser(viewModel: ViewUser.FetchUser.ViewModel(name: "", info: ""))
+        let name = response.firstName + " " + response.lastName
+        let info = "Town Hall level \(response.townHallLevel)"
+        output.displayUser(viewModel: ViewUser.FetchUser.ViewModel(name: name, info: info))
     }
 }
