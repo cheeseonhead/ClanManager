@@ -63,6 +63,20 @@ class ViewUserViewControllerTests: XCTestCase
         // Then
         XCTAssertTrue(viewUserControllerSpy.fetchUserCalled, "Fetch user should be called on view load")
     }
+
+    func testDisplayUserCorrectly()
+    {
+        // Given
+        let viewModel = ViewUser.FetchUser.ViewModel(name: "John Cena", info: "This player is very good")
+
+        // When
+        loadView()
+        viewController.displayUser(viewModel: viewModel)
+
+        // Then
+        XCTAssertEqual(viewController.nameLabel.text, viewModel.name)
+        XCTAssertEqual(viewController.infoLabel.text, viewModel.info)
+    }
 }
 
 fileprivate class ViewUserViewControllerSpy: ViewUserViewControllerOutput
