@@ -46,3 +46,5 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
         })
     }
 }
+
+extension UserMemStore: UserStoreProtocol {}

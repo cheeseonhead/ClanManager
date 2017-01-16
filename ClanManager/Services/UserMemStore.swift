@@ -5,7 +5,12 @@
 
 import Foundation
 
-class UserMemStore : UserStoreProtocol
+protocol UserMemStoreInput
+{
+    func fetchUser(completionHandler: @escaping (_: User) -> Void)
+}
+
+class UserMemStore : UserMemStoreInput
 {
     func fetchUser(completionHandler: @escaping (_: User) -> Void) {
 
