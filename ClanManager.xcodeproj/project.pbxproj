@@ -31,6 +31,7 @@
 		8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405CDE4331F74804BC466B5 /* ViewUserPresenterTests.swift */; };
 		8405C2F47D5D83113E8ED56D /* UserWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C0214034D8703B93C136 /* UserWorker.swift */; };
 		8405C3782ED1A8DE6C715A41 /* UserMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405CF082084F50BF3AF5EED /* UserMemStore.swift */; };
+		8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C2E62A901315224B7967 /* UserMemStoreSpec.swift */; };
 		8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C0BA59D4C44F1D5E77D6 /* ViewUserViewControllerTests.swift */; };
 		8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C810D46350FC56BB6766 /* User.swift */; };
 		A169465DE92190C8146505AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */; };
@@ -79,6 +80,7 @@
 		7B6A7C3B3DC41D7406C8B92D /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		8405C0214034D8703B93C136 /* UserWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorker.swift; sourceTree = "<group>"; };
 		8405C0BA59D4C44F1D5E77D6 /* ViewUserViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserViewControllerTests.swift; sourceTree = "<group>"; };
+		8405C2E62A901315224B7967 /* UserMemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMemStoreSpec.swift; sourceTree = "<group>"; };
 		8405C810D46350FC56BB6766 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8405CDB79A6F111E700302F0 /* ViewUserInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorTests.swift; sourceTree = "<group>"; };
 		8405CDE4331F74804BC466B5 /* ViewUserPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserPresenterTests.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 				56407BC61E29864100970F81 /* Info.plist */,
 				8405C7D97BB039C9AF7AF744 /* ViewUserTests */,
 				AD05A4BCB7208B70E489D6C4 /* WorkerTests */,
+				8405C39D71CFF98C87F79F89 /* ServiceTests */,
 			);
 			path = ClanManagerTests;
 			sourceTree = "<group>";
@@ -215,6 +218,14 @@
 				8405C0214034D8703B93C136 /* UserWorker.swift */,
 			);
 			path = Workers;
+			sourceTree = "<group>";
+		};
+		8405C39D71CFF98C87F79F89 /* ServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				8405C2E62A901315224B7967 /* UserMemStoreSpec.swift */,
+			);
+			path = ServiceTests;
 			sourceTree = "<group>";
 		};
 		8405C7D97BB039C9AF7AF744 /* ViewUserTests */ = {
@@ -487,6 +498,7 @@
 				8405C09005D95917C313B881 /* ViewUserInteractorTests.swift in Sources */,
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
 				AD05AB80BE91B49A13CC7F68 /* UserWorkerTests.swift in Sources */,
+				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

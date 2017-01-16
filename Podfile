@@ -5,4 +5,12 @@ use_frameworks!
 
 target "ClanManagerTests" do
     pod 'Quick'
+    pod 'Nimble'
+end
+
+post_install do |installer|
+    puts("Update debug pod settings to speed up build time")
+    Dir.glob(File.join("Pods", "**", "Pods*{debug,Private}.xcconfig")).each do |file|
+        File.open(file, 'a') { |f| f.puts "\nDEBUG_INFORMATION_FORMAT = dwarf" }
+    end
 end
