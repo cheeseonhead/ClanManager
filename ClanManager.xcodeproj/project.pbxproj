@@ -14,7 +14,6 @@
 		56407BB51E29864000970F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
 		56407BB71E29864000970F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB61E29864000970F81 /* Assets.xcassets */; };
 		56407BBA1E29864000970F81 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB81E29864000970F81 /* LaunchScreen.storyboard */; };
-		56407BD01E29864100970F81 /* ClanManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BCF1E29864100970F81 /* ClanManagerUITests.swift */; };
 		564A821A1E29A0A4007B3E45 /* ViewUserConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82141E29A0A4007B3E45 /* ViewUserConfigurator.swift */; };
 		564A821B1E29A0A4007B3E45 /* ViewUserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82151E29A0A4007B3E45 /* ViewUserInteractor.swift */; };
 		564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82161E29A0A4007B3E45 /* ViewUserModels.swift */; };
@@ -65,7 +64,6 @@
 		56407BC01E29864100970F81 /* ClanManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClanManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		56407BC61E29864100970F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		56407BCB1E29864100970F81 /* ClanManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClanManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		56407BCF1E29864100970F81 /* ClanManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClanManagerUITests.swift; sourceTree = "<group>"; };
 		56407BD11E29864100970F81 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		564A82141E29A0A4007B3E45 /* ViewUserConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserConfigurator.swift; sourceTree = "<group>"; };
 		564A82151E29A0A4007B3E45 /* ViewUserInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractor.swift; sourceTree = "<group>"; };
@@ -182,7 +180,6 @@
 		56407BCE1E29864100970F81 /* ClanManagerUITests */ = {
 			isa = PBXGroup;
 			children = (
-				56407BCF1E29864100970F81 /* ClanManagerUITests.swift */,
 				56407BD11E29864100970F81 /* Info.plist */,
 			);
 			path = ClanManagerUITests;
@@ -494,7 +491,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56407BD01E29864100970F81 /* ClanManagerUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
