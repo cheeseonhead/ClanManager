@@ -11,9 +11,11 @@ class UserMemStoreSpec: QuickSpec {
     override func spec()
     {
         describe("UserMemStore") { 
-            let userMemStore:UserMemStore!
+            var userMemStore: UserMemStore!
+            var testUsers: [User]!
             beforeEach {
                 userMemStore = UserMemStore()
+                testUsers = [User(), User()]
             }
         }
     }

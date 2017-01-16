@@ -12,6 +12,8 @@ protocol UserMemStoreInput
 
 class UserMemStore : UserMemStoreInput
 {
+    var users: [User]!
+    
     func fetchUser(completionHandler: @escaping (_: User) -> Void) {
 
     }
