@@ -28,6 +28,8 @@ extension ViewUserPresenter: ViewUserInteractorOutput
 {
 }
 
+extension ViewUserRouter:ViewUserRouterOutput {}
+
 class ViewUserConfigurator
 {
     // MARK: Object lifecycle
