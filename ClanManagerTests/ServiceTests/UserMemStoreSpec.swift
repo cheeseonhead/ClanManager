@@ -20,7 +20,7 @@ class UserMemStoreSpec: QuickSpec {
             }
             
             context("when asked to get a list of users", {
-                var resultUsers: User!
+                var resultUsers: [User]!
                 beforeEach {
                     userMemStore.fetchUsers(completionHandler: { (users) in
                         resultUsers = users
@@ -28,7 +28,7 @@ class UserMemStoreSpec: QuickSpec {
                 }
                 
                 it("should return a list of users", closure: {
-                    expect(resultUsers).toEventually(be)
+                    expect(resultUsers).toEventually(be(resultUsers))
                 })
             })
         }
