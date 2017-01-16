@@ -11,7 +11,7 @@
 import UIKit
 
 protocol ViewUserRouterInput {
-    
+    func passDataToNextScene(for segue: UIStoryboardSegue)
 }
 
 protocol ViewUserRouterDataSource:class {
@@ -24,11 +24,11 @@ protocol ViewUserRouterDataDestination:class {
 
 class ViewUserRouter: ViewUserRouterInput {
     
-    weak var viewController:ViewUserViewController!
+    weak var viewController:UIViewController!
     weak private var dataSource:ViewUserRouterDataSource!
     weak var dataDestination:ViewUserRouterDataDestination!
     
-    init(viewController:ViewUserViewController, dataSource:ViewUserRouterDataSource, dataDestination:ViewUserRouterDataDestination) {
+    init(viewController:UIViewController, dataSource:ViewUserRouterDataSource, dataDestination:ViewUserRouterDataDestination) {
         self.viewController = viewController
         self.dataSource = dataSource
         self.dataDestination = dataDestination
