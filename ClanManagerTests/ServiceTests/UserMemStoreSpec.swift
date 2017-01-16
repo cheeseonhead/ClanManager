@@ -16,7 +16,21 @@ class UserMemStoreSpec: QuickSpec {
             beforeEach {
                 userMemStore = UserMemStore()
                 testUsers = [User(), User()]
+                userMemStore.users = testUsers
             }
+            
+            context("when asked to get a list of users", {
+                var resultUsers: User!
+                beforeEach {
+                    userMemStore.fetchUsers(completionHandler: { (users) in
+                        resultUsers = users
+                    })
+                }
+                
+                it("should return a list of users", closure: {
+                    expect(resultUsers).toEventually(be)
+                })
+            })
         }
     }
 }
