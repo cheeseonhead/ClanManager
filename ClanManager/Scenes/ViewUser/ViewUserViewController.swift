@@ -20,11 +20,16 @@ protocol ViewUserViewControllerOutput
     func fetchUser(request: ViewUser.FetchUser.Request)
 }
 
+protocol ViewUserRouterOutput
+{
+    func passDataToNextScene(for segue: UIStoryboardSegue)
+}
+
 class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 {
 
     var output: ViewUserViewControllerOutput!
-    var router: ViewUserRouter!
+    var router: ViewUserRouterOutput!
 
     // MARK: - Outlets
 
