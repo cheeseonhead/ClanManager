@@ -20,15 +20,9 @@ protocol ViewUserInteractorOutput
     func presentUser(response: ViewUser.FetchUser.Response)
 }
 
-protocol ViewUserDataSource
-{
+protocol ViewUserDataSource {}
 
-}
-
-protocol ViewUserDataDestination
-{
-
-}
+protocol ViewUserDataDestination {}
 
 class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination
 {
