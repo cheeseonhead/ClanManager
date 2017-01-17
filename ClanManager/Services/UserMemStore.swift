@@ -20,7 +20,7 @@ class UserMemStore: UserMemStoreInput
     private var users: [String:User] = [:]
 
     func createUser(user: User) {
-//        users[user.id] = user
+        users[user.id] = user
     }
     
     func fetchUsers(completionHandler: @escaping (_: [User]) -> Void)

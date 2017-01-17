@@ -62,16 +62,6 @@ class UserMemStoreSpec: QuickSpec
                     expect(resultUsers).to(contain(testUsers))
                 })
             })
-            
-            context("when asked to get a single user with id", { 
-                var resultUser: User!
-                beforeEach {
-                    userMemStore.fetchUser(id: "uniqueId", completionHandler: { (user) in
-                        resultUser = user
-                    })
-                }
-                
-            })
         }
     }
 }
