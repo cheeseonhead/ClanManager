@@ -7,12 +7,21 @@ import Foundation
 
 protocol UserMemStoreInput
 {
-    func fetchUser(completionHandler: @escaping (_: User) -> Void)
+    func fetchUsers(completionHandler: @escaping (_: [User]) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
 }
 
-class UserMemStore : UserMemStoreInput
+class UserMemStore: UserMemStoreInput
 {
-    func fetchUser(completionHandler: @escaping (_: User) -> Void) {
+    var users: [User]!
+
+    func fetchUsers(completionHandler: @escaping (_: [User]) -> Void)
+    {
+        completionHandler(users)
+    }
+
+    func fetchUser(id _: String, completionHandler _: @escaping (_: User) -> Void)
+    {
 
     }
 }
