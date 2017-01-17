@@ -17,10 +17,37 @@ class UserMemStoreSpec: QuickSpec
             var testUsers: [User]!
             beforeEach
             {
+                testUsers = [
+                    User(id: "firstUser", firstName: "Barry", lastName: "Allen", townHallLevel: 8),
+                    User(id: "secondUser", firstName: "James", lastName: "Moriarty", townHallLevel: 10)
+                ]
                 userMemStore = UserMemStore()
-                testUsers = [User(), User()]
-                userMemStore.users = testUsers
             }
+            
+            context("when asked to create two users", {
+                beforeEach {
+                    userMemStore.createUser(user: testUsers[0])
+                    userMemStore.createUser(user: testUsers[1])
+                }
+                
+                it("should return same user when fetching first user", closure: {
+                    var result: User!
+                    userMemStore.fetchUser(id: testUsers[0].id, completionHandler: { (user) in
+                        result = user
+                    })
+                    
+                    expect(result).toEventually(equal(testUsers[0]))
+                })
+                
+                it("should return same user when fetching second user", closure:{
+                    var result: User!
+                    userMemStore.fetchUser(id: testUsers[1].id, completionHandler: { (user) in
+                        result = user
+                    })
+                    
+                    expect(result).toEventually(equal(testUsers[1]))
+                })
+            })
 
             context("when asked to get a list of users", {
                 var resultUsers: [User]!
@@ -34,6 +61,16 @@ class UserMemStoreSpec: QuickSpec
                 it("should return a list of users", closure: {
                     expect(resultUsers).to(contain(testUsers))
                 })
+            })
+            
+            context("when asked to get a single user with id", { 
+                var resultUser: User!
+                beforeEach {
+                    userMemStore.fetchUser(id: "uniqueId", completionHandler: { (user) in
+                        resultUser = user
+                    })
+                }
+                
             })
         }
     }
