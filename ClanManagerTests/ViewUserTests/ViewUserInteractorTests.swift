@@ -50,6 +50,22 @@ class ViewUserInteractorTests: XCTestCase
         XCTAssertTrue(workerSpy.fetchUserCalled, "Should call the worker to fetch the user.")
         XCTAssertTrue(outputSpy.presentUserCalled, "Present User should be called on the output.")
     }
+
+    func testFetchUserConstructsCorrectResponse()
+    {
+        let workerSpy = UserWorkerSpy(userStore: UserMemStore())
+        let outputSpy = ViewUserInteractorSpy()
+        interactor.output = outputSpy
+        interactor.worker = workerSpy
+
+        workerSpy.fakeResultUser = User(id: "qwerty", firstName: "Allen", lastName: "Chang", townHallLevel: 5)
+
+        let expected = ViewUser.FetchUser.Response(firstName: "Allen", lastName: "Chang", townHallLevel: 5)
+
+        interactor.fetchUser(id: "", request: ViewUser.FetchUser.Request())
+
+        XCTAssertEqual(expected, outputSpy.resultResponse!, "Returned user should be the same as given by the worker")
+    }
 }
 
 fileprivate class ViewUserInteractorSpy: ViewUserInteractorOutput
