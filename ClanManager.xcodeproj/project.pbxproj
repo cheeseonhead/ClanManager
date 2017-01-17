@@ -33,6 +33,8 @@
 		56D4AE0E1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */; };
 		56D4AE0F1E2ECF18007FCF7D /* EditSettingsViewControllerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE0B1E2ECF18007FCF7D /* EditSettingsViewControllerTests.swift */; };
 		56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */; };
+		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
+		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
 		61DB6964938C443B9EA9D76E /* Pods_ClanManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */; };
 		6C9BD12A9AD2CFF986DA2A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46136DD4041771032D65A8B /* QuartzCore.framework */; };
@@ -95,6 +97,7 @@
 		56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenterTests.swift; sourceTree = "<group>"; };
 		56D4AE0B1E2ECF18007FCF7D /* EditSettingsViewControllerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerTests.swift; sourceTree = "<group>"; };
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
+		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		692B15C9E590CDDB93A0817C /* Pods-ClanManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -270,6 +273,7 @@
 				56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */,
 				56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */,
 				56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */,
+				56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */,
 			);
 			path = EditSettings;
 			sourceTree = "<group>";
@@ -448,6 +452,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				56407BBA1E29864000970F81 /* LaunchScreen.storyboard in Resources */,
+				56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */,
 				56407BB71E29864000970F81 /* Assets.xcassets in Resources */,
 				56407BB51E29864000970F81 /* Main.storyboard in Resources */,
 			);
@@ -458,6 +463,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				564A82281E29A46D007B3E45 /* Main.storyboard in Resources */,
+				56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
