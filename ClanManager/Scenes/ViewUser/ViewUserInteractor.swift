@@ -12,7 +12,7 @@ import UIKit
 
 protocol ViewUserInteractorInput
 {
-    func fetchUser(id: String, request _: ViewUser.FetchUser.Request)
+    func fetchUser(request _: ViewUser.FetchUser.Request)
 }
 
 protocol ViewUserInteractorOutput
@@ -32,9 +32,9 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
 
     // MARK: Business logic
 
-    func fetchUser(id: String, request _: ViewUser.FetchUser.Request)
+    func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        worker.fetchUser(id: id, completionHandler: { (_: User) in
+        worker.fetchUser(id: request.id, completionHandler: { (_: User) in
             let response = ViewUser.FetchUser.Response(firstName: "", lastName: "", townHallLevel: 0)
             self.output.presentUser(response: response)
         })

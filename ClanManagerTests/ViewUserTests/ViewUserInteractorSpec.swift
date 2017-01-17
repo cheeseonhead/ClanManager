@@ -60,11 +60,13 @@ fileprivate class ViewUserInteractorSpy: ViewUserInteractorOutput
 
 fileprivate class UserWorkerSpy: UserWorker
 {
+    var requestID: String!
     var fetchUserCalled = false
     var fakeResultUser: User!
 
-    override func fetchUser(id _: String, completionHandler: @escaping (_: User) -> Void)
+    override func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
     {
+        requestID = id
         fetchUserCalled = true
         completionHandler(fakeResultUser)
     }

@@ -17,7 +17,7 @@ protocol ViewUserViewControllerInput
 
 protocol ViewUserViewControllerOutput
 {
-    func fetchUser(id: String, request _: ViewUser.FetchUser.Request)
+    func fetchUser(request _: ViewUser.FetchUser.Request)
 }
 
 protocol ViewUserRouterOutput
@@ -56,8 +56,8 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 
     func fetchUserOnLoad()
     {
-        let request = ViewUser.FetchUser.Request()
-        output.fetchUser(id: "", request: request)
+        let request = ViewUser.FetchUser.Request(id: "")
+        output.fetchUser(request: request)
     }
 
     // MARK: - Display logic
