@@ -24,42 +24,54 @@ class UserMemStoreSpec: QuickSpec
                 userMemStore = UserMemStore()
             }
             
-            context("when asked to create two users", {
+            describe("create two users", {
                 beforeEach {
                     userMemStore.createUser(user: testUsers[0])
                     userMemStore.createUser(user: testUsers[1])
                 }
                 
-                it("should return same user when fetching first user", closure: {
-                    var result: User!
-                    userMemStore.fetchUser(id: testUsers[0].id, completionHandler: { (user) in
-                        result = user
+                context("when asked to fetch those two users", {
+                    it("should return same user when fetching first user", closure: {
+                        var result: User!
+                        userMemStore.fetchUser(id: testUsers[0].id, completionHandler: { (user) in
+                            result = user
+                        })
+                        
+                        expect(result).toEventually(equal(testUsers[0]))
                     })
                     
-                    expect(result).toEventually(equal(testUsers[0]))
+                    it("should return same user when fetching second user", closure:{
+                        var result: User!
+                        userMemStore.fetchUser(id: testUsers[1].id, completionHandler: { (user) in
+                            result = user
+                        })
+                        
+                        expect(result).toEventually(equal(testUsers[1]))
+                    })
                 })
                 
-                it("should return same user when fetching second user", closure:{
-                    var result: User!
-                    userMemStore.fetchUser(id: testUsers[1].id, completionHandler: { (user) in
-                        result = user
+                context("when asked to fetch a user that doesn't exist", { 
+                    it("should return a nil user", closure: {
+                        var result: User? = testUsers[0]
+                        userMemStore.fetchUser(id: "idDoesntExist", completionHandler: { (user) in
+                            result = user
+                        })
+                        
+                        expect(result).toEventually(beNil())
                     })
-                    
-                    expect(result).toEventually(equal(testUsers[1]))
                 })
-            })
-
-            context("when asked to get a list of users", {
-                var resultUsers: [User]!
-                beforeEach
-                {
-                    userMemStore.fetchUsers(completionHandler: { users in
-                        resultUsers = users
+                
+                context("when asked to get a list of users", {
+                    var resultUsers: [User]!
+                    beforeEach {
+                        userMemStore.fetchUsers(completionHandler: { users in
+                            resultUsers = users
+                        })
+                    }
+                    
+                    it("should return a list of users", closure: {
+                        expect(resultUsers).to(contain(testUsers))
                     })
-                }
-
-                it("should return a list of users", closure: {
-                    expect(resultUsers).to(contain(testUsers))
                 })
             })
         }
