@@ -55,20 +55,23 @@ class ViewUserInteractorTests: XCTestCase
 fileprivate class ViewUserInteractorSpy: ViewUserInteractorOutput
 {
     var presentUserCalled = false
+    var resultResponse: ViewUser.FetchUser.Response!
 
-    func presentUser(response _: ViewUser.FetchUser.Response)
+    func presentUser(response: ViewUser.FetchUser.Response)
     {
         presentUserCalled = true
+        resultResponse = response
     }
 }
 
 fileprivate class UserWorkerSpy: UserWorker
 {
     var fetchUserCalled = false
+    var fakeResultUser: User!
 
     override func fetchUser(id _: String, completionHandler: @escaping (_: User) -> Void)
     {
         fetchUserCalled = true
-        completionHandler(User())
+        completionHandler(fakeResultUser)
     }
 }
