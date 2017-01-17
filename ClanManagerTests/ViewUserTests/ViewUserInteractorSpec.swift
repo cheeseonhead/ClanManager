@@ -42,6 +42,13 @@ class ViewUserInteractorSpec: QuickSpec
                 it("should request for the user with correct id from request", closure: {
                     expect(userWorkerSpy.requestID).toEventually(equal("barryAllen321"))
                 })
+
+                it("should correctly create response with returne user", closure: {
+                    let expected = ViewUser.FetchUser.Response(firstName: userWorkerSpy.fakeResultUser.firstName,
+                                                               lastName: userWorkerSpy.fakeResultUser.lastName,
+                                                               townHallLevel: userWorkerSpy.fakeResultUser.townHallLevel)
+                    expect(interactorSpy.resultResponse).toEventually(equal(expected))
+                })
             })
         }
     }
