@@ -32,7 +32,7 @@ class ViewUserInteractorSpec: QuickSpec
             context("when asked to fetch user", {
                 beforeEach
                 {
-                    interactor.fetchUser(id: "thisIdNonExist", request: ViewUser.FetchUser.Request())
+                    interactor.fetchUser(request: ViewUser.FetchUser.Request(id: "barryAllen321"))
                 }
 
                 it("should trigger present user on output", closure: {
@@ -40,6 +40,7 @@ class ViewUserInteractorSpec: QuickSpec
                 })
 
                 it("should request for the user with correct id from request", closure: {
+                    expect(userWorkerSpy.requestID).toEventually(equal("barryAllen321"))
                 })
             })
         }
