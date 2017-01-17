@@ -7,7 +7,7 @@ import Foundation
 
 protocol UserStoreProtocol
 {
-    func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
 }
 
 class UserWorker
@@ -19,7 +19,7 @@ class UserWorker
         self.userStore = userStore
     }
 
-    func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
     {
         userStore.fetchUser(id: id)
         { user in

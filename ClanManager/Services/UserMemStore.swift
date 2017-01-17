@@ -12,7 +12,7 @@ protocol UserMemStoreInput
     
     // Read
     func fetchUsers(completionHandler: @escaping (_: [User]) -> Void)
-    func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
 }
 
 class UserMemStore: UserMemStoreInput
@@ -30,8 +30,8 @@ class UserMemStore: UserMemStoreInput
         }))
     }
 
-    func fetchUser(id _: String, completionHandler _: @escaping (_: User) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
     {
-
+        completionHandler(users[id])
     }
 }
