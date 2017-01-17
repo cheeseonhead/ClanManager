@@ -21,11 +21,18 @@ struct ViewUser
 
         }
 
-        struct Response
+        struct Response: Equatable
         {
             var firstName: String
             var lastName: String
             var townHallLevel: Int
+
+            static func ==(lhs: Response, rhs: Response) -> Bool
+            {
+                return lhs.firstName == rhs.firstName &&
+                    lhs.lastName == rhs.lastName &&
+                    lhs.townHallLevel == rhs.townHallLevel
+            }
         }
 
         struct ViewModel
