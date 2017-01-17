@@ -17,8 +17,12 @@ class EditSettingsViewControllerSpec: QuickSpec {
     
     override func spec() {
         describe("EditSettingsViewController") {
+            var outputSpy: EditSettingsViewControllerOutputSpy!
             beforeEach {
+                outputSpy = EditSettingsViewControllerOutputSpy()
+                
                 self.setupEditSettingsViewController()
+                self.viewController.output = outputSpy
             }
             
             context("when view is loaded", {
@@ -27,9 +31,13 @@ class EditSettingsViewControllerSpec: QuickSpec {
                 }
                 
                 it("should send a request to the output", closure: {
-                    
+                    expect(outputSpy.fetchSettingsCalled).toEventually(beTrue())
                 })
             })
+            
+            afterEach {
+                self.window = nil
+            }
         }
     }
     
@@ -43,6 +51,7 @@ class EditSettingsViewControllerSpec: QuickSpec {
     
     func loadView()
     {
+        window = UIWindow()
         window.addSubview(viewController.view)
         RunLoop.current.run(until: Date())
     }
@@ -50,7 +59,10 @@ class EditSettingsViewControllerSpec: QuickSpec {
 
 class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
 {
+    // Checkers
+    var fetchSettingsCalled = false
+    
     func fetchSettings(request: EditSettings.FetchSettings.Request) {
-        
+        fetchSettingsCalled = true
     }
 }
