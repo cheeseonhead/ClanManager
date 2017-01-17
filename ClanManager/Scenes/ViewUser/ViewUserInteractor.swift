@@ -35,6 +35,10 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserD
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
         worker.fetchUser(id: request.id, completionHandler: { user in
+            guard let user = user else {
+                self.output.presentUser(response: ViewUser.FetchUser.Response())
+                return
+            }
             let response = ViewUser.FetchUser.Response(firstName: user.firstName, lastName: user.lastName, townHallLevel: user.townHallLevel)
             self.output.presentUser(response: response)
         })
