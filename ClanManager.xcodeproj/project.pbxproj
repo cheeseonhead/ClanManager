@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		216CAC671DCD8EDA67123399 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */; };
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
+		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
 		4FBAA3BF27E5DCE3C9E8CA5E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72ECF9207EED0C87A43151E /* CoreTelephony.framework */; };
 		56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BAD1E29864000970F81 /* AppDelegate.swift */; };
 		56407BB51E29864000970F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
@@ -36,7 +37,6 @@
 		A169465DE92190C8146505AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */; };
 		A852B167F21F1865D726AD51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C914C43E0C961F56D936C7C1 /* CoreMedia.framework */; };
 		AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */; };
-		AD05AB80BE91B49A13CC7F68 /* UserWorkerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ABE85F9C1C7B640E0D0E /* UserWorkerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
 		56407BAA1E29864000970F81 /* ClanManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClanManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56407BAD1E29864000970F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56407BB41E29864000970F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -87,7 +88,6 @@
 		8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		A46136DD4041771032D65A8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorSpec.swift; sourceTree = "<group>"; };
-		AD05ABE85F9C1C7B640E0D0E /* UserWorkerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerTests.swift; sourceTree = "<group>"; };
 		AECC1C3DF12BB1CC1760FF12 /* Pods-ClanManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClanManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72ECF9207EED0C87A43151E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -274,7 +274,7 @@
 		AD05A4BCB7208B70E489D6C4 /* WorkerTests */ = {
 			isa = PBXGroup;
 			children = (
-				AD05ABE85F9C1C7B640E0D0E /* UserWorkerTests.swift */,
+				34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */,
 			);
 			path = WorkerTests;
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 			files = (
 				8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */,
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
-				AD05AB80BE91B49A13CC7F68 /* UserWorkerTests.swift in Sources */,
+				34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
 			);
