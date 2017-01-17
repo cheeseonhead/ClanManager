@@ -13,6 +13,19 @@ import UIKit
 
 
 
-struct EditSettingsScene {
-    
+struct EditSettings {
+    struct LoadSettings {
+        
+        struct Request {
+            
+        }
+        
+        struct Response {
+            
+        }
+        
+        struct ViewModel {
+            
+        }
+    }
 }
