@@ -44,7 +44,7 @@ class ViewUserInteractorTests: XCTestCase
         interactor.worker = workerSpy
 
         // When
-        interactor.fetchUser(request: ViewUser.FetchUser.Request())
+        interactor.fetchUser(id: "", request: ViewUser.FetchUser.Request())
 
         // Then
         XCTAssertTrue(workerSpy.fetchUserCalled, "Should call the worker to fetch the user.")
@@ -66,7 +66,7 @@ fileprivate class UserWorkerSpy: UserWorker
 {
     var fetchUserCalled = false
 
-    override func fetchUser(completionHandler: @escaping (_: User) -> Void)
+    override func fetchUser(id _: String, completionHandler: @escaping (_: User) -> Void)
     {
         fetchUserCalled = true
         completionHandler(User())

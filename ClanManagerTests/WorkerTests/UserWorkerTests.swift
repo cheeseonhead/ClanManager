@@ -41,7 +41,7 @@ class UserWorkerTests: XCTestCase
         let storeSpy = userWorker.userStore as! UserMemStoreSpy
 
         // When
-        userWorker.fetchUser
+        userWorker.fetchUser(id: "")
         { _ in
         }
 
@@ -56,7 +56,7 @@ class UserWorkerTests: XCTestCase
 
         // When
         let expect = expectation(description: "Wait for fetch user to return")
-        userWorker.fetchUser
+        userWorker.fetchUser(id: "")
         { _ in
             expect.fulfill()
         }
@@ -74,7 +74,7 @@ fileprivate class UserMemStoreSpy: UserMemStore
     var fetchUserCalled = false
     var asyncDelaySeconds = 1
 
-    override func fetchUser(completionHandler: @escaping (_: User) -> Void)
+    override func fetchUser(id _: String, completionHandler: @escaping (_: User) -> Void)
     {
         fetchUserCalled = true
         let oneSecondAfter = DispatchTime.now() + DispatchTimeInterval.seconds(asyncDelaySeconds)

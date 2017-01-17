@@ -7,20 +7,22 @@ import Foundation
 
 protocol UserStoreProtocol
 {
-    func fetchUser(completionHandler: @escaping (_: User) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
 }
 
 class UserWorker
 {
-    var userStore:UserStoreProtocol
+    var userStore: UserStoreProtocol
 
-    init(userStore:UserStoreProtocol) {
+    init(userStore: UserStoreProtocol)
+    {
         self.userStore = userStore
     }
 
-    func fetchUser(completionHandler: @escaping (_: User) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
     {
-        userStore.fetchUser { (user) in
+        userStore.fetchUser(id: id)
+        { user in
             completionHandler(user)
         }
     }
