@@ -93,10 +93,10 @@
             </objects>
             <point key="canvasLocation" x="1790" y="374"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Settings View Controller-->
         <scene sceneID="ibs-as-eRV">
             <objects>
-                <viewController id="26H-or-EqU" sceneMemberID="viewController">
+                <viewController id="26H-or-EqU" customClass="EditSettingsViewController" customModule="ClanManager" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5mc-Lj-ZQ1"/>
                         <viewControllerLayoutGuide type="bottom" id="beE-df-lFL"/>
