@@ -12,13 +12,28 @@ import Nimble
 
 class EditSettingsViewControllerSpec: QuickSpec {
     
+    var viewController: EditSettingsViewController!
+    var window: UIWindow!
+    
     override func spec() {
         describe("EditSettingsViewController") {
-            var viewController: EditSettingsViewController!
             beforeEach {
-                viewController = EditSettingsViewController()
+                self.setupEditSettingsViewController()
             }
         }
     }
     
+    // MARK: Helpers
+    func setupEditSettingsViewController()
+    {
+        let bundle = Bundle.main
+        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        viewController = storyboard.instantiateViewController(withIdentifier: "EditSettingsViewController") as! EditSettingsViewController
+    }
+    
+    func loadView()
+    {
+        window.addSubview(viewController.view)
+        RunLoop.current.run(until: Date())
+    }
 }
