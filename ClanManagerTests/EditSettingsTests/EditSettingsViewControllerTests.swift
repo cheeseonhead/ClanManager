@@ -39,7 +39,7 @@ class EditSettingsViewControllerTests: XCTestCase
   func setupEditSettingsViewController()
   {
     let bundle = Bundle.main
-    let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+    let storyboard = UIStoryboard(name: "EditSettings", bundle: bundle)
     sut = storyboard.instantiateViewController(withIdentifier: "EditSettingsViewController") as! EditSettingsViewController
   }
   

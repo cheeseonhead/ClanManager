@@ -45,7 +45,7 @@ class EditSettingsViewControllerSpec: QuickSpec {
     func setupEditSettingsViewController()
     {
         let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "Main", bundle: bundle)
+        let storyboard = UIStoryboard(name: "EditSettings", bundle: bundle)
         viewController = storyboard.instantiateViewController(withIdentifier: "EditSettingsViewController") as! EditSettingsViewController
     }
     
