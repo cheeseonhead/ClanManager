@@ -23,8 +23,6 @@ class ViewUserInteractorSpec: QuickSpec
                 interactorSpy = ViewUserInteractorSpy()
                 userWorkerSpy = UserWorkerSpy(userStore: UserMemStore())
 
-                userWorkerSpy.fakeResultUser = User(id: "thisIdExists", firstName: "Allen", lastName: "Chan", townHallLevel: 5)
-
                 interactor.output = interactorSpy
                 interactor.worker = userWorkerSpy
             }
@@ -32,6 +30,8 @@ class ViewUserInteractorSpec: QuickSpec
             context("when asked to fetch user", {
                 beforeEach
                 {
+                    userWorkerSpy.fakeResultUser = User(id: "thisIdExists", firstName: "Allen", lastName: "Chan", townHallLevel: 5)
+                    
                     interactor.fetchUser(request: ViewUser.FetchUser.Request(id: "barryAllen321"))
                 }
 
@@ -43,10 +43,23 @@ class ViewUserInteractorSpec: QuickSpec
                     expect(userWorkerSpy.requestID).toEventually(equal("barryAllen321"))
                 })
 
-                it("should correctly create response with returne user", closure: {
-                    let expected = ViewUser.FetchUser.Response(firstName: userWorkerSpy.fakeResultUser.firstName,
-                                                               lastName: userWorkerSpy.fakeResultUser.lastName,
-                                                               townHallLevel: userWorkerSpy.fakeResultUser.townHallLevel)
+                it("should correctly create response with valid return user", closure: {
+                    let expected = ViewUser.FetchUser.Response(firstName: userWorkerSpy.fakeResultUser!.firstName,
+                                                               lastName: userWorkerSpy.fakeResultUser!.lastName,
+                                                               townHallLevel: userWorkerSpy.fakeResultUser!.townHallLevel)
+                    expect(interactorSpy.resultResponse).toEventually(equal(expected))
+                })
+            })
+            
+            context("when asked to fetch invalid user", { 
+                beforeEach {
+                    userWorkerSpy.fakeResultUser = nil
+                    
+                    interactor.fetchUser(request: ViewUser.FetchUser.Request(id: ""))
+                }
+                
+                it("should create valid response", closure: {
+                    let expected = ViewUser.FetchUser.Response()
                     expect(interactorSpy.resultResponse).toEventually(equal(expected))
                 })
             })
@@ -70,9 +83,9 @@ fileprivate class UserWorkerSpy: UserWorker
 {
     var requestID: String!
     var fetchUserCalled = false
-    var fakeResultUser: User!
+    var fakeResultUser: User?
 
-    override func fetchUser(id: String, completionHandler: @escaping (_: User) -> Void)
+    override func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
     {
         requestID = id
         fetchUserCalled = true

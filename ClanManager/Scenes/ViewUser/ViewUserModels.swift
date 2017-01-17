@@ -28,9 +28,9 @@ struct ViewUser
 
         struct Response: Equatable
         {
-            var firstName: String
-            var lastName: String
-            var townHallLevel: Int
+            var firstName: String = ""
+            var lastName: String = ""
+            var townHallLevel: Int = 0
 
             static func ==(lhs: Response, rhs: Response) -> Bool
             {
