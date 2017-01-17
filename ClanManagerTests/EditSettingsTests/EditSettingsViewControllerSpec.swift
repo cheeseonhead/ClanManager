@@ -20,6 +20,16 @@ class EditSettingsViewControllerSpec: QuickSpec {
             beforeEach {
                 self.setupEditSettingsViewController()
             }
+            
+            context("when view is loaded", {
+                beforeEach {
+                    self.loadView()
+                }
+                
+                it("should send a request to the output", closure: {
+                    
+                })
+            })
         }
     }
     
@@ -36,4 +46,9 @@ class EditSettingsViewControllerSpec: QuickSpec {
         window.addSubview(viewController.view)
         RunLoop.current.run(until: Date())
     }
+}
+
+class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
+{
+    
 }
