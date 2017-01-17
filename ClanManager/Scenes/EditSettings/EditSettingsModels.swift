@@ -14,7 +14,7 @@ import UIKit
 
 
 struct EditSettings {
-    struct LoadSettings {
+    struct FetchSettings {
         
         struct Request {
             
