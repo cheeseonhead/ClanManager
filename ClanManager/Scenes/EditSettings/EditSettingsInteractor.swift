@@ -11,7 +11,7 @@
 import UIKit
 
 protocol EditSettingsInteractorInput {
-    
+    func fetchSettings(request: EditSettings.FetchSettings.Request)
 }
 
 protocol EditSettingsInteractorOutput {
@@ -32,5 +32,7 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
     
     // MARK: Business logic
     
-
+    func fetchSettings(request: EditSettings.FetchSettings.Request) {
+        
+    }
 }

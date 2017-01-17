@@ -50,5 +50,7 @@ class EditSettingsViewControllerSpec: QuickSpec {
 
 class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
 {
-    
+    func fetchSettings(request: EditSettings.FetchSettings.Request) {
+        
+    }
 }

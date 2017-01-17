@@ -15,7 +15,7 @@ protocol EditSettingsViewControllerInput {
 }
 
 protocol EditSettingsViewControllerOutput {
-    
+    func fetchSettings(request: EditSettings.FetchSettings.Request)
 }
 
 class EditSettingsViewController: UIViewController, EditSettingsViewControllerInput {
@@ -34,10 +34,14 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        fetchSettingsOnLoad()
     }
     
     // MARK: Event handling
     
+    func fetchSettingsOnLoad()
+    {
+    }
     
     // MARK: Display logic
     
