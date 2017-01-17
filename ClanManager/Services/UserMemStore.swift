@@ -17,7 +17,7 @@ class UserMemStore : UserMemStoreInput
     
     func fetchUsers(completionHandler: @escaping (_: [User]) -> Void)
     {
-        
+        completionHandler(users)
     }
     
     func fetchUser(completionHandler: @escaping (_: User) -> Void) {

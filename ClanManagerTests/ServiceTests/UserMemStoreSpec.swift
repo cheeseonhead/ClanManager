@@ -28,9 +28,28 @@ class UserMemStoreSpec: QuickSpec {
                 }
                 
                 it("should return a list of users", closure: {
-                    expect(resultUsers).toEventually(be(resultUsers))
+                    expect(resultUsers).to(equal(testUsers?))
+//                    expect(resultUsers).toEventually(be(testUsers))
                 })
             })
+        }
+    }
+}
+
+extension Array where Element: Equatable
+{
+    public static func ==(lhs: Array<User>, rhs: Array<User>) -> Bool
+    {
+        if (lhs.count != rhs.count) {
+            return false
+        }
+        else {
+            for i in 0 ..< lhs.count {
+                if(!(lhs[i] == rhs[i])) {
+                    return false
+                }
+            }
+            return true
         }
     }
 }
