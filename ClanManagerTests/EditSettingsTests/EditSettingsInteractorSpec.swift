@@ -49,3 +49,12 @@ fileprivate class SessionWorkerSpy: SessionWorker
         fetchSettingsCalled = true
     }
 }
+fileprivate class EditSettingsInteractorOutputSpy: EditSettingsInteractorOutput
+{
+    // Checks
+    var gotResponse: EditSettings.FetchSettings.Response!
+    
+    func presentSettings(response: EditSettings.FetchSettings.Response)
+    {
+        
+    }
