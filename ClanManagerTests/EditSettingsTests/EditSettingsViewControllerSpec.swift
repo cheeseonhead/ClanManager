@@ -47,13 +47,15 @@ class EditSettingsViewControllerSpec: QuickSpec
                 }
 
                 context("when asked to display settings", {
+                    var viewModel: EditSettings.FetchSettings.ViewModel!
                     beforeEach
                     {
-
+                        viewModel = EditSettings.FetchSettings.ViewModel(currentPlayerTag: "testingTag")
+                        self.viewController.displaySettings(viewModel: viewModel)
                     }
 
-                    it("should display them correctly", closure: {
-                        XCTAssertTrue(false)
+                    it("should display player tag correctly", closure: {
+                        expect(self.viewController.playerTagTextField.text).toEventually(equal("testingTag"))
                     })
                 })
             })
@@ -81,7 +83,7 @@ class EditSettingsViewControllerSpec: QuickSpec
     }
 }
 
-class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
+fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
 {
     // Checkers
     var fetchSettingsCalled = false
