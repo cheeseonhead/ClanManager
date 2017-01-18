@@ -12,5 +12,15 @@ import Nimble
 
 class EditSettingsInteractorSpec: QuickSpec
 {
-
+    override func spec()
+    {
+        describe("EditSettingsInteractor")
+        {
+            var interactor: EditSettingsInteractor!
+            beforeEach
+            {
+                interactor = EditSettingsInteractor()
+            }
+        }
+    }
 }
