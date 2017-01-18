@@ -32,7 +32,6 @@
 		56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */; };
 		56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */; };
 		56D4AE081E2ECE55007FCF7D /* EditSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */; };
-		56D4AE0D1E2ECF18007FCF7D /* EditSettingsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE091E2ECF18007FCF7D /* EditSettingsInteractorTests.swift */; };
 		56D4AE0E1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */; };
 		56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */; };
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
@@ -99,7 +98,6 @@
 		56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenter.swift; sourceTree = "<group>"; };
 		56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsRouter.swift; sourceTree = "<group>"; };
 		56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewController.swift; sourceTree = "<group>"; };
-		56D4AE091E2ECF18007FCF7D /* EditSettingsInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorTests.swift; sourceTree = "<group>"; };
 		56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenterTests.swift; sourceTree = "<group>"; };
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 		8405C4E6D2D13F9B797FE18F /* EditSettingsTests */ = {
 			isa = PBXGroup;
 			children = (
-				56D4AE091E2ECF18007FCF7D /* EditSettingsInteractorTests.swift */,
 				56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */,
 				56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */,
 				34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */,
@@ -571,7 +568,6 @@
 				56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
-				56D4AE0D1E2ECF18007FCF7D /* EditSettingsInteractorTests.swift in Sources */,
 				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
