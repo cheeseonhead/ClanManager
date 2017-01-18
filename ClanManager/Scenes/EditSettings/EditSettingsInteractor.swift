@@ -10,29 +10,36 @@
 
 import UIKit
 
-protocol EditSettingsInteractorInput {
+protocol EditSettingsInteractorInput
+{
     func fetchSettings(request: EditSettings.FetchSettings.Request)
 }
 
-protocol EditSettingsInteractorOutput {
-    
+protocol EditSettingsInteractorOutput
+{
+
 }
 
-protocol EditSettingsDataSource {
-    
+protocol EditSettingsDataSource
+{
+
 }
 
-protocol EditSettingsDataDestination {
-    
+protocol EditSettingsDataDestination
+{
+
 }
 
-class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSource, EditSettingsDataDestination {
-    
+class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSource, EditSettingsDataDestination
+{
+
     var output: EditSettingsInteractorOutput!
-    
+    var sessionWorker: SessionWorker! = SessionWorker()
+
     // MARK: Business logic
-    
-    func fetchSettings(request: EditSettings.FetchSettings.Request) {
-        
+
+    func fetchSettings(request _: EditSettings.FetchSettings.Request)
+    {
+
     }
 }
