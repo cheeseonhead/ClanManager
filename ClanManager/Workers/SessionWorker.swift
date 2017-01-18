@@ -10,7 +10,7 @@ import UIKit
 
 class SessionWorker
 {
-    func fetchSettings(completionHandler _: @escaping (_: User?) -> Void)
+    func fetchSettings(completionHandler _: @escaping (_: Settings?) -> Void)
     {
 
     }
