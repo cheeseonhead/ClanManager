@@ -49,6 +49,7 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     func fetchSettingsOnLoad()
     {
+        output.fetchSettings(request: EditSettings.FetchSettings.Request())
     }
 
     @IBAction func saveButtonPressed(_: UIButton)
@@ -57,8 +58,9 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     // MARK: Display logic
 
-    func displaySettings(viewModel _: EditSettings.FetchSettings.ViewModel)
+    func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
     {
+        self.playerTagTextField.text = viewModel.currentPlayerTag
     }
 }
 
