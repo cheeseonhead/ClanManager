@@ -18,21 +18,29 @@ class EditSettingsInteractorSpec: QuickSpec
         {
             var interactor: EditSettingsInteractor!
             var workerSpy: SessionWorkerSpy!
+            var outputSpy: EditSettingsInteractorOutputSpy!
             beforeEach
             {
                 workerSpy = SessionWorkerSpy(store: SessionMemStore())
+                outputSpy = EditSettingsInteractorOutputSpy()
                 interactor = EditSettingsInteractor()
                 interactor.sessionWorker = workerSpy
+                interactor.output = outputSpy
             }
 
             context("when asked to fetch settings", {
                 beforeEach
                 {
+                    workerSpy.fakeSettings = Settings(currentPlayerTag: "fakePlayerTag")
                     interactor.fetchSettings(request: EditSettings.FetchSettings.Request())
                 }
 
                 it("should send request to worker", closure: {
                     expect(workerSpy.fetchSettingsCalled).toEventually(beTrue())
+                })
+                
+                it("should send correct response to output", closure: {
+                    expect(outputSpy.gotResponse.currentPlayerTag).toEventually(equal("fakePlayerTag"))
                 })
             })
         }
@@ -43,12 +51,16 @@ fileprivate class SessionWorkerSpy: SessionWorker
 {
     // Checks
     var fetchSettingsCalled = false
+    
+    // Stub
+    var fakeSettings: Settings!
 
     override func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
     {
         fetchSettingsCalled = true
     }
 }
+
 fileprivate class EditSettingsInteractorOutputSpy: EditSettingsInteractorOutput
 {
     // Checks
@@ -56,5 +68,6 @@ fileprivate class EditSettingsInteractorOutputSpy: EditSettingsInteractorOutput
     
     func presentSettings(response: EditSettings.FetchSettings.Response)
     {
-        
+        gotResponse = response
     }
+}
