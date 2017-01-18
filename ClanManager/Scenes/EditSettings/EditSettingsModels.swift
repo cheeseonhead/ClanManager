@@ -11,21 +11,24 @@
 
 import UIKit
 
+struct EditSettings
+{
+    struct FetchSettings
+    {
 
+        struct Request
+        {
 
-struct EditSettings {
-    struct FetchSettings {
-        
-        struct Request {
-            
         }
-        
-        struct Response {
-            
+
+        struct Response
+        {
+
         }
-        
-        struct ViewModel {
-            
+
+        struct ViewModel
+        {
+            var currentPlayerTag: String = ""
         }
     }
 }
