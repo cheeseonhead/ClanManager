@@ -11,6 +11,8 @@
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
 		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
 		34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */; };
+		34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */; };
+		34C3FDAF1E2F4604009AE284 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAE1E2F4604009AE284 /* Settings.swift */; };
 		4FBAA3BF27E5DCE3C9E8CA5E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72ECF9207EED0C87A43151E /* CoreTelephony.framework */; };
 		56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BAD1E29864000970F81 /* AppDelegate.swift */; };
 		56407BB51E29864000970F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
@@ -71,6 +73,8 @@
 /* Begin PBXFileReference section */
 		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
 		34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorSpec.swift; sourceTree = "<group>"; };
+		34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorker.swift; sourceTree = "<group>"; };
+		34C3FDAE1E2F4604009AE284 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		56407BAA1E29864000970F81 /* ClanManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClanManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56407BAD1E29864000970F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56407BB41E29864000970F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -241,6 +245,7 @@
 			isa = PBXGroup;
 			children = (
 				8405C0214034D8703B93C136 /* UserWorker.swift */,
+				34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -300,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				8405C810D46350FC56BB6766 /* User.swift */,
+				34C3FDAE1E2F4604009AE284 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -535,6 +541,7 @@
 				56D4AE041E2ECE55007FCF7D /* EditSettingsInteractor.swift in Sources */,
 				564A821D1E29A0A4007B3E45 /* ViewUserPresenter.swift in Sources */,
 				564A821E1E29A0A4007B3E45 /* ViewUserRouter.swift in Sources */,
+				34C3FDAF1E2F4604009AE284 /* Settings.swift in Sources */,
 				564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */,
 				564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */,
 				56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */,
@@ -543,6 +550,7 @@
 				56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */,
 				8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */,
 				8405C2F47D5D83113E8ED56D /* UserWorker.swift in Sources */,
+				34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */,
 				8405C3782ED1A8DE6C715A41 /* UserMemStore.swift in Sources */,
 				56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */,
 			);
