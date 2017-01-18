@@ -10,18 +10,21 @@
 
 import UIKit
 
-protocol EditSettingsPresenterInput {
-    
+protocol EditSettingsPresenterInput
+{
+
 }
 
-protocol EditSettingsPresenterOutput: class {
-    
+protocol EditSettingsPresenterOutput: class
+{
+    func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
 }
 
-class EditSettingsPresenter: EditSettingsPresenterInput {
-    
+class EditSettingsPresenter: EditSettingsPresenterInput
+{
+
     weak var output: EditSettingsPresenterOutput!
-    
+
     // MARK: Presentation logic
-    
+
 }

@@ -10,46 +10,56 @@
 
 import UIKit
 
-protocol EditSettingsViewControllerInput {
-    
+protocol EditSettingsViewControllerInput
+{
+    func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
 }
 
-protocol EditSettingsViewControllerOutput {
+protocol EditSettingsViewControllerOutput
+{
     func fetchSettings(request: EditSettings.FetchSettings.Request)
 }
 
-class EditSettingsViewController: UIViewController, EditSettingsViewControllerInput {
-    
+class EditSettingsViewController: UIViewController, EditSettingsViewControllerInput
+{
+
     var output: EditSettingsViewControllerOutput!
     var router: EditSettingsRouter!
-    
+
     // MARK: Object lifecycle
-    
-    override func awakeFromNib() {
+
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
         EditSettingsConfigurator.sharedInstance.configure(viewController: self)
     }
-    
+
     // MARK: View lifecycle
-    
-    override func viewDidLoad() {
+
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
         fetchSettingsOnLoad()
     }
-    
+
     // MARK: Event handling
-    
+
     func fetchSettingsOnLoad()
     {
     }
-    
+
     // MARK: Display logic
-    
+
+    func displaySettings(viewModel _: EditSettings.FetchSettings.ViewModel)
+    {
+    }
 }
 
-//This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
-extension EditSettingsViewController: EditSettingsPresenterOutput {
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+// This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
+extension EditSettingsViewController: EditSettingsPresenterOutput
+{
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
         router.passDataToNextScene(for: segue)
     }
 }
