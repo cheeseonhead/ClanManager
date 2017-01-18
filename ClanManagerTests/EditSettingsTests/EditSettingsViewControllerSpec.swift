@@ -10,37 +10,61 @@
 import Quick
 import Nimble
 
-class EditSettingsViewControllerSpec: QuickSpec {
-    
+class EditSettingsViewControllerSpec: QuickSpec
+{
+
     var viewController: EditSettingsViewController!
     var window: UIWindow!
-    
-    override func spec() {
-        describe("EditSettingsViewController") {
+
+    override func spec()
+    {
+        describe("EditSettingsViewController")
+        {
             var outputSpy: EditSettingsViewControllerOutputSpy!
-            beforeEach {
+            beforeEach
+            {
                 outputSpy = EditSettingsViewControllerOutputSpy()
-                
+
                 self.setupEditSettingsViewController()
                 self.viewController.output = outputSpy
             }
-            
+
             context("when view is loaded", {
-                beforeEach {
+                beforeEach
+                {
                     self.loadView()
                 }
-                
+
                 it("should send a request to the output", closure: {
                     expect(outputSpy.fetchSettingsCalled).toEventually(beTrue())
                 })
             })
-            
-            afterEach {
+
+            describe("after view is loaded", closure: {
+                beforeEach
+                {
+                    self.loadView()
+                }
+
+                context("when asked to display settings", {
+                    beforeEach
+                    {
+
+                    }
+
+                    it("should display them correctly", closure: {
+                        XCTAssertTrue(false)
+                    })
+                })
+            })
+
+            afterEach
+            {
                 self.window = nil
             }
         }
     }
-    
+
     // MARK: Helpers
     func setupEditSettingsViewController()
     {
@@ -48,7 +72,7 @@ class EditSettingsViewControllerSpec: QuickSpec {
         let storyboard = UIStoryboard(name: "EditSettings", bundle: bundle)
         viewController = storyboard.instantiateViewController(withIdentifier: "EditSettingsViewController") as! EditSettingsViewController
     }
-    
+
     func loadView()
     {
         window = UIWindow()
@@ -61,8 +85,9 @@ class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
 {
     // Checkers
     var fetchSettingsCalled = false
-    
-    func fetchSettings(request: EditSettings.FetchSettings.Request) {
+
+    func fetchSettings(request _: EditSettings.FetchSettings.Request)
+    {
         fetchSettingsCalled = true
     }
 }
