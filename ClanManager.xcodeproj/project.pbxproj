@@ -32,7 +32,6 @@
 		56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */; };
 		56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */; };
 		56D4AE081E2ECE55007FCF7D /* EditSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */; };
-		56D4AE0E1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */; };
 		56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */; };
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
@@ -98,7 +97,6 @@
 		56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenter.swift; sourceTree = "<group>"; };
 		56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsRouter.swift; sourceTree = "<group>"; };
 		56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewController.swift; sourceTree = "<group>"; };
-		56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenterTests.swift; sourceTree = "<group>"; };
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
 		56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStore.swift; sourceTree = "<group>"; };
@@ -261,7 +259,6 @@
 		8405C4E6D2D13F9B797FE18F /* EditSettingsTests */ = {
 			isa = PBXGroup;
 			children = (
-				56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */,
 				56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */,
 				34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */,
 			);
@@ -561,7 +558,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D4AE0E1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift in Sources */,
 				8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */,
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
 				34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */,
