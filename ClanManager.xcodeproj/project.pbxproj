@@ -37,6 +37,7 @@
 		56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */; };
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
+		56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
 		61DB6964938C443B9EA9D76E /* Pods_ClanManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */; };
 		6C9BD12A9AD2CFF986DA2A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46136DD4041771032D65A8B /* QuartzCore.framework */; };
@@ -102,6 +103,7 @@
 		56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenterTests.swift; sourceTree = "<group>"; };
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
+		56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStore.swift; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		692B15C9E590CDDB93A0817C /* Pods-ClanManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -297,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				8405CF082084F50BF3AF5EED /* UserMemStore.swift */,
+				56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -545,6 +548,7 @@
 				564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */,
 				564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */,
 				56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */,
+				56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */,
 				564A821A1E29A0A4007B3E45 /* ViewUserConfigurator.swift in Sources */,
 				56D4AE031E2ECE55007FCF7D /* EditSettingsConfigurator.swift in Sources */,
 				56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */,
