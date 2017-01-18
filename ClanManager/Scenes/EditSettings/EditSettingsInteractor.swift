@@ -41,8 +41,13 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
     func fetchSettings(request _: EditSettings.FetchSettings.Request)
     {
         sessionWorker.fetchSettings
-        { _ in
-
+        { settings in
+            guard let settings = settings else {
+                self.output.presentSettings(response: EditSettings.FetchSettings.Response())
+                return
+            }
+            let response = EditSettings.FetchSettings.Response(currentPlayerTag: settings.currentPlayerTag)
+            self.output.presentSettings(response: response)
         }
     }
 }

@@ -39,6 +39,10 @@ class EditSettingsInteractorSpec: QuickSpec
                     expect(workerSpy.fetchSettingsCalled).toEventually(beTrue())
                 })
                 
+                it("should trigger present on output", closure: {
+                    expect(outputSpy.presentSettingsCalled).toEventually(beTrue())
+                })
+                
                 it("should send correct response to output", closure: {
                     expect(outputSpy.gotResponse.currentPlayerTag).toEventually(equal("fakePlayerTag"))
                 })
@@ -55,19 +59,22 @@ fileprivate class SessionWorkerSpy: SessionWorker
     // Stub
     var fakeSettings: Settings!
 
-    override func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
+    override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
         fetchSettingsCalled = true
+        completionHandler(fakeSettings)
     }
 }
 
 fileprivate class EditSettingsInteractorOutputSpy: EditSettingsInteractorOutput
 {
     // Checks
+    var presentSettingsCalled = false
     var gotResponse: EditSettings.FetchSettings.Response!
     
     func presentSettings(response: EditSettings.FetchSettings.Response)
     {
+        presentSettingsCalled = true
         gotResponse = response
     }
 }
