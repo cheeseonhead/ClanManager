@@ -40,6 +40,9 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
 
     func fetchSettings(request _: EditSettings.FetchSettings.Request)
     {
+        sessionWorker.fetchSettings
+        { _ in
 
+        }
     }
 }
