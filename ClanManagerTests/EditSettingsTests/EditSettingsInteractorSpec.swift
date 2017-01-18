@@ -20,7 +20,7 @@ class EditSettingsInteractorSpec: QuickSpec
             var workerSpy: SessionWorkerSpy!
             beforeEach
             {
-                workerSpy = SessionWorkerSpy()
+                workerSpy = SessionWorkerSpy(store: SessionMemStore())
                 interactor = EditSettingsInteractor()
                 interactor.sessionWorker = workerSpy
             }

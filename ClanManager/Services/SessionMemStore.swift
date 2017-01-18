@@ -11,12 +11,13 @@ import Foundation
 protocol SessionMemStoreInput
 {
     // Read
-    func fetchSettings(completionHandler:(Settings?)->Void)
+    func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
 }
 
 class SessionMemStore : SessionMemStoreInput
 {
-    func fetchSettings(completionHandler: (Settings?) -> Void) {
+    func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
+    {
         
     }
 }

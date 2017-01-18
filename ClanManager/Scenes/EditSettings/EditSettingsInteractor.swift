@@ -34,7 +34,7 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
 {
 
     var output: EditSettingsInteractorOutput!
-    var sessionWorker: SessionWorker! = SessionWorker()
+    var sessionWorker: SessionWorker! = SessionWorker(store:SessionMemStore())
 
     // MARK: Business logic
 
@@ -46,3 +46,5 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
         }
     }
 }
+
+extension SessionMemStore: SessionStoreProtocol {}

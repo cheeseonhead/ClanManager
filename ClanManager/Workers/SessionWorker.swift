@@ -8,8 +8,19 @@
 
 import UIKit
 
+protocol SessionStoreProtocol
+{
+    func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
+}
+
 class SessionWorker
 {
+    var store:SessionStoreProtocol!
+    
+    init(store:SessionStoreProtocol) {
+        self.store = store
+    }
+    
     func fetchSettings(completionHandler _: @escaping (_: Settings?) -> Void)
     {
 
