@@ -26,6 +26,9 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     var output: EditSettingsViewControllerOutput!
     var router: EditSettingsRouter!
 
+    @IBOutlet weak var playerTagTextField: UITextField!
+    @IBOutlet weak var saveButton: UIButton!
+
     // MARK: Object lifecycle
 
     override func awakeFromNib()
@@ -45,6 +48,10 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     // MARK: Event handling
 
     func fetchSettingsOnLoad()
+    {
+    }
+
+    @IBAction func saveButtonPressed(_: UIButton)
     {
     }
 
