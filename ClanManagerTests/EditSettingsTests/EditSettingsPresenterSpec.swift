@@ -14,10 +14,13 @@ class EditSettingsPresenterSpec: QuickSpec
         describe("EditSettingsPresenter")
         {
             var presenter: EditSettingsPresenter!
+            var outputSpy: EditSettingsPresenterOutputSpy!
 
             beforeEach
             {
+                outputSpy = EditSettingsPresenterOutputSpy()
                 presenter = EditSettingsPresenter()
+                presenter.output = outputSpy
             }
 
             context("when present is called with empty response")
