@@ -12,7 +12,7 @@ import UIKit
 
 protocol EditSettingsPresenterInput
 {
-
+    func presentSettings(response: EditSettings.FetchSettings.Response)
 }
 
 protocol EditSettingsPresenterOutput: class
@@ -27,4 +27,8 @@ class EditSettingsPresenter: EditSettingsPresenterInput
 
     // MARK: Presentation logic
 
+    func presentSettings(response: EditSettings.FetchSettings.Response)
+    {
+        
+    }
 }

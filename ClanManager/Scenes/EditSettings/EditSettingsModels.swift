@@ -23,7 +23,7 @@ struct EditSettings
 
         struct Response
         {
-
+            var currentPlayerTag: String = ""
         }
 
         struct ViewModel

@@ -10,6 +10,9 @@
 		216CAC671DCD8EDA67123399 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */; };
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
 		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
+		34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */; };
+		34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */; };
+		34C3FDAF1E2F4604009AE284 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAE1E2F4604009AE284 /* Settings.swift */; };
 		4FBAA3BF27E5DCE3C9E8CA5E /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72ECF9207EED0C87A43151E /* CoreTelephony.framework */; };
 		56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BAD1E29864000970F81 /* AppDelegate.swift */; };
 		56407BB51E29864000970F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
@@ -29,11 +32,10 @@
 		56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */; };
 		56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */; };
 		56D4AE081E2ECE55007FCF7D /* EditSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */; };
-		56D4AE0D1E2ECF18007FCF7D /* EditSettingsInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE091E2ECF18007FCF7D /* EditSettingsInteractorTests.swift */; };
-		56D4AE0E1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */; };
 		56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */; };
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
+		56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
 		61DB6964938C443B9EA9D76E /* Pods_ClanManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */; };
 		6C9BD12A9AD2CFF986DA2A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46136DD4041771032D65A8B /* QuartzCore.framework */; };
@@ -69,6 +71,9 @@
 
 /* Begin PBXFileReference section */
 		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
+		34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorSpec.swift; sourceTree = "<group>"; };
+		34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorker.swift; sourceTree = "<group>"; };
+		34C3FDAE1E2F4604009AE284 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		56407BAA1E29864000970F81 /* ClanManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClanManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56407BAD1E29864000970F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56407BB41E29864000970F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -92,10 +97,9 @@
 		56D4AE001E2ECE55007FCF7D /* EditSettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenter.swift; sourceTree = "<group>"; };
 		56D4AE011E2ECE55007FCF7D /* EditSettingsRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsRouter.swift; sourceTree = "<group>"; };
 		56D4AE021E2ECE55007FCF7D /* EditSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewController.swift; sourceTree = "<group>"; };
-		56D4AE091E2ECF18007FCF7D /* EditSettingsInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorTests.swift; sourceTree = "<group>"; };
-		56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsPresenterTests.swift; sourceTree = "<group>"; };
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
+		56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStore.swift; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		692B15C9E590CDDB93A0817C /* Pods-ClanManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -239,6 +243,7 @@
 			isa = PBXGroup;
 			children = (
 				8405C0214034D8703B93C136 /* UserWorker.swift */,
+				34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */,
 			);
 			path = Workers;
 			sourceTree = "<group>";
@@ -254,9 +259,8 @@
 		8405C4E6D2D13F9B797FE18F /* EditSettingsTests */ = {
 			isa = PBXGroup;
 			children = (
-				56D4AE091E2ECF18007FCF7D /* EditSettingsInteractorTests.swift */,
-				56D4AE0A1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift */,
 				56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */,
+				34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */,
 			);
 			path = EditSettingsTests;
 			sourceTree = "<group>";
@@ -289,6 +293,7 @@
 			isa = PBXGroup;
 			children = (
 				8405CF082084F50BF3AF5EED /* UserMemStore.swift */,
+				56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -297,6 +302,7 @@
 			isa = PBXGroup;
 			children = (
 				8405C810D46350FC56BB6766 /* User.swift */,
+				34C3FDAE1E2F4604009AE284 /* Settings.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -532,14 +538,17 @@
 				56D4AE041E2ECE55007FCF7D /* EditSettingsInteractor.swift in Sources */,
 				564A821D1E29A0A4007B3E45 /* ViewUserPresenter.swift in Sources */,
 				564A821E1E29A0A4007B3E45 /* ViewUserRouter.swift in Sources */,
+				34C3FDAF1E2F4604009AE284 /* Settings.swift in Sources */,
 				564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */,
 				564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */,
 				56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */,
+				56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */,
 				564A821A1E29A0A4007B3E45 /* ViewUserConfigurator.swift in Sources */,
 				56D4AE031E2ECE55007FCF7D /* EditSettingsConfigurator.swift in Sources */,
 				56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */,
 				8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */,
 				8405C2F47D5D83113E8ED56D /* UserWorker.swift in Sources */,
+				34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */,
 				8405C3782ED1A8DE6C715A41 /* UserMemStore.swift in Sources */,
 				56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */,
 			);
@@ -549,14 +558,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				56D4AE0E1E2ECF18007FCF7D /* EditSettingsPresenterTests.swift in Sources */,
 				8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */,
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
 				34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */,
 				56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
-				56D4AE0D1E2ECF18007FCF7D /* EditSettingsInteractorTests.swift in Sources */,
+				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

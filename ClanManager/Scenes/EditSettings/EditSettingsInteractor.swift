@@ -10,29 +10,46 @@
 
 import UIKit
 
-protocol EditSettingsInteractorInput {
+protocol EditSettingsInteractorInput
+{
     func fetchSettings(request: EditSettings.FetchSettings.Request)
 }
 
-protocol EditSettingsInteractorOutput {
-    
+protocol EditSettingsInteractorOutput
+{
+    func presentSettings(response: EditSettings.FetchSettings.Response)
 }
 
-protocol EditSettingsDataSource {
-    
+protocol EditSettingsDataSource
+{
+
 }
 
-protocol EditSettingsDataDestination {
-    
+protocol EditSettingsDataDestination
+{
+
 }
 
-class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSource, EditSettingsDataDestination {
-    
+class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSource, EditSettingsDataDestination
+{
+
     var output: EditSettingsInteractorOutput!
-    
+    var sessionWorker: SessionWorker! = SessionWorker(store:SessionMemStore())
+
     // MARK: Business logic
-    
-    func fetchSettings(request: EditSettings.FetchSettings.Request) {
-        
+
+    func fetchSettings(request _: EditSettings.FetchSettings.Request)
+    {
+        sessionWorker.fetchSettings
+        { settings in
+            guard let settings = settings else {
+                self.output.presentSettings(response: EditSettings.FetchSettings.Response())
+                return
+            }
+            let response = EditSettings.FetchSettings.Response(currentPlayerTag: settings.currentPlayerTag)
+            self.output.presentSettings(response: response)
+        }
     }
 }
+
+extension SessionMemStore: SessionStoreProtocol {}
