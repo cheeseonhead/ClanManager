@@ -22,6 +22,22 @@ class SessionMemStoreSpec: QuickSpec
             {
                 store = SessionMemStore()
             }
+
+            context("when asked to save settings")
+            {
+                var fakeSettings: Settings!
+                var returnedSettings: Settings!
+                beforeEach
+                {
+                    fakeSettings = Settings(currentPlayerTag: "fakePlayerTag")
+                    store.saveSettings(newSettings: fakeSettings) { settings in returnedSettings = settings }
+                }
+
+                it("should return the same settings")
+                {
+                    expect(returnedSettings).toEventually(equal(fakeSettings))
+                }
+            }
         }
     }
 }
