@@ -19,13 +19,16 @@ protocol SessionMemStoreInput
 
 class SessionMemStore: SessionMemStoreInput
 {
-    func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
-    {
+    var currentSettings: Settings!
 
+    func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
+    {
+        completionHandler(currentSettings)
     }
 
-    func saveSettings(newSettings _: Settings, completionHandler _: @escaping (Settings?) -> Void)
+    func saveSettings(newSettings: Settings, completionHandler: @escaping (Settings?) -> Void)
     {
-
+        currentSettings = newSettings
+        completionHandler(currentSettings)
     }
 }
