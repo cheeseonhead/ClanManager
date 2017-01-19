@@ -37,6 +37,20 @@ class SessionMemStoreSpec: QuickSpec
                 {
                     expect(returnedSettings).toEventually(equal(fakeSettings))
                 }
+
+                context("when asked to fetch settings")
+                {
+                    var resultSettings: Settings!
+                    beforeEach
+                    {
+                        store.fetchSettings { settings in resultSettings = settings }
+                    }
+
+                    it("should retrieve the same settings on fetch")
+                    {
+                        expect(resultSettings).toEventually(equal(fakeSettings))
+                    }
+                }
             }
         }
     }
