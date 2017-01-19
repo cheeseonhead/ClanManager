@@ -8,7 +8,12 @@
 
 import Foundation
 
-struct Settings
+struct Settings: Equatable
 {
     var currentPlayerTag: String = ""
+
+    static func ==(lhs: Settings, rhs: Settings) -> Bool
+    {
+        return lhs.currentPlayerTag == rhs.currentPlayerTag
+    }
 }
