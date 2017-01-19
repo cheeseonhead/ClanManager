@@ -35,6 +35,23 @@ class EditSettingsPresenterSpec: QuickSpec
                     expect(outputSpy.displaySettingsCalled).toEventually(beTrue())
                 }
             }
+
+            context("when present is called with filled response")
+            {
+                var fakeResponse: EditSettings.FetchSettings.Response!
+                var expectedViewModel: EditSettings.FetchSettings.ViewModel!
+                beforeEach
+                {
+                    fakeResponse = EditSettings.FetchSettings.Response(currentPlayerTag: "thisIsFake")
+                    expectedViewModel = EditSettings.FetchSettings.ViewModel(currentPlayerTag: "thisIsFake")
+                    presenter.presentSettings(response: fakeResponse)
+                }
+
+                it("should trigger display settings on output with valid view model")
+                {
+                    expect(outputSpy.resultViewModel).toEventually(equal(expectedViewModel))
+                }
+            }
         }
     }
 }
@@ -43,9 +60,11 @@ fileprivate class EditSettingsPresenterOutputSpy: EditSettingsPresenterOutput
 {
     // Checks
     var displaySettingsCalled = false
+    var resultViewModel: EditSettings.FetchSettings.ViewModel!
 
-    func displaySettings(viewModel _: EditSettings.FetchSettings.ViewModel)
+    func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
     {
         displaySettingsCalled = true
+        resultViewModel = viewModel
     }
 }
