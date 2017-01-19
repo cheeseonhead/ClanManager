@@ -32,7 +32,7 @@ class EditSettingsPresenterSpec: QuickSpec
 
                 it("should trigger display settings on output")
                 {
-                    expect(false).to(beTrue())
+                    expect(outputSpy.displaySettingsCalled).toEventually(beTrue())
                 }
             }
         }
