@@ -14,5 +14,21 @@ class SessionWorkerSpec: QuickSpec
 {
     override func spec()
     {
+        describe("SessionWorker")
+        {
+            var worker: SessionWorker!
+            var storeSpy: SessionStoreSpy!
+
+            beforeEach
+            {
+                worker = SessionWorker(store: SessionStoreSpy())
+                storeSpy = worker.store as! SessionStoreSpy
+            }
+        }
     }
+}
+
+class SessionStoreSpy: SessionMemStore
+{
+
 }
