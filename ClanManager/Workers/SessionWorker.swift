@@ -15,14 +15,18 @@ protocol SessionStoreProtocol
 
 class SessionWorker
 {
-    var store:SessionStoreProtocol!
-    
-    init(store:SessionStoreProtocol) {
+    var store: SessionStoreProtocol!
+
+    init(store: SessionStoreProtocol)
+    {
         self.store = store
     }
-    
-    func fetchSettings(completionHandler _: @escaping (_: Settings?) -> Void)
-    {
 
+    func fetchSettings(completionHandler: @escaping (_: Settings?) -> Void)
+    {
+        store.fetchSettings
+        { settings in
+            completionHandler(settings)
+        }
     }
 }
