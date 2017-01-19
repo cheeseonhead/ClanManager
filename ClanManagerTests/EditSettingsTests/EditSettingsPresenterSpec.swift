@@ -17,8 +17,32 @@ class EditSettingsPresenterSpec: QuickSpec
 
             beforeEach
             {
-                present = EditSettingsPresenter()
+                presenter = EditSettingsPresenter()
+            }
+
+            context("when present is called with empty response")
+            {
+                beforeEach
+                {
+                    presenter.presentSettings(response: EditSettings.FetchSettings.Response())
+                }
+
+                it("should trigger display settings on output")
+                {
+                    expect(false).to(beTrue())
+                }
             }
         }
+    }
+}
+
+fileprivate class EditSettingsPresenterOutputSpy: EditSettingsPresenterOutput
+{
+    // Checks
+    var displaySettingsCalled = false
+
+    func displaySettings(viewModel _: EditSettings.FetchSettings.ViewModel)
+    {
+        displaySettingsCalled = true
     }
 }
