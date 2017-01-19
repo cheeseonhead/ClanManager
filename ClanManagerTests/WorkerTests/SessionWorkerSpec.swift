@@ -24,11 +24,30 @@ class SessionWorkerSpec: QuickSpec
                 worker = SessionWorker(store: SessionStoreSpy())
                 storeSpy = worker.store as! SessionStoreSpy
             }
+
+            context("when asked to fetch settings")
+            {
+                beforeEach
+                {
+                    worker.fetchSettings(completionHandler: { _ in })
+                }
+
+                it("should send a request to the store")
+                {
+                    expect(storeSpy.fetchSettingsCalled).toEventually(beTrue())
+                }
+            }
         }
     }
 }
 
 class SessionStoreSpy: SessionMemStore
 {
+    // Checks
+    var fetchSettingsCalled = false
 
+    override func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
+    {
+        fetchSettingsCalled = true
+    }
 }
