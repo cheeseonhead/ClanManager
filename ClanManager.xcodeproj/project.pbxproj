@@ -36,6 +36,7 @@
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */; };
+		56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */; };
 		56D4AE191E303BD2007FCF7D /* SessionWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
 		61DB6964938C443B9EA9D76E /* Pods_ClanManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */; };
@@ -101,6 +102,7 @@
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
 		56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStore.swift; sourceTree = "<group>"; };
+		56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStoreSpec.swift; sourceTree = "<group>"; };
 		56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorkerSpec.swift; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		692B15C9E590CDDB93A0817C /* Pods-ClanManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 			isa = PBXGroup;
 			children = (
 				8405C2E62A901315224B7967 /* UserMemStoreSpec.swift */,
+				56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */,
 			);
 			path = ServiceTests;
 			sourceTree = "<group>";
@@ -569,6 +572,7 @@
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
 				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
+				56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
