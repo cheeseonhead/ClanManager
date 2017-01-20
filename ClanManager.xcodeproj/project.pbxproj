@@ -36,6 +36,7 @@
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */; };
+		56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */; };
 		56D4AE191E303BD2007FCF7D /* SessionWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */; };
 		56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
@@ -103,6 +104,7 @@
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
 		56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStore.swift; sourceTree = "<group>"; };
+		56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStoreSpec.swift; sourceTree = "<group>"; };
 		56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorkerSpec.swift; sourceTree = "<group>"; };
 		56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStoreSpec.swift; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
