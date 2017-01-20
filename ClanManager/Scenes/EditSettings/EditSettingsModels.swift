@@ -26,9 +26,14 @@ struct EditSettings
             var currentPlayerTag: String = ""
         }
 
-        struct ViewModel
+        struct ViewModel: Equatable
         {
             var currentPlayerTag: String = ""
+
+            static func ==(lhs: ViewModel, rhs: ViewModel) -> Bool
+            {
+                return lhs.currentPlayerTag == rhs.currentPlayerTag
+            }
         }
     }
 }

@@ -29,6 +29,7 @@ class EditSettingsPresenter: EditSettingsPresenterInput
 
     func presentSettings(response: EditSettings.FetchSettings.Response)
     {
-        
+        let viewModel = EditSettings.FetchSettings.ViewModel(currentPlayerTag: response.currentPlayerTag)
+        output.displaySettings(viewModel: viewModel)
     }
 }
