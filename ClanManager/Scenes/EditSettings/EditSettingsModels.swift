@@ -21,9 +21,14 @@ struct EditSettings
 
         }
 
-        struct Response
+        struct Response: Equatable
         {
             var currentPlayerTag: String = ""
+
+            static func ==(lhs: Response, rhs: Response) -> Bool
+            {
+                return lhs.currentPlayerTag == rhs.currentPlayerTag
+            }
         }
 
         struct ViewModel: Equatable
