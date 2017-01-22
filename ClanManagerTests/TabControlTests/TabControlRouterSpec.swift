@@ -14,6 +14,13 @@ class TabControlRouterSpec: QuickSpec
 {
     override func spec()
     {
+        describe("TabControlRouter")
+        {
+            var router: TabControlRouter!
 
+            beforeEach
+            {
+            }
+        }
     }
 }
