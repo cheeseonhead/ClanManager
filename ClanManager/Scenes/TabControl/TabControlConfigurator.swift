@@ -12,14 +12,6 @@ import UIKit
 
 // MARK: Connect View, Interactor, and Presenter
 
-extension TabControlInteractor: TabControlViewControllerOutput, TabControlRouterDataProvider, TabControlRouterDataReceiver
-{
-}
-
-extension TabControlPresenter: TabControlInteractorOutput
-{
-}
-
 class TabControlConfigurator
 {
     // MARK: Object lifecycle
@@ -45,3 +37,11 @@ class TabControlConfigurator
         viewController.router = router
     }
 }
+
+extension TabControlInteractor: TabControlViewControllerOutput, TabControlRouterDataProvider, TabControlRouterDataReceiver {}
+
+extension TabControlPresenter: TabControlInteractorOutput {}
+
+extension TabControlRouter: TabControlViewControllerRouter {}
+
+extension TabControlViewController: TabControlPresenterOutput {}
