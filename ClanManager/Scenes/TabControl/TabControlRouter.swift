@@ -40,6 +40,11 @@ class TabControlRouter: TabControlRouterInput
 
     // MARK: Navigation
 
+    func openSettingsViewController()
+    {
+
+    }
+
     // MARK: Communication
 
     func passDataToNextScene(for segue: UIStoryboardSegue)
