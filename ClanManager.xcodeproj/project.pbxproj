@@ -59,6 +59,7 @@
 		A169465DE92190C8146505AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */; };
 		A852B167F21F1865D726AD51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C914C43E0C961F56D936C7C1 /* CoreMedia.framework */; };
 		AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */; };
+		AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ADBD44941EFEBEE1EC6A /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -131,6 +132,7 @@
 		8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		A46136DD4041771032D65A8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorSpec.swift; sourceTree = "<group>"; };
+		AD05ADBD44941EFEBEE1EC6A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		AECC1C3DF12BB1CC1760FF12 /* Pods-ClanManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClanManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C72ECF9207EED0C87A43151E /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
@@ -210,6 +212,7 @@
 				56407BB81E29864000970F81 /* LaunchScreen.storyboard */,
 				56407BBB1E29864000970F81 /* Info.plist */,
 				8405C803961ECF44AB678F0A /* Services */,
+				AD05A853873A45375F7BB59A /* Base */,
 			);
 			path = ClanManager;
 			sourceTree = "<group>";
@@ -373,6 +376,14 @@
 				56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */,
 			);
 			path = WorkerTests;
+			sourceTree = "<group>";
+		};
+		AD05A853873A45375F7BB59A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				AD05ADBD44941EFEBEE1EC6A /* Router.swift */,
+			);
+			path = Base;
 			sourceTree = "<group>";
 		};
 		B07C74161AA88FB8C9104002 /* Pods */ = {
@@ -600,6 +611,7 @@
 				8405C3782ED1A8DE6C715A41 /* UserMemStore.swift in Sources */,
 				56E5E8C01E3481E100AA7429 /* TabControlConfigurator.swift in Sources */,
 				56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */,
+				AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
