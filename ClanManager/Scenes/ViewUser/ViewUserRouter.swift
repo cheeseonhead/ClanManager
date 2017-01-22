@@ -23,7 +23,7 @@ protocol ViewUserRouterDataProvider: class
 protocol ViewUserRouterDataReceiver: class
 {
 
-    var displayPlayerTag: String! { get set }
+    var playerTag: String! { get set }
 }
 
 class ViewUserRouter: ViewUserRouterInput
