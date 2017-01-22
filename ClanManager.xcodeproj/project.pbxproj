@@ -206,13 +206,13 @@
 				56407BE01E299F7B00970F81 /* Scenes */,
 				8405C82591AEE12E55199FA3 /* Models */,
 				8405C10AEDE158B5185719AD /* Workers */,
+				AD05A853873A45375F7BB59A /* Base */,
 				56407BAD1E29864000970F81 /* AppDelegate.swift */,
 				56407BB31E29864000970F81 /* Main.storyboard */,
 				56407BB61E29864000970F81 /* Assets.xcassets */,
 				56407BB81E29864000970F81 /* LaunchScreen.storyboard */,
 				56407BBB1E29864000970F81 /* Info.plist */,
 				8405C803961ECF44AB678F0A /* Services */,
-				AD05A853873A45375F7BB59A /* Base */,
 			);
 			path = ClanManager;
 			sourceTree = "<group>";
