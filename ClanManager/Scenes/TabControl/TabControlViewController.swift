@@ -10,21 +10,20 @@
 
 import UIKit
 
-protocol TabControlViewControllerInput
+protocol TabControlViewControllerInput {}
+
+protocol TabControlViewControllerOutput {}
+
+protocol TabControlViewControllerRouter: Router
 {
-
-}
-
-protocol TabControlViewControllerOutput
-{
-
+    func openSettingsViewController()
 }
 
 class TabControlViewController: UITabBarController, TabControlViewControllerInput
 {
 
     var output: TabControlViewControllerOutput!
-    var router: TabControlRouter!
+    var router: TabControlViewControllerRouter!
 
     // MARK: Object lifecycle
 
@@ -45,13 +44,4 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
 
     // MARK: Display logic
 
-}
-
-// This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
-extension TabControlViewController: TabControlPresenterOutput
-{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        router.passDataToNextScene(for: segue)
-    }
 }

@@ -44,4 +44,11 @@ extension TabControlPresenter: TabControlInteractorOutput {}
 
 extension TabControlRouter: TabControlViewControllerRouter {}
 
-extension TabControlViewController: TabControlPresenterOutput {}
+extension TabControlViewController: TabControlPresenterOutput
+{
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        router.passDataToNextScene(for: segue)
+    }
+}
