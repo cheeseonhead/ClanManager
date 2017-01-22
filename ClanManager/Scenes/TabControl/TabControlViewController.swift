@@ -20,7 +20,7 @@ protocol TabControlViewControllerOutput
 
 }
 
-class TabControlViewController: UIViewController, TabControlViewControllerInput
+class TabControlViewController: UITabBarController, TabControlViewControllerInput
 {
 
     var output: TabControlViewControllerOutput!
