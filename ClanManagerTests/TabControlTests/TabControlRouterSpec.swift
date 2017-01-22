@@ -1,5 +1,5 @@
 //
-//  TabControlRouterTests.swift
+//  TabControlRouterSpec.swift
 //  ClanManager
 //
 //  Created by Jeffrey Wu on 2017-01-22.
