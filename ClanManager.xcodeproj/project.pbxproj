@@ -36,9 +36,14 @@
 		56D4AE141E2ED9CD007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE151E2EDBDC007FCF7D /* EditSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */; };
 		56D4AE171E2FCE89007FCF7D /* SessionMemStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */; };
-		56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */; };
 		56D4AE191E303BD2007FCF7D /* SessionWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */; };
 		56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */; };
+		56E5E8C01E3481E100AA7429 /* TabControlConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BA1E3481E100AA7429 /* TabControlConfigurator.swift */; };
+		56E5E8C11E3481E100AA7429 /* TabControlInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BB1E3481E100AA7429 /* TabControlInteractor.swift */; };
+		56E5E8C21E3481E100AA7429 /* TabControlModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BC1E3481E100AA7429 /* TabControlModels.swift */; };
+		56E5E8C31E3481E100AA7429 /* TabControlPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BD1E3481E100AA7429 /* TabControlPresenter.swift */; };
+		56E5E8C41E3481E100AA7429 /* TabControlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BE1E3481E100AA7429 /* TabControlRouter.swift */; };
+		56E5E8C51E3481E100AA7429 /* TabControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BF1E3481E100AA7429 /* TabControlViewController.swift */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
 		61DB6964938C443B9EA9D76E /* Pods_ClanManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */; };
 		6C9BD12A9AD2CFF986DA2A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46136DD4041771032D65A8B /* QuartzCore.framework */; };
@@ -104,9 +109,14 @@
 		56D4AE111E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsViewControllerSpec.swift; sourceTree = "<group>"; };
 		56D4AE131E2ED9CD007FCF7D /* EditSettings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSettings.storyboard; sourceTree = "<group>"; };
 		56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStore.swift; sourceTree = "<group>"; };
-		56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStoreSpec.swift; sourceTree = "<group>"; };
 		56D4AE181E303BD2007FCF7D /* SessionWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorkerSpec.swift; sourceTree = "<group>"; };
 		56D4AE1A1E314754007FCF7D /* SessionMemStoreSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionMemStoreSpec.swift; sourceTree = "<group>"; };
+		56E5E8BA1E3481E100AA7429 /* TabControlConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlConfigurator.swift; sourceTree = "<group>"; };
+		56E5E8BB1E3481E100AA7429 /* TabControlInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlInteractor.swift; sourceTree = "<group>"; };
+		56E5E8BC1E3481E100AA7429 /* TabControlModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlModels.swift; sourceTree = "<group>"; };
+		56E5E8BD1E3481E100AA7429 /* TabControlPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlPresenter.swift; sourceTree = "<group>"; };
+		56E5E8BE1E3481E100AA7429 /* TabControlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlRouter.swift; sourceTree = "<group>"; };
+		56E5E8BF1E3481E100AA7429 /* TabControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewController.swift; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		692B15C9E590CDDB93A0817C /* Pods-ClanManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -230,6 +240,7 @@
 			children = (
 				56407BE11E299F7B00970F81 /* ViewUser */,
 				8405C66EBD86D138C1E26E2C /* EditSettings */,
+				8405C50F8BECAA2388CF524A /* TabControl */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -273,6 +284,19 @@
 				8405C2843218497A0B72D2E0 /* EditSettingsPresenterSpec.swift */,
 			);
 			path = EditSettingsTests;
+			sourceTree = "<group>";
+		};
+		8405C50F8BECAA2388CF524A /* TabControl */ = {
+			isa = PBXGroup;
+			children = (
+				56E5E8BA1E3481E100AA7429 /* TabControlConfigurator.swift */,
+				56E5E8BB1E3481E100AA7429 /* TabControlInteractor.swift */,
+				56E5E8BC1E3481E100AA7429 /* TabControlModels.swift */,
+				56E5E8BD1E3481E100AA7429 /* TabControlPresenter.swift */,
+				56E5E8BE1E3481E100AA7429 /* TabControlRouter.swift */,
+				56E5E8BF1E3481E100AA7429 /* TabControlViewController.swift */,
+			);
+			path = TabControl;
 			sourceTree = "<group>";
 		};
 		8405C66EBD86D138C1E26E2C /* EditSettings */ = {
@@ -544,12 +568,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				564A821B1E29A0A4007B3E45 /* ViewUserInteractor.swift in Sources */,
+				56E5E8C21E3481E100AA7429 /* TabControlModels.swift in Sources */,
 				56D4AE051E2ECE55007FCF7D /* EditSettingsModels.swift in Sources */,
 				56D4AE081E2ECE55007FCF7D /* EditSettingsViewController.swift in Sources */,
 				56D4AE041E2ECE55007FCF7D /* EditSettingsInteractor.swift in Sources */,
 				564A821D1E29A0A4007B3E45 /* ViewUserPresenter.swift in Sources */,
 				564A821E1E29A0A4007B3E45 /* ViewUserRouter.swift in Sources */,
 				34C3FDAF1E2F4604009AE284 /* Settings.swift in Sources */,
+				56E5E8C31E3481E100AA7429 /* TabControlPresenter.swift in Sources */,
+				56E5E8C11E3481E100AA7429 /* TabControlInteractor.swift in Sources */,
 				564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */,
 				564A821C1E29A0A4007B3E45 /* ViewUserModels.swift in Sources */,
 				56D4AE071E2ECE55007FCF7D /* EditSettingsRouter.swift in Sources */,
@@ -558,9 +585,12 @@
 				56D4AE031E2ECE55007FCF7D /* EditSettingsConfigurator.swift in Sources */,
 				56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */,
 				8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */,
+				56E5E8C41E3481E100AA7429 /* TabControlRouter.swift in Sources */,
+				56E5E8C51E3481E100AA7429 /* TabControlViewController.swift in Sources */,
 				8405C2F47D5D83113E8ED56D /* UserWorker.swift in Sources */,
 				34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */,
 				8405C3782ED1A8DE6C715A41 /* UserMemStore.swift in Sources */,
+				56E5E8C01E3481E100AA7429 /* TabControlConfigurator.swift in Sources */,
 				56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
