@@ -12,7 +12,7 @@ import UIKit
 
 // MARK: Connect View, Interactor, and Presenter
 
-extension TabControlInteractor: TabControlViewControllerOutput, TabControlRouterDataSource, TabControlRouterDataDestination
+extension TabControlInteractor: TabControlViewControllerOutput, TabControlRouterDataProvider, TabControlRouterDataReceiver
 {
 }
 

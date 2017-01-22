@@ -15,12 +15,12 @@ protocol TabControlRouterInput
 
 }
 
-protocol TabControlRouterDataSource: class
+protocol TabControlRouterDataProvider: class
 {
     var displayPlayerTag: String! { get }
 }
 
-protocol TabControlRouterDataDestination: class
+protocol TabControlRouterDataReceiver: class
 {
     var displayPlayerTag: String! { get set }
 }
@@ -29,10 +29,10 @@ class TabControlRouter: TabControlRouterInput
 {
 
     weak var viewController: TabControlViewController!
-    private weak var dataSource: TabControlRouterDataSource!
-    weak var dataDestination: TabControlRouterDataDestination!
+    private weak var dataSource: TabControlRouterDataProvider!
+    weak var dataDestination: TabControlRouterDataReceiver!
 
-    init(viewController: TabControlViewController, dataSource: TabControlRouterDataSource, dataDestination: TabControlRouterDataDestination)
+    init(viewController: TabControlViewController, dataSource: TabControlRouterDataProvider, dataDestination: TabControlRouterDataReceiver)
     {
         self.viewController = viewController
         self.dataSource = dataSource
