@@ -44,6 +44,7 @@
 		56E5E8C31E3481E100AA7429 /* TabControlPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BD1E3481E100AA7429 /* TabControlPresenter.swift */; };
 		56E5E8C41E3481E100AA7429 /* TabControlRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BE1E3481E100AA7429 /* TabControlRouter.swift */; };
 		56E5E8C51E3481E100AA7429 /* TabControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8BF1E3481E100AA7429 /* TabControlViewController.swift */; };
+		56E5E8C81E3484A600AA7429 /* TabControlRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56E5E8C71E3484A600AA7429 /* TabControlRouterTests.swift */; };
 		5D09886A1FAFC630BEFAC614 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC010DE3D463CA16B82E8AC /* CoreText.framework */; };
 		61DB6964938C443B9EA9D76E /* Pods_ClanManagerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */; };
 		6C9BD12A9AD2CFF986DA2A39 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46136DD4041771032D65A8B /* QuartzCore.framework */; };
@@ -117,6 +118,7 @@
 		56E5E8BD1E3481E100AA7429 /* TabControlPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlPresenter.swift; sourceTree = "<group>"; };
 		56E5E8BE1E3481E100AA7429 /* TabControlRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlRouter.swift; sourceTree = "<group>"; };
 		56E5E8BF1E3481E100AA7429 /* TabControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewController.swift; sourceTree = "<group>"; };
+		56E5E8C71E3484A600AA7429 /* TabControlRouterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlRouterTests.swift; sourceTree = "<group>"; };
 		57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		692B15C9E590CDDB93A0817C /* Pods-ClanManagerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 				AD05A4BCB7208B70E489D6C4 /* WorkerTests */,
 				8405C39D71CFF98C87F79F89 /* ServiceTests */,
 				8405C4E6D2D13F9B797FE18F /* EditSettingsTests */,
+				8405C8CF0DBFBC3A7E082166 /* TabControlTests */,
 			);
 			path = ClanManagerTests;
 			sourceTree = "<group>";
@@ -339,6 +342,14 @@
 				34C3FDAE1E2F4604009AE284 /* Settings.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		8405C8CF0DBFBC3A7E082166 /* TabControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				56E5E8C71E3484A600AA7429 /* TabControlRouterTests.swift */,
+			);
+			path = TabControlTests;
 			sourceTree = "<group>";
 		};
 		A1B66609F1E16456D288E9C3 /* Frameworks */ = {
@@ -603,6 +614,7 @@
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
 				34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */,
 				56D4AE191E303BD2007FCF7D /* SessionWorkerSpec.swift in Sources */,
+				56E5E8C81E3484A600AA7429 /* TabControlRouterTests.swift in Sources */,
 				56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
