@@ -20,11 +20,11 @@ extension ViewUserViewController: ViewUserPresenterOutput
     }
 }
 
-extension ViewUserInteractor: ViewUserViewControllerOutput, ViewUserRouterDataSource, ViewUserRouterDataDestination {}
+extension ViewUserInteractor: ViewUserViewControllerOutput, ViewUserRouterDataProvider, ViewUserRouterDataReceiver {}
 
 extension ViewUserPresenter: ViewUserInteractorOutput {}
 
-extension ViewUserRouter:ViewUserRouterOutput {}
+extension ViewUserRouter: ViewUserRouterOutput {}
 
 class ViewUserConfigurator
 {

@@ -10,36 +10,43 @@
 
 import UIKit
 
-protocol ViewUserRouterInput {
+protocol ViewUserRouterInput
+{
     func passDataToNextScene(for segue: UIStoryboardSegue)
 }
 
-protocol ViewUserRouterDataSource:class {
-    
+protocol ViewUserRouterDataProvider: class
+{
+
 }
 
-protocol ViewUserRouterDataDestination:class {
-    
+protocol ViewUserRouterDataReceiver: class
+{
+
+    var displayPlayerTag: String! { get set }
 }
 
-class ViewUserRouter: ViewUserRouterInput {
-    
-    weak var viewController:UIViewController!
-    weak private var dataSource:ViewUserRouterDataSource!
-    weak var dataDestination:ViewUserRouterDataDestination!
-    
-    init(viewController:UIViewController, dataSource:ViewUserRouterDataSource, dataDestination:ViewUserRouterDataDestination) {
+class ViewUserRouter: ViewUserRouterInput
+{
+
+    weak var viewController: UIViewController!
+    private weak var dataSource: ViewUserRouterDataProvider!
+    weak var dataDestination: ViewUserRouterDataReceiver!
+
+    init(viewController: UIViewController, dataSource: ViewUserRouterDataProvider, dataDestination: ViewUserRouterDataReceiver)
+    {
         self.viewController = viewController
         self.dataSource = dataSource
         self.dataDestination = dataDestination
     }
-    
+
     // MARK: Navigation
-    
+
     // MARK: Communication
-    
-    func passDataToNextScene(for segue: UIStoryboardSegue) {
+
+    func passDataToNextScene(for segue: UIStoryboardSegue)
+    {
         // NOTE: Teach the router which scenes it can communicate with
-        
+
     }
 }
