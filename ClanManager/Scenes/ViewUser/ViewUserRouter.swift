@@ -15,10 +15,7 @@ protocol ViewUserRouterInput
     func passDataToNextScene(for segue: UIStoryboardSegue)
 }
 
-protocol ViewUserRouterDataProvider: class
-{
-
-}
+protocol ViewUserRouterDataProvider: class {}
 
 protocol ViewUserRouterDataReceiver: class
 {
