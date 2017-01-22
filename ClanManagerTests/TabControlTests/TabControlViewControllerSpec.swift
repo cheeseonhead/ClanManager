@@ -6,9 +6,9 @@
 //  Copyright © 2017 Cheeseonhead. All rights reserved.
 //
 
-@testable import ClanManager
 import Quick
 import Nimble
+@testable import ClanManager
 
 class TabControlViewControllerSpec: QuickSpec
 {

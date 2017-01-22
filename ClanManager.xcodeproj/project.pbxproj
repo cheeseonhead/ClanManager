@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		216CAC671DCD8EDA67123399 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */; };
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
-		346877B91E34CEE000645089 /* TabControlViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346877B81E34CEE000645089 /* TabControlViewControllerSpec.swift */; };
 		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
 		34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */; };
 		34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */; };
@@ -60,6 +59,7 @@
 		A169465DE92190C8146505AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */; };
 		A852B167F21F1865D726AD51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C914C43E0C961F56D936C7C1 /* CoreMedia.framework */; };
 		AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */; };
+		AD05A386D3D80159BB591944 /* TabControlViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */; };
 		AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ADBD44941EFEBEE1EC6A /* Router.swift */; };
 /* End PBXBuildFile section */
 
@@ -81,7 +81,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		346877B81E34CEE000645089 /* TabControlViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewControllerSpec.swift; sourceTree = SOURCE_ROOT; };
 		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
 		34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorSpec.swift; sourceTree = "<group>"; };
 		34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorker.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BuddyBuildSDK.framework; sourceTree = "<group>"; };
 		A46136DD4041771032D65A8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorSpec.swift; sourceTree = "<group>"; };
+		AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewControllerSpec.swift; sourceTree = "<group>"; };
 		AD05ADBD44941EFEBEE1EC6A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		AECC1C3DF12BB1CC1760FF12 /* Pods-ClanManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClanManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -227,7 +227,7 @@
 				AD05A4BCB7208B70E489D6C4 /* WorkerTests */,
 				8405C39D71CFF98C87F79F89 /* ServiceTests */,
 				8405C4E6D2D13F9B797FE18F /* EditSettingsTests */,
-				8405C8CF0DBFBC3A7E082166 /* TabControlTests */,
+				AD05ADF609803FEEEA9CA849 /* TabControlTests */,
 			);
 			path = ClanManagerTests;
 			sourceTree = "<group>";
@@ -347,14 +347,6 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		8405C8CF0DBFBC3A7E082166 /* TabControlTests */ = {
-			isa = PBXGroup;
-			children = (
-				346877B81E34CEE000645089 /* TabControlViewControllerSpec.swift */,
-			);
-			path = TabControlTests;
-			sourceTree = "<group>";
-		};
 		A1B66609F1E16456D288E9C3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -387,6 +379,14 @@
 				AD05ADBD44941EFEBEE1EC6A /* Router.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		AD05ADF609803FEEEA9CA849 /* TabControlTests */ = {
+			isa = PBXGroup;
+			children = (
+				AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */,
+			);
+			path = TabControlTests;
 			sourceTree = "<group>";
 		};
 		B07C74161AA88FB8C9104002 /* Pods */ = {
@@ -623,7 +623,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */,
-				346877B91E34CEE000645089 /* TabControlViewControllerSpec.swift in Sources */,
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
 				34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */,
 				56D4AE191E303BD2007FCF7D /* SessionWorkerSpec.swift in Sources */,
@@ -633,6 +632,7 @@
 				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
 				56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */,
 				8405C5011FB219B9A034278C /* EditSettingsPresenterSpec.swift in Sources */,
+				AD05A386D3D80159BB591944 /* TabControlViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
