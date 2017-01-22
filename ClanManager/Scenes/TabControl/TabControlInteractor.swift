@@ -10,30 +10,22 @@
 
 import UIKit
 
-protocol TabControlInteractorInput
-{
+protocol TabControlInteractorInput {}
 
+protocol TabControlInteractorOutput {}
+
+protocol TabControlDataProvider {}
+
+protocol TabControlDataReceiver
+{
+    var displayPlayerTag: String! { get }
 }
 
-protocol TabControlInteractorOutput
+class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, TabControlDataReceiver
 {
-
-}
-
-protocol TabControlDataSource
-{
-
-}
-
-protocol TabControlDataDestination
-{
-
-}
-
-class TabControlInteractor: TabControlInteractorInput, TabControlDataSource, TabControlDataDestination
-{
-
     var output: TabControlInteractorOutput!
+
+    var displayPlayerTag: String!
 
     // MARK: Business logic
 
