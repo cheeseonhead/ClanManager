@@ -20,22 +20,28 @@ protocol ViewUserInteractorOutput
     func presentUser(response: ViewUser.FetchUser.Response)
 }
 
-protocol ViewUserDataSource {}
+protocol ViewUserDataProvider {}
 
-protocol ViewUserDataDestination {}
+protocol ViewUserDataReceiver
+{
+    var playerTag: String! { get set }
+}
 
-class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataSource, ViewUserDataDestination
+class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUserDataReceiver
 {
 
     var output: ViewUserInteractorOutput!
     var worker: UserWorker! = UserWorker(userStore: UserMemStore())
+
+    var playerTag: String!
 
     // MARK: Business logic
 
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
         worker.fetchUser(id: request.id, completionHandler: { user in
-            guard let user = user else {
+            guard let user = user else
+            {
                 self.output.presentUser(response: ViewUser.FetchUser.Response())
                 return
             }
