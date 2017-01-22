@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		216CAC671DCD8EDA67123399 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */; };
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
+		346877B91E34CEE000645089 /* TabControlViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 346877B81E34CEE000645089 /* TabControlViewControllerSpec.swift */; };
 		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
 		34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */; };
 		34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */; };
@@ -80,6 +81,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		346877B81E34CEE000645089 /* TabControlViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewControllerSpec.swift; sourceTree = SOURCE_ROOT; };
 		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
 		34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorSpec.swift; sourceTree = "<group>"; };
 		34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorker.swift; sourceTree = "<group>"; };
@@ -348,6 +350,7 @@
 		8405C8CF0DBFBC3A7E082166 /* TabControlTests */ = {
 			isa = PBXGroup;
 			children = (
+				346877B81E34CEE000645089 /* TabControlViewControllerSpec.swift */,
 			);
 			path = TabControlTests;
 			sourceTree = "<group>";
@@ -620,6 +623,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8405C0E553CFCF7046A38888 /* ViewUserPresenterTests.swift in Sources */,
+				346877B91E34CEE000645089 /* TabControlViewControllerSpec.swift in Sources */,
 				8405C7C7178C4DD9913AB011 /* ViewUserViewControllerTests.swift in Sources */,
 				34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */,
 				56D4AE191E303BD2007FCF7D /* SessionWorkerSpec.swift in Sources */,
