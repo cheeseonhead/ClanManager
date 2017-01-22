@@ -17,12 +17,12 @@ protocol TabControlRouterInput
 
 protocol TabControlRouterDataSource: class
 {
-    func getPlayerTagToDisplay() -> String
+    var displayPlayerTag: String! { get }
 }
 
 protocol TabControlRouterDataDestination: class
 {
-    var displayPlayerTag: String { get set }
+    var displayPlayerTag: String! { get set }
 }
 
 class TabControlRouter: TabControlRouterInput
