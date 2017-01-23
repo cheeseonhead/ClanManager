@@ -27,9 +27,14 @@ struct TabControl
                 return lhs.currentPlayerTag == rhs.currentPlayerTag
             }
         }
-        struct ViewModel
+        struct ViewModel: Equatable
         {
             var playerTag: String = ""
+
+            static func ==(lhs: ViewModel, rhs: ViewModel) -> Bool
+            {
+                return lhs.playerTag == rhs.playerTag
+            }
         }
     }
 }
