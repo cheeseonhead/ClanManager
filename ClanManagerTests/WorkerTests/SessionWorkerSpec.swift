@@ -43,7 +43,7 @@ class SessionWorkerSpec: QuickSpec
 
                 it("should return same result from the store")
                 {
-                    expect(resultSettings).toEventually(equal(fakeSettings), timeout: Double(storeSpy.asyncDelaySeconds) + 0.1)
+                    expect(resultSettings).toEventually(equal(fakeSettings), timeout: Double(storeSpy.asyncDelayMilliseconds) + 0.1)
                 }
             }
         }
@@ -52,7 +52,7 @@ class SessionWorkerSpec: QuickSpec
 
 class SessionStoreSpy: SessionMemStore
 {
-    var asyncDelaySeconds = 1
+    var asyncDelayMilliseconds = TestGlobals.ASYNC_DELAY_MILLISECONDS
 
     // Checks
     var fetchSettingsCalled = false
@@ -63,8 +63,8 @@ class SessionStoreSpy: SessionMemStore
     override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
         fetchSettingsCalled = true
-        let oneSecondAfter = DispatchTime.now() + DispatchTimeInterval.seconds(asyncDelaySeconds)
-        DispatchQueue.main.asyncAfter(deadline: oneSecondAfter, execute: {
+        let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
+        DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
             completionHandler(self.fakeSettings)
         })
     }
