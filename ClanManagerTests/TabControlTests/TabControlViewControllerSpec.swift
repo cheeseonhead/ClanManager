@@ -56,7 +56,7 @@ class TabControlViewControllerSpec: QuickSpec
                 {
                     beforeEach
                     {
-                        var viewModel = TabControl.FetchSettings.ViewModel(playerTag: "")
+                        let viewModel = TabControl.FetchSettings.ViewModel(playerTag: "")
                         self.viewController.displaySettings(viewModel: viewModel)
                     }
 
@@ -70,7 +70,7 @@ class TabControlViewControllerSpec: QuickSpec
                 {
                     beforeEach
                     {
-                        var viewModel = TabControl.FetchSettings.ViewModel(playerTag: "nonEmptyPlayerTag")
+                        let viewModel = TabControl.FetchSettings.ViewModel(playerTag: "nonEmptyPlayerTag")
                         self.viewController.displaySettings(viewModel: viewModel)
                     }
 
