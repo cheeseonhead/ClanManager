@@ -50,6 +50,11 @@ class TabControlInteractorSpec: QuickSpec
                     let expected = TabControl.FetchSettings.Response(currentPlayerTag: "validPlayerTag")
                     expect(outputSpy.gotResponse).toEventually(equal(expected))
                 }
+
+                it("should have the current player tag correctly set")
+                {
+                    expect(interactor.currentPlayerTag).toEventually(equal("validPlayerTag"))
+                }
             }
 
             context("when asked to fetch settings with nil values")
@@ -63,6 +68,11 @@ class TabControlInteractorSpec: QuickSpec
                 it("should send an empty response to the output")
                 {
                     expect(outputSpy.gotResponse).toEventually(equal(TabControl.FetchSettings.Response()))
+                }
+
+                it("should have an empty string as the current player tag")
+                {
+                    expect(interactor.currentPlayerTag).toEventually(beNil())
                 }
             }
         }
