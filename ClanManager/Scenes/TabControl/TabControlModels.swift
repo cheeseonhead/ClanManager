@@ -23,6 +23,7 @@ struct TabControl
         }
         struct ViewModel
         {
+            var playerTag: String = ""
         }
     }
 }
