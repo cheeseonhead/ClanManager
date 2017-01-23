@@ -88,3 +88,30 @@ class TabControlViewControllerSpec: QuickSpec
         RunLoop.current.run(until: Date())
     }
 }
+
+fileprivate class OutputSpy: TabControlViewControllerOutput
+{
+    // Checks
+    var fetchSettingsCalled = false
+
+    func fetchSettings(request _: TabControl.FetchSettings.Request)
+    {
+        fetchSettingsCalled = true
+    }
+}
+
+fileprivate class RouterSpy: TabControlViewControllerRouter
+{
+    // Checks
+    var openSettingsCalled = false
+    var passDataToViewUserCalled = false
+
+    func openSettingsViewController()
+    {
+        openSettingsCalled = true
+    }
+    func passDataToViewUserViewController()
+    {
+        passDataToViewUserCalled = true
+    }
+}
