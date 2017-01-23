@@ -15,7 +15,10 @@ protocol TabControlInteractorInput
     func fetchSettings(request: TabControl.FetchSettings.Request)
 }
 
-protocol TabControlInteractorOutput {}
+protocol TabControlInteractorOutput
+{
+    func presentSettings(response: TabControl.FetchSettings.Response)
+}
 
 protocol TabControlDataProvider
 {

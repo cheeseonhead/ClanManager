@@ -12,19 +12,16 @@ import UIKit
 
 protocol TabControlPresenterInput
 {
-
+    func presentSettings(response: TabControl.FetchSettings.Response)
 }
 
-protocol TabControlPresenterOutput: class
-{
-
-}
+protocol TabControlPresenterOutput: class {}
 
 class TabControlPresenter: TabControlPresenterInput
 {
-
     weak var output: TabControlPresenterOutput!
 
     // MARK: Presentation logic
 
+    func presentSettings(response _: TabControl.FetchSettings.Response) {}
 }
