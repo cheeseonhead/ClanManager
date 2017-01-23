@@ -41,15 +41,13 @@ class TabControlRouter: TabControlRouterInput
 
     func openSettingsViewController()
     {
-
+        viewController.performSegue(withIdentifier: "presentEditSettingsViewController", sender: nil)
     }
 
     // MARK: Communication
 
     func passDataToNextScene(for segue: UIStoryboardSegue)
     {
-        // NOTE: Teach the router which scenes it can communicate with
-
     }
 
     func passDataToViewUserViewController()
