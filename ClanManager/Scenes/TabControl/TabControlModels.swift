@@ -20,7 +20,7 @@ struct TabControl
         }
         struct Response: Equatable
         {
-            var currentPlayerTag: String = ""
+            var currentPlayerTag: String?
 
             static func ==(lhs: Response, rhs: Response) -> Bool
             {

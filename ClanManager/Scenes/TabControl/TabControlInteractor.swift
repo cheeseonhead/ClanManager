@@ -22,7 +22,7 @@ protocol TabControlInteractorOutput
 
 protocol TabControlDataProvider
 {
-    var currentPlayerTag: String! { get }
+    var currentPlayerTag: String? { get }
 }
 
 protocol TabControlDataReceiver {}
@@ -32,7 +32,7 @@ class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, T
     var output: TabControlInteractorOutput!
     var sessionWorker: SessionWorker! = SessionWorker(store: SessionMemStore())
 
-    var currentPlayerTag: String!
+    var currentPlayerTag: String?
 
     // MARK: Business logic
 
@@ -45,6 +45,9 @@ class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, T
                 self.output.presentSettings(response: TabControl.FetchSettings.Response())
                 return
             }
+
+            self.currentPlayerTag = settings.currentPlayerTag
+
             let response = TabControl.FetchSettings.Response(currentPlayerTag: settings.currentPlayerTag)
             self.output.presentSettings(response: response)
         }

@@ -18,7 +18,7 @@ protocol TabControlRouterInput
 
 protocol TabControlRouterDataProvider: class
 {
-    var currentPlayerTag: String! { get }
+    var currentPlayerTag: String? { get }
 }
 
 protocol TabControlRouterDataReceiver: class {}
