@@ -37,3 +37,18 @@ fileprivate class OutputSpy: TabControlInteractorOutput
         presentSettingCalled = true
     }
 }
+
+fileprivate class SessionWorkerSpy: SessionWorker
+{
+    // Checks
+    var fetchSettingsCalled = false
+
+    // Stub
+    var fakeSettings: Settings!
+
+    override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
+    {
+        fetchSettingsCalled = true
+        completionHandler(fakeSettings)
+    }
+}
