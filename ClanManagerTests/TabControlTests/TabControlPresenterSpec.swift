@@ -17,10 +17,14 @@ class TabControlPresenterSpec: QuickSpec
         describe("TabControlPresenter")
         {
             var presenter: TabControlPresenter!
+            var outputSpy: OutputSpy!
 
             beforeEach
             {
+                outputSpy = OutputSpy()
                 presenter = TabControlPresenter()
+
+                presenter.output = outputSpy
             }
 
             context("when asked to present valid response")
