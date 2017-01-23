@@ -15,13 +15,16 @@ class TabControlInteractorSpec: QuickSpec
         {
             var interactor: TabControlInteractor!
             var outputSpy: OutputSpy!
+            var sessionWorkerSpy: SessionWorkerSpy!
 
             beforeEach
             {
                 interactor = TabControlInteractor()
                 outputSpy = OutputSpy()
+                sessionWorkerSpy = SessionWorkerSpy(store: SessionMemStore())
 
                 interactor.output = outputSpy
+                interactor.sessionWorker = sessionWorkerSpy
             }
         }
     }
