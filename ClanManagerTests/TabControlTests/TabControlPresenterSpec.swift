@@ -37,12 +37,13 @@ class TabControlPresenterSpec: QuickSpec
 
                 it("should ask the output to display settings")
                 {
-
+                    expect(outputSpy.displaySettingsCalled).toEventually(beTrue())
                 }
 
                 it("should send a valid view model to output")
                 {
-
+                    var expected = TabControl.FetchSettings.ViewModel(playerTag: "validPlayerTag")
+                    expect(outputSpy.gotViewModel).toEventually(equal(expected))
                 }
             }
         }
@@ -52,9 +53,11 @@ class TabControlPresenterSpec: QuickSpec
 fileprivate class OutputSpy: TabControlPresenterOutput
 {
     var displaySettingsCalled = false
+    var gotViewModel: TabControl.FetchSettings.ViewModel!
 
-    func displaySettings(viewModel _: TabControl.FetchSettings.ViewModel)
+    func displaySettings(viewModel: TabControl.FetchSettings.ViewModel)
     {
         displaySettingsCalled = true
+        gotViewModel = viewModel
     }
 }
