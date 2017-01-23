@@ -19,7 +19,7 @@ protocol TabControlInteractorOutput {}
 
 protocol TabControlDataProvider
 {
-    var displayPlayerTag: String! { get }
+    var currentPlayerTag: String! { get }
 }
 
 protocol TabControlDataReceiver {}
@@ -28,7 +28,7 @@ class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, T
 {
     var output: TabControlInteractorOutput!
 
-    var displayPlayerTag: String!
+    var currentPlayerTag: String!
 
     // MARK: Business logic
 
