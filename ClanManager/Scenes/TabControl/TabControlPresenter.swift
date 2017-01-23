@@ -24,7 +24,14 @@ class TabControlPresenter: TabControlPresenterInput
 {
     weak var output: TabControlPresenterOutput!
 
-    // MARK: Presentation logic
+    func presentSettings(response: TabControl.FetchSettings.Response)
+    {
+        var viewModel = TabControl.FetchSettings.ViewModel()
+        if response.currentPlayerTag != nil
+        {
+            viewModel.playerTag = response.currentPlayerTag!
+        }
 
-    func presentSettings(response _: TabControl.FetchSettings.Response) {}
+        output.displaySettings(viewModel: viewModel)
+    }
 }
