@@ -11,7 +11,18 @@
 
 import UIKit
 
-struct TabControlScene
+struct TabControl
 {
-
+    struct FetchSettings
+    {
+        struct Request
+        {
+        }
+        struct Response
+        {
+        }
+        struct ViewModel
+        {
+        }
+    }
 }
