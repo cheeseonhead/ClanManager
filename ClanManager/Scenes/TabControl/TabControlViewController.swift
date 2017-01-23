@@ -10,7 +10,10 @@
 
 import UIKit
 
-protocol TabControlViewControllerInput {}
+protocol TabControlViewControllerInput
+{
+    func displaySettings(viewModel: TabControl.FetchSettings.ViewModel)
+}
 
 protocol TabControlViewControllerOutput
 {
@@ -20,6 +23,7 @@ protocol TabControlViewControllerOutput
 protocol TabControlViewControllerRouter: Router
 {
     func openSettingsViewController()
+    func passDataToViewUserViewController()
 }
 
 class TabControlViewController: UITabBarController, TabControlViewControllerInput
@@ -42,6 +46,18 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
     {
         super.viewDidLoad()
         fetchSettingsOnLoad()
+    }
+
+    // MARK: Display
+    func displaySettings(viewModel: TabControl.FetchSettings.ViewModel)
+    {
+        if viewModel.playerTag.characters.count > 0 {
+            router.passDataToViewUserViewController()
+        }
+        else
+        {
+            router.openSettingsViewController()
+        }
     }
 }
 
