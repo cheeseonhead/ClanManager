@@ -13,7 +13,23 @@ class TabControlInteractorSpec: QuickSpec
     {
         describe("TabControlInteractor")
         {
+            var interactor: TabControlInteractor!
 
+            beforeEach
+            {
+                interactor = TabControlInteractor()
+            }
         }
+    }
+}
+
+fileprivate class OutputSpy: TabControlInteractorOutput
+{
+    // Check
+    var presentSettingCalled = false
+
+    func presentSettings(response _: TabControl.FetchSettings.Response)
+    {
+        presentSettingCalled = true
     }
 }
