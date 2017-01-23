@@ -28,8 +28,8 @@ class TabControlViewControllerSpec: QuickSpec
                 routerSpy = RouterSpy()
 
                 self.setupViewController()
-                viewController.output = outputSpy
-                viewController.router = routerSpy
+                self.viewController.output = outputSpy
+                self.viewController.router = routerSpy
             }
 
             context("when view is loaded")
@@ -125,4 +125,6 @@ fileprivate class RouterSpy: TabControlViewControllerRouter
     {
         passDataToViewUserCalled = true
     }
+
+    func passDataToNextScene(for segue: UIStoryboardSegue) {}
 }
