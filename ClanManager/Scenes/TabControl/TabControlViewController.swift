@@ -12,7 +12,10 @@ import UIKit
 
 protocol TabControlViewControllerInput {}
 
-protocol TabControlViewControllerOutput {}
+protocol TabControlViewControllerOutput
+{
+    func fetchSettings(request: TabControl.FetchSettings.Request)
+}
 
 protocol TabControlViewControllerRouter: Router
 {
@@ -46,6 +49,6 @@ fileprivate extension TabControlViewController
 {
     func fetchSettingsOnLoad()
     {
-
+        output.fetchSettings(request: TabControl.FetchSettings.Request())
     }
 }
