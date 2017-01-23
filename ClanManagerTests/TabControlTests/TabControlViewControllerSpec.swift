@@ -19,10 +19,56 @@ class TabControlViewControllerSpec: QuickSpec
     {
         describe("TabControlViewController")
         {
-
             beforeEach
             {
                 self.setupViewController()
+            }
+
+            context("when view is loaded")
+            {
+                beforeEach
+                {
+                    self.loadView()
+                }
+
+                it("should send request to load settings to output")
+                {
+                    expect(false).to(beTrue())
+                }
+            }
+
+            describe("after view is loaded")
+            {
+                beforeEach
+                {
+                    self.loadView()
+                }
+
+                context("when asked to display settings with empty player tag")
+                {
+                    beforeEach
+                    {
+                        // Ask to display settings
+                    }
+
+                    it("should ask the router to navigate to edit settings scene")
+                    {
+                        expect(false).to(beTrue())
+                    }
+                }
+
+                context("when asked to display settings with non-empty player tag")
+                {
+                    beforeEach
+                    {
+                        // Ask to display
+                    }
+
+                    it("should ask the router to pass data to the view user scene")
+                    {
+                        expect(false).to(beTrue())
+                    }
+                }
             }
         }
     }
