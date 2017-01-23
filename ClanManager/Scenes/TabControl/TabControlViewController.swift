@@ -31,6 +31,8 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
     var output: TabControlViewControllerOutput!
     var router: TabControlViewControllerRouter!
 
+    fileprivate var currentPlayerTag: String!
+
     // MARK: Object lifecycle
 
     override func awakeFromNib()
@@ -47,16 +49,15 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
         fetchSettingsOnLoad()
     }
 
+    override func viewDidAppear(_: Bool)
+    {
+        setupViewControllersOnAppear()
+    }
+
     // MARK: Display
     func displaySettings(viewModel: TabControl.FetchSettings.ViewModel)
     {
-        if viewModel.playerTag.characters.count > 0 {
-            router.passDataToViewUserViewController()
-        }
-        else
-        {
-            router.openSettingsViewController()
-        }
+        currentPlayerTag = viewModel.playerTag
     }
 }
 
@@ -65,5 +66,16 @@ fileprivate extension TabControlViewController
     func fetchSettingsOnLoad()
     {
         output.fetchSettings(request: TabControl.FetchSettings.Request())
+    }
+
+    func setupViewControllersOnAppear()
+    {
+        if currentPlayerTag.characters.count > 0 {
+            router.passDataToViewUserViewController()
+        }
+        else
+        {
+            router.openSettingsViewController()
+        }
     }
 }
