@@ -14,10 +14,14 @@ class TabControlInteractorSpec: QuickSpec
         describe("TabControlInteractor")
         {
             var interactor: TabControlInteractor!
+            var outputSpy: OutputSpy!
 
             beforeEach
             {
                 interactor = TabControlInteractor()
+                outputSpy = OutputSpy()
+
+                interactor.output = outputSpy
             }
         }
     }
