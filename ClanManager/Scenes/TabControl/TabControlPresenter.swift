@@ -15,7 +15,10 @@ protocol TabControlPresenterInput
     func presentSettings(response: TabControl.FetchSettings.Response)
 }
 
-protocol TabControlPresenterOutput: class {}
+protocol TabControlPresenterOutput: class
+{
+    func displaySettings(viewModel: TabControl.FetchSettings.ViewModel)
+}
 
 class TabControlPresenter: TabControlPresenterInput
 {
