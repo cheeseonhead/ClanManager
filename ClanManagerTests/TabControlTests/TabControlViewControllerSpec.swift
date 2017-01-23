@@ -19,9 +19,17 @@ class TabControlViewControllerSpec: QuickSpec
     {
         describe("TabControlViewController")
         {
+            var outputSpy: OutputSpy!
+            var routerSpy: RouterSpy!
+
             beforeEach
             {
+                outputSpy = OutputSpy()
+                routerSpy = RouterSpy()
+
                 self.setupViewController()
+                viewController.output = outputSpy
+                viewController.router = routerSpy
             }
 
             context("when view is loaded")
@@ -48,7 +56,8 @@ class TabControlViewControllerSpec: QuickSpec
                 {
                     beforeEach
                     {
-                        // Ask to display settings
+                        var viewModel = TabControl.FetchSettings.ViewModel(playerTag: "")
+                        self.viewController.displaySettings(viewModel: viewModel)
                     }
 
                     it("should ask the router to navigate to edit settings scene")
@@ -61,7 +70,8 @@ class TabControlViewControllerSpec: QuickSpec
                 {
                     beforeEach
                     {
-                        // Ask to display
+                        var viewModel = TabControl.FetchSettings.ViewModel(playerTag: "nonEmptyPlayerTag")
+                        self.viewController.displaySettings(viewModel: viewModel)
                     }
 
                     it("should ask the router to pass data to the view user scene")
@@ -110,6 +120,7 @@ fileprivate class RouterSpy: TabControlViewControllerRouter
     {
         openSettingsCalled = true
     }
+
     func passDataToViewUserViewController()
     {
         passDataToViewUserCalled = true
