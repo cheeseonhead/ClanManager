@@ -42,7 +42,7 @@ class TabControlPresenterSpec: QuickSpec
 
                 it("should send a valid view model to output")
                 {
-                    var expected = TabControl.FetchSettings.ViewModel(playerTag: "validPlayerTag")
+                    let expected = TabControl.FetchSettings.ViewModel(playerTag: "validPlayerTag")
                     expect(outputSpy.gotViewModel).toEventually(equal(expected))
                 }
             }
@@ -57,7 +57,7 @@ class TabControlPresenterSpec: QuickSpec
 
                 it("should send empty valid view model to output")
                 {
-                    var expected = TabControl.FetchSettings.ViewModel()
+                    let expected = TabControl.FetchSettings.ViewModel()
                     expect(outputSpy.gotViewModel).toEventually(equal(expected))
                 }
             }

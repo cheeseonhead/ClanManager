@@ -16,14 +16,9 @@ struct ViewUser
     struct FetchUser
     {
 
-        struct Request: Equatable
+        struct Request
         {
             var id: String
-
-            static func ==(lhs: Request, rhs: Request) -> Bool
-            {
-                return lhs.id == rhs.id
-            }
         }
 
         struct Response: Equatable
