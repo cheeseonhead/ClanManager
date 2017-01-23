@@ -17,12 +17,12 @@ protocol TabControlInteractorInput
 
 protocol TabControlInteractorOutput {}
 
-protocol TabControlDataProvider {}
-
-protocol TabControlDataReceiver
+protocol TabControlDataProvider
 {
     var displayPlayerTag: String! { get }
 }
+
+protocol TabControlDataReceiver {}
 
 class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, TabControlDataReceiver
 {
