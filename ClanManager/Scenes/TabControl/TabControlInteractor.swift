@@ -38,6 +38,15 @@ class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, T
 
     func fetchSettings(request _: TabControl.FetchSettings.Request)
     {
-
+        sessionWorker.fetchSettings
+        { settings in
+            guard let settings = settings else
+            {
+                self.output.presentSettings(response: TabControl.FetchSettings.Response())
+                return
+            }
+            let response = TabControl.FetchSettings.Response(currentPlayerTag: settings.currentPlayerTag)
+            self.output.presentSettings(response: response)
+        }
     }
 }

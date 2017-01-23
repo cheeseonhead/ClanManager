@@ -47,7 +47,7 @@ class TabControlInteractorSpec: QuickSpec
 
                 it("should send a valid response to the output")
                 {
-                    var expected = TabControl.FetchSettings.Response(currentPlayerTag: "validPlayerTag")
+                    let expected = TabControl.FetchSettings.Response(currentPlayerTag: "validPlayerTag")
                     expect(outputSpy.gotResponse).toEventually(equal(expected))
                 }
             }
