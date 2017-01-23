@@ -41,7 +41,7 @@ class TabControlViewControllerSpec: QuickSpec
 
                 it("should send request to load settings to output")
                 {
-                    expect(false).to(beTrue())
+                    expect(outputSpy.fetchSettingsCalled).toEventually(beTrue())
                 }
             }
 
@@ -62,7 +62,7 @@ class TabControlViewControllerSpec: QuickSpec
 
                     it("should ask the router to navigate to edit settings scene")
                     {
-                        expect(false).to(beTrue())
+                        expect(routerSpy.openSettingsCalled).toEventually(beTrue())
                     }
                 }
 
@@ -76,7 +76,7 @@ class TabControlViewControllerSpec: QuickSpec
 
                     it("should ask the router to pass data to the view user scene")
                     {
-                        expect(false).to(beTrue())
+                        expect(routerSpy.passDataToViewUserCalled).toEventually(beTrue())
                     }
                 }
             }
