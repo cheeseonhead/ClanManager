@@ -38,10 +38,14 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        fetchSettingsOnLoad()
     }
+}
 
-    // MARK: Event handling
+fileprivate extension TabControlViewController
+{
+    func fetchSettingsOnLoad()
+    {
 
-    // MARK: Display logic
-
+    }
 }
