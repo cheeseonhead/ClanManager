@@ -46,6 +46,21 @@ class TabControlPresenterSpec: QuickSpec
                     expect(outputSpy.gotViewModel).toEventually(equal(expected))
                 }
             }
+
+            context("when asked to present invalid response")
+            {
+                beforeEach
+                {
+                    let invalidResponse = TabControl.FetchSettings.Response(currentPlayerTag: nil)
+                    presenter.presentSettings(response: invalidResponse)
+                }
+
+                it("should send empty valid view model to output")
+                {
+                    var expected = TabControl.FetchSettings.ViewModel()
+                    expected(outputSpy.gotViewModel).toEvenTually(equal(expected))
+                }
+            }
         }
     }
 }
