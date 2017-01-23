@@ -58,7 +58,7 @@ class TabControlPresenterSpec: QuickSpec
                 it("should send empty valid view model to output")
                 {
                     var expected = TabControl.FetchSettings.ViewModel()
-                    expected(outputSpy.gotViewModel).toEvenTually(equal(expected))
+                    expect(outputSpy.gotViewModel).toEventually(equal(expected))
                 }
             }
         }
