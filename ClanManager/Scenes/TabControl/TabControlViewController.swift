@@ -28,7 +28,6 @@ protocol TabControlViewControllerRouter: Router
 
 class TabControlViewController: UITabBarController, TabControlViewControllerInput
 {
-
     var output: TabControlViewControllerOutput!
     var router: TabControlViewControllerRouter!
 

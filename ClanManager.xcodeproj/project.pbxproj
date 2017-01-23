@@ -61,6 +61,7 @@
 		AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */; };
 		AD05A386D3D80159BB591944 /* TabControlViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */; };
 		AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ADBD44941EFEBEE1EC6A /* Router.swift */; };
+		AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +135,7 @@
 		A46136DD4041771032D65A8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorSpec.swift; sourceTree = "<group>"; };
 		AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewControllerSpec.swift; sourceTree = "<group>"; };
+		AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlInteractorSpec.swift; sourceTree = "<group>"; };
 		AD05ADBD44941EFEBEE1EC6A /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		AECC1C3DF12BB1CC1760FF12 /* Pods-ClanManagerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ClanManagerTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ClanManagerTests/Pods-ClanManagerTests.release.xcconfig"; sourceTree = "<group>"; };
 		B5DE4F399AC246ABEC70A23D /* Pods_ClanManagerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ClanManagerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -385,6 +387,7 @@
 			isa = PBXGroup;
 			children = (
 				AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */,
+				AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */,
 			);
 			path = TabControlTests;
 			sourceTree = "<group>";
@@ -633,6 +636,7 @@
 				56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */,
 				8405C5011FB219B9A034278C /* EditSettingsPresenterSpec.swift in Sources */,
 				AD05A386D3D80159BB591944 /* TabControlViewControllerSpec.swift in Sources */,
+				AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
