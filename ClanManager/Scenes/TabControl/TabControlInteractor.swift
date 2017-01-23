@@ -10,7 +10,10 @@
 
 import UIKit
 
-protocol TabControlInteractorInput {}
+protocol TabControlInteractorInput
+{
+    func fetchSettings(request: TabControl.FetchSettings.Request)
+}
 
 protocol TabControlInteractorOutput {}
 
@@ -29,4 +32,8 @@ class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, T
 
     // MARK: Business logic
 
+    func fetchSettings(request _: TabControl.FetchSettings.Request)
+    {
+
+    }
 }

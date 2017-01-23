@@ -12,7 +12,8 @@ import UIKit
 
 protocol TabControlRouterInput
 {
-
+    func openSettingsViewController()
+    func passDataToViewUserViewController()
 }
 
 protocol TabControlRouterDataProvider: class
@@ -20,9 +21,7 @@ protocol TabControlRouterDataProvider: class
     var displayPlayerTag: String! { get }
 }
 
-protocol TabControlRouterDataReceiver: class
-{
-}
+protocol TabControlRouterDataReceiver: class {}
 
 class TabControlRouter: TabControlRouterInput
 {
@@ -50,6 +49,11 @@ class TabControlRouter: TabControlRouterInput
     func passDataToNextScene(for segue: UIStoryboardSegue)
     {
         // NOTE: Teach the router which scenes it can communicate with
+
+    }
+
+    func passDataToViewUserViewController()
+    {
 
     }
 }
