@@ -7,3 +7,11 @@
 //
 
 import Foundation
+
+extension UIViewController
+{
+    func isViewVisible() -> Bool
+    {
+        return self.isViewLoaded && self.view.window != nil
+    }
+}
