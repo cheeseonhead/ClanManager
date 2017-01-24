@@ -23,7 +23,7 @@ class UserWorkerSpec: QuickSpec
             {
                 userStoreSpy = UserMemStoreSpy()
                 userStoreSpy.fakeUser = User(id: "uniqueId", firstName: "Barry", lastName: "Allen", townHallLevel: 8)
-                
+
                 userWorker = UserWorker(userStore: userStoreSpy)
             }
 
@@ -37,15 +37,15 @@ class UserWorkerSpec: QuickSpec
                 }
 
                 it("should have made a request to the store", closure: {
-                    expect(userStoreSpy.fetchUserCalled).toEventually(beTrue(), timeout: Double(userStoreSpy.asyncDelaySeconds) + 0.1)
+                    expect(userStoreSpy.fetchUserCalled).toEventually(beTrue(), timeout: Double(userStoreSpy.asyncDelayMilliseconds) + 0.1)
                 })
-                
-                it("should have made a request using the same id", closure: { 
-                    expect(userStoreSpy.requestWithId).toEventually(equal("thisIdDoesntExist"), timeout: Double(userStoreSpy.asyncDelaySeconds) + 0.1)
+
+                it("should have made a request using the same id", closure: {
+                    expect(userStoreSpy.requestWithId).toEventually(equal("thisIdDoesntExist"), timeout: Double(userStoreSpy.asyncDelayMilliseconds) + 0.1)
                 })
-                
+
                 it("should return with same user the store returned", closure: {
-                    expect(resultUser).toEventually(equal(userStoreSpy.fakeUser), timeout: Double(userStoreSpy.asyncDelaySeconds) + 0.1)
+                    expect(resultUser).toEventually(equal(userStoreSpy.fakeUser), timeout: Double(userStoreSpy.asyncDelayMilliseconds) + 0.1)
                 })
             })
         }
@@ -54,11 +54,11 @@ class UserWorkerSpec: QuickSpec
 
 fileprivate class UserMemStoreSpy: UserMemStore
 {
-    var asyncDelaySeconds = 1
-    
+    var asyncDelayMilliseconds = TestGlobals.ASYNC_DELAY_MILLISECONDS
+
     // MARK: - Stub
     var fakeUser: User!
-    
+
     // MARK: - Spying
     var fetchUserCalled = false
     var requestWithId: String!
@@ -67,8 +67,8 @@ fileprivate class UserMemStoreSpy: UserMemStore
     {
         fetchUserCalled = true
         requestWithId = id
-        let oneSecondAfter = DispatchTime.now() + DispatchTimeInterval.seconds(asyncDelaySeconds)
-        DispatchQueue.main.asyncAfter(deadline: oneSecondAfter, execute: {
+        let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
+        DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
             completionHandler(self.fakeUser)
         })
     }
