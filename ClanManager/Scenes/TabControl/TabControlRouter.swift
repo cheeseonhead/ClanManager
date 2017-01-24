@@ -26,11 +26,11 @@ protocol TabControlRouterDataReceiver: class {}
 class TabControlRouter: TabControlRouterInput
 {
 
-    weak var viewController: UITabBarController!
+    weak var viewController: TabControlViewController!
     private weak var dataSource: TabControlRouterDataProvider!
     weak var dataDestination: TabControlRouterDataReceiver!
 
-    init(viewController: UITabBarController, dataSource: TabControlRouterDataProvider, dataDestination: TabControlRouterDataReceiver)
+    init(viewController: TabControlViewController, dataSource: TabControlRouterDataProvider, dataDestination: TabControlRouterDataReceiver)
     {
         self.viewController = viewController
         self.dataSource = dataSource
@@ -52,6 +52,7 @@ class TabControlRouter: TabControlRouterInput
 
     func passDataToViewUserViewController()
     {
-
+        let targetVC = viewController.viewControllers?[0] as! ViewUserViewController
+        targetVC.dataReceiver.playerTag = dataSource.currentPlayerTag
     }
 }
