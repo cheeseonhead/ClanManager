@@ -17,7 +17,6 @@
 		562922651E36A30500FB165C /* TestGlobals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562922641E36A30500FB165C /* TestGlobals.swift */; };
 		562922671E36AD5700FB165C /* TabControlPresenterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562922661E36AD5700FB165C /* TabControlPresenterSpec.swift */; };
 		562922691E37436200FB165C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562922681E37436200FB165C /* ViewController.swift */; };
-		5629226B1E37B48400FB165C /* TabControlRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5629226A1E37B48400FB165C /* TabControlRouterSpec.swift */; };
 		56407BAE1E29864000970F81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56407BAD1E29864000970F81 /* AppDelegate.swift */; };
 		56407BB51E29864000970F81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
 		56407BB71E29864000970F81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB61E29864000970F81 /* Assets.xcassets */; };
@@ -93,7 +92,6 @@
 		562922641E36A30500FB165C /* TestGlobals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestGlobals.swift; sourceTree = "<group>"; };
 		562922661E36AD5700FB165C /* TabControlPresenterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlPresenterSpec.swift; sourceTree = "<group>"; };
 		562922681E37436200FB165C /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		5629226A1E37B48400FB165C /* TabControlRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlRouterSpec.swift; sourceTree = "<group>"; };
 		56407BAA1E29864000970F81 /* ClanManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ClanManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		56407BAD1E29864000970F81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		56407BB41E29864000970F81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -399,7 +397,6 @@
 				AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */,
 				AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */,
 				562922661E36AD5700FB165C /* TabControlPresenterSpec.swift */,
-				5629226A1E37B48400FB165C /* TabControlRouterSpec.swift */,
 			);
 			path = TabControlTests;
 			sourceTree = "<group>";
@@ -645,7 +642,6 @@
 				562922651E36A30500FB165C /* TestGlobals.swift in Sources */,
 				56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
-				5629226B1E37B48400FB165C /* TabControlRouterSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
 				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
 				562922671E36AD5700FB165C /* TabControlPresenterSpec.swift in Sources */,
