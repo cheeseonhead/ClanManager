@@ -51,13 +51,14 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
 
     override func viewDidAppear(_: Bool)
     {
-        setupViewControllersOnAppear()
+        updateChildViewControllersIfVisible()
     }
 
     // MARK: Display
     func displaySettings(viewModel: TabControl.FetchSettings.ViewModel)
     {
         currentPlayerTag = viewModel.playerTag
+        updateChildViewControllersIfVisible()
     }
 }
 
@@ -68,8 +69,13 @@ fileprivate extension TabControlViewController
         output.fetchSettings(request: TabControl.FetchSettings.Request())
     }
 
-    func setupViewControllersOnAppear()
+    func updateChildViewControllersIfVisible()
     {
+        guard self.isViewVisible() && currentPlayerTag != nil else
+        {
+            return
+        }
+
         if currentPlayerTag.characters.count > 0 {
             router.passDataToViewUserViewController()
         }
