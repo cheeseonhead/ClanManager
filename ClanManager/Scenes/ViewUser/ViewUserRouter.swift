@@ -19,7 +19,6 @@ protocol ViewUserRouterDataProvider: class {}
 
 protocol ViewUserRouterDataReceiver: class
 {
-
     var playerTag: String! { get set }
 }
 
