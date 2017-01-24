@@ -19,7 +19,7 @@ protocol SessionMemStoreInput
 
 class SessionMemStore: SessionMemStoreInput
 {
-    var currentSettings: Settings!
+    var currentSettings: Settings! = Settings(currentPlayerTag: "jeff")
 
     func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
