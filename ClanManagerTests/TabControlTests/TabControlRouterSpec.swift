@@ -39,24 +39,11 @@ class TabControlRouterSpec: QuickSpec
                     expect(vcSpy.performSegueCalled).toEventually(beTrue())
                 }
             }
-
-            context("when asked to pass data to view user VC")
-            {
-                beforeEach
-                {
-                    router.passDataToViewUserViewController()
-                }
-
-                it("should get the player tag from data provider")
-                {
-                    expect(dataSpy.currentPlayerTagCalled).toEventually(beTrue())
-                }
-            }
         }
     }
 }
 
-fileprivate class ViewControllerSpy: UIViewController
+fileprivate class ViewControllerSpy: UITabBarController
 {
     var performSegueCalled = false
 
