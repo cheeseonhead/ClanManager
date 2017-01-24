@@ -26,17 +26,30 @@ class TabControlRouterSpec: QuickSpec
                 dataSpy = DataSpy()
                 router = TabControlRouter(viewController: vcSpy, dataSource: dataSpy, dataDestination: dataSpy)
             }
+
+            context("when asked to open settings view controller")
+            {
+                beforeEach
+                {
+                    router.openSettingsViewController()
+                }
+
+                it("should trigger prepare for segue")
+                {
+                    expect(vcSpy.performSegueCalled).toEventually(beTrue())
+                }
+            }
         }
     }
 }
 
 fileprivate class ViewControllerSpy: UIViewController
 {
-    var prepareForSegueCalled = false
+    var performSegueCalled = false
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    override func performSegue(withIdentifier _: String, sender _: Any?)
     {
-        prepareForSegueCalled = true
+        performSegueCalled = true
     }
 }
 
