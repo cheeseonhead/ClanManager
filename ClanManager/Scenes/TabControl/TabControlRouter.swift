@@ -26,11 +26,11 @@ protocol TabControlRouterDataReceiver: class {}
 class TabControlRouter: TabControlRouterInput
 {
 
-    weak var viewController: UIViewController!
+    weak var viewController: UITabBarController!
     private weak var dataSource: TabControlRouterDataProvider!
     weak var dataDestination: TabControlRouterDataReceiver!
 
-    init(viewController: UIViewController, dataSource: TabControlRouterDataProvider, dataDestination: TabControlRouterDataReceiver)
+    init(viewController: UITabBarController, dataSource: TabControlRouterDataProvider, dataDestination: TabControlRouterDataReceiver)
     {
         self.viewController = viewController
         self.dataSource = dataSource
