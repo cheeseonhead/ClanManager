@@ -27,6 +27,7 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 
     var output: ViewUserViewControllerOutput!
     var router: ViewUserViewControllerRouter!
+    var dataReceiver: ViewUserRouterDataReceiver!
 
     // MARK: - Outlets
 

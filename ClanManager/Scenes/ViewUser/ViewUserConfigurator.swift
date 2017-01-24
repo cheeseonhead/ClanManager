@@ -22,7 +22,6 @@ class ViewUserConfigurator
 
     func configure(viewController: ViewUserViewController)
     {
-
         let presenter = ViewUserPresenter()
         presenter.output = viewController
 
@@ -33,6 +32,7 @@ class ViewUserConfigurator
 
         viewController.output = interactor
         viewController.router = router
+        viewController.dataReceiver = interactor
     }
 }
 
