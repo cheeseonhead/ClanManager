@@ -16,7 +16,31 @@ class TabControlRouterSpec: QuickSpec
     {
         describe("TabControlRouter")
         {
+            var router: TabControlRouter!
+            var vcSpy: ViewControllerSpy!
+            var dataSpy: DataSpy!
 
+            beforeEach
+            {
+                vcSpy = ViewControllerSpy(nibName: nil, bundle: nil)
+                dataSpy = DataSpy()
+                router = TabControlRouter(viewController: vcSpy, dataSource: dataSpy, dataDestination: dataSpy)
+            }
         }
     }
+}
+
+fileprivate class ViewControllerSpy: UIViewController
+{
+    var prepareForSegueCalled = false
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        prepareForSegueCalled = true
+    }
+}
+
+fileprivate class DataSpy: TabControlRouterDataProvider, TabControlRouterDataReceiver
+{
+    var currentPlayerTag: String?
 }
