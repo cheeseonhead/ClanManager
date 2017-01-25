@@ -29,6 +29,7 @@
 		564A821E1E29A0A4007B3E45 /* ViewUserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */; };
 		564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */; };
 		564A82281E29A46D007B3E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
+		56C7C0B81E38FB77002569D7 /* TabControlRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7C0B71E38FB77002569D7 /* TabControlRouterSpec.swift */; };
 		56D4AE031E2ECE55007FCF7D /* EditSettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4ADFD1E2ECE55007FCF7D /* EditSettingsConfigurator.swift */; };
 		56D4AE041E2ECE55007FCF7D /* EditSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4ADFE1E2ECE55007FCF7D /* EditSettingsInteractor.swift */; };
 		56D4AE051E2ECE55007FCF7D /* EditSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4ADFF1E2ECE55007FCF7D /* EditSettingsModels.swift */; };
@@ -109,6 +110,7 @@
 		564A82171E29A0A4007B3E45 /* ViewUserPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserPresenter.swift; sourceTree = "<group>"; };
 		564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserRouter.swift; sourceTree = "<group>"; };
 		564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserViewController.swift; sourceTree = "<group>"; };
+		56C7C0B71E38FB77002569D7 /* TabControlRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlRouterSpec.swift; sourceTree = "<group>"; };
 		56D4ADFD1E2ECE55007FCF7D /* EditSettingsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsConfigurator.swift; sourceTree = "<group>"; };
 		56D4ADFE1E2ECE55007FCF7D /* EditSettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractor.swift; sourceTree = "<group>"; };
 		56D4ADFF1E2ECE55007FCF7D /* EditSettingsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsModels.swift; sourceTree = "<group>"; };
@@ -397,6 +399,7 @@
 				AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */,
 				AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */,
 				562922661E36AD5700FB165C /* TabControlPresenterSpec.swift */,
+				56C7C0B71E38FB77002569D7 /* TabControlRouterSpec.swift */,
 			);
 			path = TabControlTests;
 			sourceTree = "<group>";
@@ -642,6 +645,7 @@
 				562922651E36A30500FB165C /* TestGlobals.swift in Sources */,
 				56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
+				56C7C0B81E38FB77002569D7 /* TabControlRouterSpec.swift in Sources */,
 				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
 				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
 				562922671E36AD5700FB165C /* TabControlPresenterSpec.swift in Sources */,
