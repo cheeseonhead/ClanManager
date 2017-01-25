@@ -28,6 +28,7 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     @IBOutlet weak var playerTagTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
 
     // MARK: Object lifecycle
 
@@ -43,6 +44,17 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     {
         super.viewDidLoad()
         fetchSettingsOnLoad()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+    }
+
+    func keyboardWasShown(notification: NSNotification)
+    {
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.size
+        let contentInset = UIEdgeInsets(top: 0, left: 0, bottom: (keyboardSize?.height)!, right: 0)
+
+        self.scrollView.contentInset = contentInset
     }
 
     // MARK: Event handling
@@ -61,5 +73,10 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
     {
         self.playerTagTextField.text = viewModel.currentPlayerTag
+    }
+
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
     }
 }
