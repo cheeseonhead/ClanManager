@@ -64,6 +64,7 @@
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="User" image="first" id="acW-dT-cKf"/>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
                         <outlet property="infoLabel" destination="A5M-7J-77L" id="MBm-KY-JKv"/>
                         <outlet property="nameLabel" destination="KQZ-1w-vlD" id="ZkY-FW-d4z"/>
