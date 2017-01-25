@@ -63,12 +63,3 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
         self.playerTagTextField.text = viewModel.currentPlayerTag
     }
 }
-
-// This should be on configurator but for some reason storyboard doesn't detect ViewController's name if placed there
-extension EditSettingsViewController: EditSettingsPresenterOutput
-{
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        router.passDataToNextScene(for: segue)
-    }
-}

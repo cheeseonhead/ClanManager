@@ -10,36 +10,26 @@
 
 import UIKit
 
-protocol EditSettingsRouterInput {
-    
-}
+protocol EditSettingsRouterInput {}
 
-protocol EditSettingsRouterDataSource:class {
-    
-}
+protocol EditSettingsRouterDataSource: class {}
 
-protocol EditSettingsRouterDataDestination:class {
-    
-}
+protocol EditSettingsRouterDataDestination: class {}
 
-class EditSettingsRouter: EditSettingsRouterInput {
-    
-    weak var viewController:EditSettingsViewController!
-    weak private var dataSource:EditSettingsRouterDataSource!
-    weak var dataDestination:EditSettingsRouterDataDestination!
-    
-    init(viewController:EditSettingsViewController, dataSource:EditSettingsRouterDataSource, dataDestination:EditSettingsRouterDataDestination) {
+class EditSettingsRouter: EditSettingsRouterInput
+{
+    weak var viewController: EditSettingsViewController!
+    private weak var dataSource: EditSettingsRouterDataSource!
+    weak var dataDestination: EditSettingsRouterDataDestination!
+
+    init(viewController: EditSettingsViewController, dataSource: EditSettingsRouterDataSource, dataDestination: EditSettingsRouterDataDestination)
+    {
         self.viewController = viewController
         self.dataSource = dataSource
         self.dataDestination = dataDestination
     }
-    
+
     // MARK: Navigation
-    
+
     // MARK: Communication
-    
-    func passDataToNextScene(for segue: UIStoryboardSegue) {
-        // NOTE: Teach the router which scenes it can communicate with
-        
-    }
 }
