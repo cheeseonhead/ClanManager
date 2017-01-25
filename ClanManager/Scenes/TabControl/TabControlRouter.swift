@@ -48,10 +48,6 @@ class TabControlRouter: TabControlRouterInput
 
     // MARK: Communication
 
-    func passDataToNextScene(for segue: UIStoryboardSegue)
-    {
-    }
-
     func passDataToViewUserViewController()
     {
         viewUserVC.dataReceiver.playerTag = dataSource.currentPlayerTag

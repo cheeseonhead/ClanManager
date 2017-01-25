@@ -20,7 +20,7 @@ protocol TabControlViewControllerOutput
     func fetchSettings(request: TabControl.FetchSettings.Request)
 }
 
-protocol TabControlViewControllerRouter: Router
+protocol TabControlViewControllerRouter
 {
     func openSettingsViewController()
     func passDataToViewUserViewController()
