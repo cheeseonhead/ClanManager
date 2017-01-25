@@ -20,7 +20,7 @@ protocol ViewUserViewControllerOutput
     func fetchUser(request _: ViewUser.FetchUser.Request)
 }
 
-protocol ViewUserViewControllerRouter: Router {}
+protocol ViewUserViewControllerRouter {}
 
 class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 {
