@@ -31,7 +31,7 @@ class ViewUserInteractorSpec: QuickSpec
                 beforeEach
                 {
                     userWorkerSpy.fakeResultUser = User(id: "thisIdExists", firstName: "Allen", lastName: "Chan", townHallLevel: 5)
-                    
+
                     interactor.fetchUser(request: ViewUser.FetchUser.Request(id: "barryAllen321"))
                 }
 
@@ -50,19 +50,38 @@ class ViewUserInteractorSpec: QuickSpec
                     expect(interactorSpy.resultResponse).toEventually(equal(expected))
                 })
             })
-            
-            context("when asked to fetch invalid user", { 
-                beforeEach {
+
+            context("when asked to fetch invalid user", {
+                beforeEach
+                {
                     userWorkerSpy.fakeResultUser = nil
-                    
+
                     interactor.fetchUser(request: ViewUser.FetchUser.Request(id: ""))
                 }
-                
+
                 it("should create valid response", closure: {
                     let expected = ViewUser.FetchUser.Response()
                     expect(interactorSpy.resultResponse).toEventually(equal(expected))
                 })
             })
+
+            context("when player tag is set")
+            {
+                beforeEach
+                {
+                    interactor.playerTag = "playerTag"
+                }
+
+                it("should send request to worker")
+                {
+                    expect(userWorkerSpy.fetchUserCalled).toEventually(beTrue())
+                }
+
+                it("should send correct request to worker")
+                {
+                    expect(userWorkerSpy.requestID).toEventually(equal("playerTag"))
+                }
+            }
         }
     }
 }
