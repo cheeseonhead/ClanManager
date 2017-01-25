@@ -32,6 +32,7 @@ class TabControlConfigurator
         interactor.output = presenter
 
         let router = TabControlRouter(viewController: viewController, dataSource: interactor, dataDestination: interactor)
+        router.viewUserVC = viewController.viewControllers?[0] as! ViewUserViewController
 
         viewController.output = interactor
         viewController.router = router
