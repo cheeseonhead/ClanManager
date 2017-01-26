@@ -10,34 +10,34 @@
 
 import UIKit
 
-// MARK: Connect View, Interactor, and Presenter
-
-extension EditSettingsInteractor: EditSettingsViewControllerOutput, EditSettingsRouterDataSource, EditSettingsRouterDataDestination {
-}
-
-extension EditSettingsPresenter: EditSettingsInteractorOutput {
-}
-
-class EditSettingsConfigurator {
+class EditSettingsConfigurator
+{
     // MARK: Object lifecycle
-    
+
     static let sharedInstance = EditSettingsConfigurator()
-    
+
     private init() {}
-    
+
     // MARK: Configuration
-    
-    func configure(viewController: EditSettingsViewController) {
-        
+
+    func configure(viewController: EditSettingsViewController)
+    {
+
         let presenter = EditSettingsPresenter()
         presenter.output = viewController
-        
+
         let interactor = EditSettingsInteractor()
         interactor.output = presenter
-        
-        let router = EditSettingsRouter(viewController:viewController, dataSource:interactor, dataDestination:interactor)
-        
+
+        let router = EditSettingsRouter(viewController: viewController, dataSource: interactor, dataDestination: interactor)
+
         viewController.output = interactor
         viewController.router = router
     }
 }
+
+extension EditSettingsViewController: EditSettingsPresenterOutput {}
+
+extension EditSettingsInteractor: EditSettingsViewControllerOutput, EditSettingsRouterDataSource, EditSettingsRouterDataDestination {}
+
+extension EditSettingsPresenter: EditSettingsInteractorOutput {}

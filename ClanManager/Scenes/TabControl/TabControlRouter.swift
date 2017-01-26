@@ -25,14 +25,16 @@ protocol TabControlRouterDataReceiver: class {}
 
 class TabControlRouter: TabControlRouterInput
 {
+    // View Controllers
+    weak var tabControlVC: UIViewController!
+    weak var viewUserVC: ViewUserViewController!
 
-    weak var viewController: UIViewController!
     private weak var dataSource: TabControlRouterDataProvider!
     weak var dataDestination: TabControlRouterDataReceiver!
 
     init(viewController: UIViewController, dataSource: TabControlRouterDataProvider, dataDestination: TabControlRouterDataReceiver)
     {
-        self.viewController = viewController
+        self.tabControlVC = viewController
         self.dataSource = dataSource
         self.dataDestination = dataDestination
     }
@@ -41,17 +43,13 @@ class TabControlRouter: TabControlRouterInput
 
     func openSettingsViewController()
     {
-        viewController.performSegue(withIdentifier: "presentEditSettingsViewController", sender: nil)
+        tabControlVC.performSegue(withIdentifier: "presentEditSettingsViewController", sender: nil)
     }
 
     // MARK: Communication
 
-    func passDataToNextScene(for segue: UIStoryboardSegue)
-    {
-    }
-
     func passDataToViewUserViewController()
     {
-
+        viewUserVC.dataReceiver.playerTag = dataSource.currentPlayerTag
     }
 }

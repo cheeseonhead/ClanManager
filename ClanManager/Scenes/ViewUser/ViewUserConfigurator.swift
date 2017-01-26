@@ -22,7 +22,6 @@ class ViewUserConfigurator
 
     func configure(viewController: ViewUserViewController)
     {
-
         let presenter = ViewUserPresenter()
         presenter.output = viewController
 
@@ -33,6 +32,7 @@ class ViewUserConfigurator
 
         viewController.output = interactor
         viewController.router = router
+        viewController.dataReceiver = interactor
     }
 }
 
@@ -42,11 +42,4 @@ extension ViewUserPresenter: ViewUserInteractorOutput {}
 
 extension ViewUserRouter: ViewUserViewControllerRouter {}
 
-extension ViewUserViewController: ViewUserPresenterOutput
-{
-
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
-    {
-        router.passDataToNextScene(for: segue)
-    }
-}
+extension ViewUserViewController: ViewUserPresenterOutput {}
