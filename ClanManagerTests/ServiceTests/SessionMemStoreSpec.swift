@@ -30,7 +30,7 @@ class SessionMemStoreSpec: QuickSpec
                 beforeEach
                 {
                     fakeSettings = Settings(currentPlayerTag: "fakePlayerTag")
-                    store.saveSettings(newSettings: fakeSettings) { settings in returnedSettings = settings }
+                    store.storeSettings(settingsToStore: fakeSettings, completionHandler: { settings in returnedSettings = settings })
                 }
 
                 it("should return the same settings")
