@@ -55,7 +55,7 @@ struct EditSettings
             }
         }
 
-        struct Response
+        struct Response: Equatable
         {
             enum StringValidationType
             {
@@ -66,6 +66,12 @@ struct EditSettings
 
             var success: Bool!
             var playerTagValidation: StringValidationType!
+
+            static func ==(lhs: Response, rhs: Response) -> Bool
+            {
+                return lhs.success == rhs.success &&
+                    lhs.playerTagValidation == rhs.playerTagValidation
+            }
         }
 
         struct ViewModel {}
