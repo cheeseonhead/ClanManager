@@ -47,7 +47,7 @@ struct EditSettings
 
         struct Request: Equatable
         {
-            var playerTag: String?
+            var playerTag: String!
 
             static func ==(lhs: Request, rhs: Request) -> Bool
             {
