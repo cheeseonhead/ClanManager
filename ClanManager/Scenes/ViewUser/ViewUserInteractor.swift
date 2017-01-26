@@ -33,13 +33,26 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
     var output: ViewUserInteractorOutput!
     var worker: UserWorker! = UserWorker(userStore: UserMemStore())
 
-    var playerTag: String!
+    var playerTag: String! {
+        didSet
+        {
+            self.fetchUserWith(Id: playerTag)
+        }
+    }
 
     // MARK: Business logic
 
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        worker.fetchUser(id: request.id, completionHandler: { user in
+        self.fetchUserWith(Id: request.id)
+    }
+}
+
+fileprivate extension ViewUserInteractor
+{
+    func fetchUserWith(Id id: String)
+    {
+        worker.fetchUser(id: id, completionHandler: { user in
             guard let user = user else
             {
                 self.output.presentUser(response: ViewUser.FetchUser.Response())
