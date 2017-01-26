@@ -49,9 +49,23 @@ class SessionWorkerSpec: QuickSpec
 
             context("when asked to store settings")
             {
+                it("should send request to store when player tag valid")
+                {
+                    var fakeSettings = Settings(currentPlayerTag: "")
+                    worker.storeSettings(settingsToStore: fakeSettings) { _ in }
+                    expect(storeSpy.storeSettingsCalled).toEventually(beTrue())
+                }
+
                 it("should not send request to store when player tag is empty")
                 {
                     var fakeSettings = Settings(currentPlayerTag: "")
+                    worker.storeSettings(settingsToStore: fakeSettings) { _ in }
+                    expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
+                }
+
+                it("should not send request to store when player tag contains space")
+                {
+                    var fakeSettings = Settings(currentPlayerTag: "player tag")
                     worker.storeSettings(settingsToStore: fakeSettings) { _ in }
                     expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
                 }
@@ -80,12 +94,12 @@ class SessionStoreSpy: SessionMemStore
         })
     }
 
-    override func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (Settings?) -> Void)
+    override func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (Bool, Settings?) -> Void)
     {
         storeSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
         DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
-            completionHandler(self.fakeSettings)
+            completionHandler(true, self.fakeSettings)
         })
     }
 }
