@@ -122,9 +122,17 @@ fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControlle
 {
     // Checkers
     var fetchSettingsCalled = false
+    var storeSettingsCalled = false
+    var gotStoreSettingsRequest:EditSettings.StoreSettings.Request!
 
     func fetchSettings(request _: EditSettings.FetchSettings.Request)
     {
         fetchSettingsCalled = true
+    }
+
+    func storeSettings(request: EditSettings.StoreSettings.Request)
+    {
+        storeSettingsCalled = true
+        gotStoreSettingsRequest = request
     }
 }

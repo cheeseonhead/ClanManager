@@ -18,6 +18,7 @@ protocol EditSettingsViewControllerInput
 protocol EditSettingsViewControllerOutput
 {
     func fetchSettings(request: EditSettings.FetchSettings.Request)
+    func storeSettings(request: EditSettings.StoreSettings.Request)
 }
 
 class EditSettingsViewController: UIViewController, EditSettingsViewControllerInput
