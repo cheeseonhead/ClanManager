@@ -55,7 +55,11 @@ struct EditSettings
             }
         }
 
-        struct Response {}
+        struct Response
+        {
+            var success: Bool!
+            var playerTagValidation: SettingsStringValidation!
+        }
 
         struct ViewModel {}
     }
