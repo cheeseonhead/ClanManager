@@ -29,6 +29,11 @@ class EditSettingsViewControllerSpec: QuickSpec
                 self.viewController.output = outputSpy
             }
 
+            it("should not show status bar")
+            {
+                expect(self.viewController.prefersStatusBarHidden).to(beTrue())
+            }
+
             context("when view is loaded", {
                 beforeEach
                 {
@@ -58,6 +63,22 @@ class EditSettingsViewControllerSpec: QuickSpec
                         expect(self.viewController.playerTagTextField.text).toEventually(equal("testingTag"))
                     })
                 })
+
+                context("when text field is tapped")
+                {
+                    var scrollViewFrame: CGRect!
+
+                    beforeEach
+                    {
+                        scrollViewFrame = self.viewController.scrollView.frame
+                        self.viewController.playerTagTextField.becomeFirstResponder()
+                    }
+
+                    it("should do something")
+                    {
+                        expect(self.viewController.scrollView.frame.size.height).toEventually(beLessThan(scrollViewFrame.size.height))
+                    }
+                }
             })
 
             afterEach
