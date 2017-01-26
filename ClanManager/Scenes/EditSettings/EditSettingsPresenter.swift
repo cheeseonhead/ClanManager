@@ -13,6 +13,7 @@ import UIKit
 protocol EditSettingsPresenterInput
 {
     func presentSettings(response: EditSettings.FetchSettings.Response)
+    func presentStoreSettingsResult(response: EditSettings.StoreSettings.Response)
 }
 
 protocol EditSettingsPresenterOutput: class
@@ -31,5 +32,10 @@ class EditSettingsPresenter: EditSettingsPresenterInput
     {
         let viewModel = EditSettings.FetchSettings.ViewModel(currentPlayerTag: response.currentPlayerTag)
         output.displaySettings(viewModel: viewModel)
+    }
+
+    func presentStoreSettingsResult(response _: EditSettings.StoreSettings.Response)
+    {
+
     }
 }

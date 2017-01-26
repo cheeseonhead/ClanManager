@@ -19,6 +19,7 @@ protocol EditSettingsInteractorInput
 protocol EditSettingsInteractorOutput
 {
     func presentSettings(response: EditSettings.FetchSettings.Response)
+    func presentStoreSettingsResult(response: EditSettings.StoreSettings.Response)
 }
 
 protocol EditSettingsDataSource
