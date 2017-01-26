@@ -57,8 +57,15 @@ struct EditSettings
 
         struct Response
         {
+            enum StringValidationType
+            {
+                case valid
+                case empty
+                case containsSpaces
+            }
+
             var success: Bool!
-            var playerTagValidation: SettingsStringValidation!
+            var playerTagValidation: StringValidationType!
         }
 
         struct ViewModel {}
