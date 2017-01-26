@@ -84,6 +84,7 @@ class SessionStoreSpy: SessionMemStore
 
     // Stubs
     var fakeSettings: Settings!
+    var storeSuccess: Bool!
 
     override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
@@ -99,7 +100,7 @@ class SessionStoreSpy: SessionMemStore
         storeSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
         DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
-            completionHandler(true, self.fakeSettings)
+            completionHandler(self.storeSuccess, self.fakeSettings)
         })
     }
 }
