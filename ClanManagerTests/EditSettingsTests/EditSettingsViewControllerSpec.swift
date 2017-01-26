@@ -79,6 +79,20 @@ class EditSettingsViewControllerSpec: QuickSpec
                         expect(self.viewController.scrollView.frame.size.height).toEventually(beLessThan(scrollViewFrame.size.height))
                     }
                 }
+
+                context("when save button is tapped, with valid info")
+                {
+                    beforeEach
+                    {
+                        self.viewController.playerTagTextField.text = "validPlayerTagRightHere"
+                        self.viewController.saveButtonPressed(self.viewController.saveButton)
+                    }
+
+                    it("should send a request to the output")
+                    {
+                        expect(false).to(beTrue())
+                    }
+                }
             })
 
             afterEach
