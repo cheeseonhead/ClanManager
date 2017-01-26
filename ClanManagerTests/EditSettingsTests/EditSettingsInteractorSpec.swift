@@ -69,14 +69,22 @@ fileprivate class SessionWorkerSpy: SessionWorker
 {
     // Checks
     var fetchSettingsCalled = false
+    var storeSettingsCalled = false
 
     // Stub
     var fakeSettings: Settings!
+    var fakeStoreSettingsResult: StoreSettingsResult!
 
     override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
         fetchSettingsCalled = true
         completionHandler(fakeSettings)
+    }
+
+    override func storeSettings(settingsToStore: Settings, completionHandler: @escaping (StoreSettingsResult) -> Void)
+    {
+        storeSettingsCalled = true
+        completionHandler(fakeStoreSettingsResult)
     }
 }
 
@@ -84,11 +92,19 @@ fileprivate class EditSettingsInteractorOutputSpy: EditSettingsInteractorOutput
 {
     // Checks
     var presentSettingsCalled = false
+    var presentStoreSettingsResultCalled = false
     var gotResponse: EditSettings.FetchSettings.Response!
+    var gotStoreSettingsResponse: EditSettings.StoreSettings.Response!
 
     func presentSettings(response: EditSettings.FetchSettings.Response)
     {
         presentSettingsCalled = true
         gotResponse = response
+    }
+
+    func presentStoreSettingsResult(response: EditSettings.StoreSettings.Response)
+    {
+        presentStoreSettingsResultCalled = true
+        gotStoreSettingsResponse = response
     }
 }
