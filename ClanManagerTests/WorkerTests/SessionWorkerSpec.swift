@@ -46,6 +46,16 @@ class SessionWorkerSpec: QuickSpec
                     expect(resultSettings).toEventually(equal(fakeSettings), timeout: Double(storeSpy.asyncDelayMilliseconds) + 0.1)
                 }
             }
+
+            context("when asked to store settings")
+            {
+                it("should not send request to store when player tag is empty")
+                {
+                    var fakeSettings = Settings(currentPlayerTag: "")
+                    worker.storeSettings(settingsToStore: fakeSettings) { _ in }
+                    expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
+                }
+            }
         }
     }
 }
@@ -56,6 +66,7 @@ class SessionStoreSpy: SessionMemStore
 
     // Checks
     var fetchSettingsCalled = false
+    var storeSettingsCalled = false
 
     // Stubs
     var fakeSettings: Settings!
@@ -63,6 +74,15 @@ class SessionStoreSpy: SessionMemStore
     override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
         fetchSettingsCalled = true
+        let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
+        DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
+            completionHandler(self.fakeSettings)
+        })
+    }
+
+    override func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (Settings?) -> Void)
+    {
+        storeSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
         DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
             completionHandler(self.fakeSettings)
