@@ -14,6 +14,12 @@ protocol SessionStoreProtocol
     func storeSettings(settingsToStore: Settings, completionHandler _: @escaping (Bool, Settings?) -> Void)
 }
 
+struct StoreSettingsResult
+{
+    var success: Bool = true
+    var playerTagValidation: SettingsStringValidation
+}
+
 class SessionWorker
 {
     var store: SessionStoreProtocol!
