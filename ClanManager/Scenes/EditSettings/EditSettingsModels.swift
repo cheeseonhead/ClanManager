@@ -45,9 +45,14 @@ struct EditSettings
     struct StoreSettings
     {
 
-        struct Request
+        struct Request: Equatable
         {
             var playerTag: String?
+
+            static func ==(lhs: Request, rhs: Request) -> Bool
+            {
+                return lhs.playerTag == rhs.playerTag
+            }
         }
 
         struct Response {}
