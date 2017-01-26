@@ -90,7 +90,13 @@ class EditSettingsViewControllerSpec: QuickSpec
 
                     it("should send a request to the output")
                     {
-                        expect(false).to(beTrue())
+                        expect(outputSpy.storeSettingsCalled).toEventually(beTrue())
+                    }
+
+                    it("should send a correct request to the output")
+                    {
+                        var expected = EditSettings.StoreSettings.Request(playerTag: "validPlayerTagRightHere")
+                        expect(outputSpy.gotStoreSettingsRequest).toEventually(equal(expected))
                     }
                 }
             })
@@ -123,7 +129,7 @@ fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControlle
     // Checkers
     var fetchSettingsCalled = false
     var storeSettingsCalled = false
-    var gotStoreSettingsRequest:EditSettings.StoreSettings.Request!
+    var gotStoreSettingsRequest: EditSettings.StoreSettings.Request!
 
     func fetchSettings(request _: EditSettings.FetchSettings.Request)
     {
