@@ -30,4 +30,9 @@ class SessionWorker
             completionHandler(settings)
         }
     }
+
+    func storeSettings(settingsToStore: Settings, completionHandler _: @escaping (Settings?) -> Void)
+    {
+
+    }
 }
