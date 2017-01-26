@@ -28,6 +28,8 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     @IBOutlet weak var playerTagTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
 
     // MARK: Object lifecycle
 
@@ -43,6 +45,40 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     {
         super.viewDidLoad()
         fetchSettingsOnLoad()
+
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasShown(notification:)), name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWasHidden(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+
+    override func viewDidLayoutSubviews()
+    {
+        super.viewDidLayoutSubviews()
+        self.updateContentOffset()
+    }
+
+    func keyboardWasShown(notification: NSNotification)
+    {
+        var info = notification.userInfo!
+        let keyboardSize = (info[UIKeyboardFrameEndUserInfoKey] as? NSValue)?.cgRectValue.size
+
+        var temp = self.scrollView.frame
+        temp.size.height = self.view.frame.size.height - (keyboardSize?.height)!
+        self.scrollView.frame = temp
+
+        self.updateContentOffset()
+    }
+
+    func keyboardWasHidden(notification _: NSNotification)
+    {
+        self.scrollView.frame = self.view.bounds
+
+        self.updateContentOffset()
+    }
+
+    func updateContentOffset()
+    {
+        let topOffset = (self.scrollView.frame.size.height - self.contentView.frame.size.height) / 2
+        self.scrollView.contentInset = UIEdgeInsets(top: topOffset, left: 0, bottom: 0, right: 0)
     }
 
     // MARK: Event handling
@@ -61,5 +97,10 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
     {
         self.playerTagTextField.text = viewModel.currentPlayerTag
+    }
+
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
     }
 }
