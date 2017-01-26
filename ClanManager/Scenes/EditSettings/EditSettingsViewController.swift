@@ -91,6 +91,10 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     @IBAction func saveButtonPressed(_: UIButton)
     {
+        var request = EditSettings.StoreSettings.Request()
+        request.playerTag = self.playerTagTextField.text
+
+        output.storeSettings(request: request)
     }
 
     // MARK: Display logic
