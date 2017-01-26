@@ -8,6 +8,13 @@
 
 import Foundation
 
+enum SettingsStringValidation
+{
+    case valid
+    case errorEmpty
+    case errorContainsSpaces
+}
+
 struct Settings: Equatable
 {
     var currentPlayerTag: String = ""
