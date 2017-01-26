@@ -41,4 +41,17 @@ struct EditSettings
             }
         }
     }
+
+    struct StoreSettings
+    {
+
+        struct Request
+        {
+            var playerTag: String?
+        }
+
+        struct Response {}
+
+        struct ViewModel {}
+    }
 }
