@@ -51,21 +51,21 @@ class SessionWorkerSpec: QuickSpec
             {
                 it("should send request to store when player tag valid")
                 {
-                    var fakeSettings = Settings(currentPlayerTag: "")
+                    let fakeSettings = Settings(currentPlayerTag: "")
                     worker.storeSettings(settingsToStore: fakeSettings) { _ in }
                     expect(storeSpy.storeSettingsCalled).toEventually(beTrue())
                 }
 
                 it("should not send request to store when player tag is empty")
                 {
-                    var fakeSettings = Settings(currentPlayerTag: "")
+                    let fakeSettings = Settings(currentPlayerTag: "")
                     worker.storeSettings(settingsToStore: fakeSettings) { _ in }
                     expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
                 }
 
                 it("should not send request to store when player tag contains space")
                 {
-                    var fakeSettings = Settings(currentPlayerTag: "player tag")
+                    let fakeSettings = Settings(currentPlayerTag: "player tag")
                     worker.storeSettings(settingsToStore: fakeSettings) { _ in }
                     expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
                 }
