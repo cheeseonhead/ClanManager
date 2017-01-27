@@ -47,27 +47,97 @@ class SessionWorkerSpec: QuickSpec
                 }
             }
 
-            context("when asked to store settings")
+            describe("when asked to store settings")
             {
-                it("should send request to store when player tag valid")
+                var fakeSettings: Settings!
+                var storingResult: StoreSettingsResult!
+                describe("invalid player tag")
                 {
-                    let fakeSettings = Settings(currentPlayerTag: "")
-                    worker.storeSettings(settingsToStore: fakeSettings) { _ in }
-                    expect(storeSpy.storeSettingsCalled).toEventually(beTrue())
+                    var expectedPlayerTagValidation: StoreSettingsResult.StringValidation!
+                    context("when player tag is empty")
+                    {
+                        beforeEach
+                        {
+                            fakeSettings = Settings(currentPlayerTag: "")
+                            worker.storeSettings(settingsToStore: fakeSettings)
+                            { result in
+                                storingResult = result
+                            }
+                        }
+
+                        it("should not send request to store")
+                        {
+                            expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
+                        }
+
+                        it("should have result failed")
+                        {
+                            expect(storingResult.success).toEventually(beFalse())
+                        }
+
+                        it("should have result empty error")
+                        {
+                            expectedPlayerTagValidation = .errorEmpty
+                            expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation))
+                        }
+                    }
+
+                    context("when player tag contains spaces")
+                    {
+                        beforeEach
+                        {
+                            fakeSettings = Settings(currentPlayerTag: "helllo this has space")
+                            worker.storeSettings(settingsToStore: fakeSettings)
+                            { result in
+                                storingResult = result
+                            }
+                        }
+
+                        it("should not send request to store")
+                        {
+                            expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
+                        }
+
+                        it("should return failed")
+                        {
+                            expect(storingResult.success).toEventually(beFalse())
+                        }
+
+                        it("should have result contains space error")
+                        {
+                            expectedPlayerTagValidation = .errorContainsSpaces
+                            expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation))
+                        }
+                    }
                 }
 
-                it("should not send request to store when player tag is empty")
+                describe("valid player tag")
                 {
-                    let fakeSettings = Settings(currentPlayerTag: "")
-                    worker.storeSettings(settingsToStore: fakeSettings) { _ in }
-                    expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
-                }
+                    var expectedPlayerTagValidation: StoreSettingsResult.StringValidation!
+                    beforeEach
+                    {
+                        fakeSettings = Settings(currentPlayerTag: "helllo this has space")
+                        worker.storeSettings(settingsToStore: fakeSettings)
+                        { result in
+                            storingResult = result
+                        }
+                    }
 
-                it("should not send request to store when player tag contains space")
-                {
-                    let fakeSettings = Settings(currentPlayerTag: "player tag")
-                    worker.storeSettings(settingsToStore: fakeSettings) { _ in }
-                    expect(storeSpy.storeSettingsCalled).toNotEventually(beTrue())
+                    it("should send request to store")
+                    {
+                        expect(storeSpy.storeSettingsCalled).toEventually(beTrue())
+                    }
+
+                    it("should return success")
+                    {
+                        expect(storingResult.success).toEventually(beTrue())
+                    }
+
+                    it("should have result player tag valid")
+                    {
+                        expectedPlayerTagValidation = .valid
+                        expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation))
+                    }
                 }
             }
         }
@@ -100,7 +170,7 @@ class SessionStoreSpy: SessionMemStore
         storeSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
         DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
-            completionHandler(SessionStore.UpdateResult(success: true))
+            completionHandler(SessionStore.UpdateResult(success: self.storeSuccess))
         })
     }
 }
