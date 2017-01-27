@@ -54,9 +54,28 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
         }
     }
 
-    func storeSettings(request _: EditSettings.StoreSettings.Request)
+    func storeSettings(request: EditSettings.StoreSettings.Request)
     {
+        let newSettings = Settings(currentPlayerTag: request.playerTag)
+        sessionWorker.storeSettings(settingsToStore: newSettings)
+        { result in
+            var response = EditSettings.StoreSettings.Response()
 
+            response.success = result.success
+            switch result.playerTagValidation {
+            case .valid:
+                response.playerTagValidation = .valid
+                break
+            case .errorEmpty:
+                response.playerTagValidation = .empty
+                break
+            case .errorContainsSpaces:
+                response.playerTagValidation = .containsSpaces
+                break
+            }
+
+            self.output.presentStoreSettingsResult(response: response)
+        }
     }
 }
 
