@@ -95,7 +95,7 @@ class EditSettingsViewControllerSpec: QuickSpec
 
                     it("should send a correct request to the output")
                     {
-                        var expected = EditSettings.StoreSettings.Request(playerTag: "validPlayerTagRightHere")
+                        let expected = EditSettings.StoreSettings.Request(playerTag: "validPlayerTagRightHere")
                         expect(outputSpy.gotStoreSettingsRequest).toEventually(equal(expected))
                     }
                 }

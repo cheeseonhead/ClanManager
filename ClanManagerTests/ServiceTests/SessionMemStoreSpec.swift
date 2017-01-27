@@ -26,16 +26,19 @@ class SessionMemStoreSpec: QuickSpec
             context("when asked to save settings")
             {
                 var fakeSettings: Settings!
-                var returnedSettings: Settings!
+                var storingResult: SessionStore.UpdateResult!
                 beforeEach
                 {
                     fakeSettings = Settings(currentPlayerTag: "fakePlayerTag")
-                    store.saveSettings(newSettings: fakeSettings) { settings in returnedSettings = settings }
+                    store.storeSettings(settingsToStore: fakeSettings)
+                    { result in
+                        storingResult = result
+                    }
                 }
 
-                it("should return the same settings")
+                it("should return successful")
                 {
-                    expect(returnedSettings).toEventually(equal(fakeSettings))
+                    expect(storingResult.success).toEventually(beTrue())
                 }
 
                 context("when asked to fetch settings")

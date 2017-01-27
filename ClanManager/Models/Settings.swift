@@ -17,3 +17,16 @@ struct Settings: Equatable
         return lhs.currentPlayerTag == rhs.currentPlayerTag
     }
 }
+
+struct StoreSettingsResult
+{
+    enum StringValidation
+    {
+        case valid
+        case errorEmpty
+        case errorContainsSpaces
+    }
+
+    var success: Bool = true
+    var playerTagValidation: StringValidation = .valid
+}

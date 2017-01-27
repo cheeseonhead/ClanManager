@@ -10,5 +10,6 @@ import Foundation
 
 struct TestGlobals
 {
-    static let ASYNC_DELAY_MILLISECONDS = 300
+    static let ASYNC_DELAY_MILLISECONDS: Int = 300
+    static let MILLI_TO_WHOLE_RATIO: Double = 0.001
 }

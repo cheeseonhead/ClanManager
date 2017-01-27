@@ -30,6 +30,7 @@
 		564A821F1E29A0A4007B3E45 /* ViewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */; };
 		564A82281E29A46D007B3E45 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 56407BB31E29864000970F81 /* Main.storyboard */; };
 		56C7C0B81E38FB77002569D7 /* TabControlRouterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7C0B71E38FB77002569D7 /* TabControlRouterSpec.swift */; };
+		56C7C0BC1E3B3056002569D7 /* SessionStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C7C0BB1E3B3056002569D7 /* SessionStoreProtocol.swift */; };
 		56D4AE031E2ECE55007FCF7D /* EditSettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4ADFD1E2ECE55007FCF7D /* EditSettingsConfigurator.swift */; };
 		56D4AE041E2ECE55007FCF7D /* EditSettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4ADFE1E2ECE55007FCF7D /* EditSettingsInteractor.swift */; };
 		56D4AE051E2ECE55007FCF7D /* EditSettingsModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D4ADFF1E2ECE55007FCF7D /* EditSettingsModels.swift */; };
@@ -111,6 +112,7 @@
 		564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserRouter.swift; sourceTree = "<group>"; };
 		564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserViewController.swift; sourceTree = "<group>"; };
 		56C7C0B71E38FB77002569D7 /* TabControlRouterSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlRouterSpec.swift; sourceTree = "<group>"; };
+		56C7C0BB1E3B3056002569D7 /* SessionStoreProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionStoreProtocol.swift; sourceTree = "<group>"; };
 		56D4ADFD1E2ECE55007FCF7D /* EditSettingsConfigurator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsConfigurator.swift; sourceTree = "<group>"; };
 		56D4ADFE1E2ECE55007FCF7D /* EditSettingsInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractor.swift; sourceTree = "<group>"; };
 		56D4ADFF1E2ECE55007FCF7D /* EditSettingsModels.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsModels.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 			children = (
 				8405CF082084F50BF3AF5EED /* UserMemStore.swift */,
 				56D4AE161E2FCE89007FCF7D /* SessionMemStore.swift */,
+				56C7C0BB1E3B3056002569D7 /* SessionStoreProtocol.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -628,6 +631,7 @@
 				562922691E37436200FB165C /* ViewController.swift in Sources */,
 				34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */,
 				8405C3782ED1A8DE6C715A41 /* UserMemStore.swift in Sources */,
+				56C7C0BC1E3B3056002569D7 /* SessionStoreProtocol.swift in Sources */,
 				56E5E8C01E3481E100AA7429 /* TabControlConfigurator.swift in Sources */,
 				56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */,
 				AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */,

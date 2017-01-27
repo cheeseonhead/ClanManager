@@ -8,11 +8,6 @@
 
 import UIKit
 
-protocol SessionStoreProtocol
-{
-    func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
-}
-
 class SessionWorker
 {
     var store: SessionStoreProtocol!
@@ -27,6 +22,34 @@ class SessionWorker
         store.fetchSettings
         { settings in
             completionHandler(settings)
+        }
+    }
+
+    func storeSettings(settingsToStore: Settings, completionHandler: @escaping (StoreSettingsResult) -> Void)
+    {
+        var result = StoreSettingsResult()
+
+        if settingsToStore.currentPlayerTag.characters.index(of: " ") != nil
+        {
+            result.success = false
+            result.playerTagValidation = .errorContainsSpaces
+        }
+        else if settingsToStore.currentPlayerTag.characters.count == 0 {
+            result.success = false
+            result.playerTagValidation = .errorEmpty
+        }
+
+        guard result.success == true else
+        {
+            completionHandler(result)
+            return
+        }
+
+        store.storeSettings(settingsToStore: settingsToStore)
+        { updateResult in
+            result.success = updateResult.success
+
+            completionHandler(result)
         }
     }
 }
