@@ -70,6 +70,7 @@ fileprivate class SessionWorkerSpy: SessionWorker
     // Checks
     var fetchSettingsCalled = false
     var storeSettingsCalled = false
+    var gotSettingsToStore: Settings!
 
     // Stub
     var fakeSettings: Settings!
@@ -84,7 +85,11 @@ fileprivate class SessionWorkerSpy: SessionWorker
     override func storeSettings(settingsToStore: Settings, completionHandler: @escaping (StoreSettingsResult) -> Void)
     {
         storeSettingsCalled = true
-        completionHandler(fakeStoreSettingsResult)
+        gotSettingsToStore = settingsToStore
+
+        if fakeStoreSettingsResult != nil {
+            completionHandler(fakeStoreSettingsResult)
+        }
     }
 }
 
