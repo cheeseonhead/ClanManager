@@ -44,10 +44,9 @@ struct EditSettings
 
     struct StoreSettings
     {
-
         struct Request: Equatable
         {
-            var playerTag: String!
+            var playerTag: String = ""
 
             static func ==(lhs: Request, rhs: Request) -> Bool
             {
@@ -55,17 +54,17 @@ struct EditSettings
             }
         }
 
+        enum StringValidationType
+        {
+            case valid
+            case empty
+            case containsSpaces
+        }
+
         struct Response: Equatable
         {
-            enum StringValidationType
-            {
-                case valid
-                case empty
-                case containsSpaces
-            }
-
-            var success: Bool!
-            var playerTagValidation: StringValidationType!
+            var success: Bool = true
+            var playerTagValidation = StringValidationType.valid
 
             static func ==(lhs: Response, rhs: Response) -> Bool
             {
