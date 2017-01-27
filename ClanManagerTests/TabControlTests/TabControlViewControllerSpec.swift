@@ -80,6 +80,11 @@ class TabControlViewControllerSpec: QuickSpec
                     }
                 }
             }
+
+            afterEach
+            {
+                self.window = nil
+            }
         }
     }
 

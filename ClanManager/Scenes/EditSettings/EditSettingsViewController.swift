@@ -18,6 +18,7 @@ protocol EditSettingsViewControllerInput
 protocol EditSettingsViewControllerOutput
 {
     func fetchSettings(request: EditSettings.FetchSettings.Request)
+    func storeSettings(request: EditSettings.StoreSettings.Request)
 }
 
 class EditSettingsViewController: UIViewController, EditSettingsViewControllerInput
@@ -90,6 +91,10 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     @IBAction func saveButtonPressed(_: UIButton)
     {
+        var request = EditSettings.StoreSettings.Request()
+        request.playerTag = self.playerTagTextField.text
+
+        output.storeSettings(request: request)
     }
 
     // MARK: Display logic

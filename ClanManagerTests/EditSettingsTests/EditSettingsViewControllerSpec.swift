@@ -79,6 +79,26 @@ class EditSettingsViewControllerSpec: QuickSpec
                         expect(self.viewController.scrollView.frame.size.height).toEventually(beLessThan(scrollViewFrame.size.height))
                     }
                 }
+
+                context("when save button is tapped, with valid info")
+                {
+                    beforeEach
+                    {
+                        self.viewController.playerTagTextField.text = "validPlayerTagRightHere"
+                        self.viewController.saveButtonPressed(self.viewController.saveButton)
+                    }
+
+                    it("should send a request to the output")
+                    {
+                        expect(outputSpy.storeSettingsCalled).toEventually(beTrue())
+                    }
+
+                    it("should send a correct request to the output")
+                    {
+                        var expected = EditSettings.StoreSettings.Request(playerTag: "validPlayerTagRightHere")
+                        expect(outputSpy.gotStoreSettingsRequest).toEventually(equal(expected))
+                    }
+                }
             })
 
             afterEach
@@ -108,9 +128,17 @@ fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControlle
 {
     // Checkers
     var fetchSettingsCalled = false
+    var storeSettingsCalled = false
+    var gotStoreSettingsRequest: EditSettings.StoreSettings.Request!
 
     func fetchSettings(request _: EditSettings.FetchSettings.Request)
     {
         fetchSettingsCalled = true
+    }
+
+    func storeSettings(request: EditSettings.StoreSettings.Request)
+    {
+        storeSettingsCalled = true
+        gotStoreSettingsRequest = request
     }
 }

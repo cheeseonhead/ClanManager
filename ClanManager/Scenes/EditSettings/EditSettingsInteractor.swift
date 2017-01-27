@@ -13,6 +13,7 @@ import UIKit
 protocol EditSettingsInteractorInput
 {
     func fetchSettings(request: EditSettings.FetchSettings.Request)
+    func storeSettings(request: EditSettings.StoreSettings.Request)
 }
 
 protocol EditSettingsInteractorOutput
@@ -34,7 +35,7 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
 {
 
     var output: EditSettingsInteractorOutput!
-    var sessionWorker: SessionWorker! = SessionWorker(store:SessionMemStore())
+    var sessionWorker: SessionWorker! = SessionWorker(store: SessionMemStore())
 
     // MARK: Business logic
 
@@ -42,13 +43,19 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
     {
         sessionWorker.fetchSettings
         { settings in
-            guard let settings = settings else {
+            guard let settings = settings else
+            {
                 self.output.presentSettings(response: EditSettings.FetchSettings.Response())
                 return
             }
             let response = EditSettings.FetchSettings.Response(currentPlayerTag: settings.currentPlayerTag)
             self.output.presentSettings(response: response)
         }
+    }
+
+    func storeSettings(request _: EditSettings.StoreSettings.Request)
+    {
+
     }
 }
 
