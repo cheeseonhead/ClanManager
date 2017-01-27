@@ -19,12 +19,15 @@ class SessionWorkerSpec: QuickSpec
             var worker: SessionWorker!
             var storeSpy: SessionStoreSpy!
             var fakeSettings: Settings!
+            var timeout: Double!
 
             beforeEach
             {
                 fakeSettings = Settings(currentPlayerTag: "fakePlayerTag")
                 worker = SessionWorker(store: SessionStoreSpy())
                 storeSpy = worker.store as! SessionStoreSpy
+
+                timeout = Double(storeSpy.asyncDelayMilliseconds) * TestGlobals.MILLI_TO_WHOLE_RATIO + 0.1
             }
 
             context("when asked to fetch settings")
@@ -43,7 +46,7 @@ class SessionWorkerSpec: QuickSpec
 
                 it("should return same result from the store")
                 {
-                    expect(resultSettings).toEventually(equal(fakeSettings), timeout: Double(storeSpy.asyncDelayMilliseconds) + 0.1)
+                    expect(resultSettings).toEventually(equal(fakeSettings), timeout: timeout)
                 }
             }
 
@@ -53,6 +56,11 @@ class SessionWorkerSpec: QuickSpec
                 var storingResult: StoreSettingsResult!
                 describe("invalid player tag")
                 {
+                    beforeEach
+                    {
+                        storingResult = StoreSettingsResult()
+                    }
+
                     var expectedPlayerTagValidation: StoreSettingsResult.StringValidation!
                     context("when player tag is empty")
                     {
@@ -72,13 +80,14 @@ class SessionWorkerSpec: QuickSpec
 
                         it("should have result failed")
                         {
-                            expect(storingResult.success).toEventually(beFalse())
+                            print(timeout)
+                            expect(storingResult.success).toEventually(beFalse(), timeout: timeout)
                         }
 
                         it("should have result empty error")
                         {
                             expectedPlayerTagValidation = .errorEmpty
-                            expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation))
+                            expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation), timeout: timeout)
                         }
                     }
 
@@ -100,13 +109,13 @@ class SessionWorkerSpec: QuickSpec
 
                         it("should return failed")
                         {
-                            expect(storingResult.success).toEventually(beFalse())
+                            expect(storingResult.success).toEventually(beFalse(), timeout: timeout)
                         }
 
                         it("should have result contains space error")
                         {
                             expectedPlayerTagValidation = .errorContainsSpaces
-                            expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation))
+                            expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation), timeout: timeout)
                         }
                     }
                 }
@@ -117,6 +126,7 @@ class SessionWorkerSpec: QuickSpec
                     beforeEach
                     {
                         fakeSettings = Settings(currentPlayerTag: "helllo this has space")
+                        storingResult = StoreSettingsResult(success: false, playerTagValidation: .errorEmpty)
                         worker.storeSettings(settingsToStore: fakeSettings)
                         { result in
                             storingResult = result
@@ -130,13 +140,13 @@ class SessionWorkerSpec: QuickSpec
 
                     it("should return success")
                     {
-                        expect(storingResult.success).toEventually(beTrue())
+                        expect(storingResult.success).toEventually(beTrue(), timeout: timeout)
                     }
 
                     it("should have result player tag valid")
                     {
                         expectedPlayerTagValidation = .valid
-                        expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation))
+                        expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation), timeout: timeout)
                     }
                 }
             }
