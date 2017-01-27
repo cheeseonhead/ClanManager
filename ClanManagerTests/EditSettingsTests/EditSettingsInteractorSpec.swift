@@ -62,15 +62,15 @@ class EditSettingsInteractorSpec: QuickSpec
                 }
             }
 
-            describe("when asked to store valid settings")
+            describe("when asked to store settings")
             {
                 beforeEach
                 {
-                    let request = EditSettings.StoreSettings.Request(playerTag: "validPlayerTag")
+                    let request = EditSettings.StoreSettings.Request(playerTag: "playerTagDoesntMatter")
                     let fakeStoreSettingsResult = StoreSettingsResult()
 
-                    interactor.storeSettings(request: request)
                     workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
+                    interactor.storeSettings(request: request)
                 }
 
                 it("should call store settings on worker")
@@ -80,7 +80,7 @@ class EditSettingsInteractorSpec: QuickSpec
 
                 it("should send correct version of settings to worker")
                 {
-                    let expected = Settings(currentPlayerTag: "validPlayerTag")
+                    let expected = Settings(currentPlayerTag: "playerTagDoesntMatter")
                     expect(workerSpy.gotSettingsToStore).toEventually(equal(expected))
                 }
 
@@ -90,52 +90,81 @@ class EditSettingsInteractorSpec: QuickSpec
                 }
             }
 
-            describe("when asked to store invalid settings")
+            describe("different success result")
             {
-                context("when player tag is empty")
+                var request: EditSettings.StoreSettings.Request!
+                var fakeStoreSettingsResult: StoreSettingsResult!
+
+                beforeEach
                 {
-                    beforeEach
-                    {
-                        let request = EditSettings.StoreSettings.Request(playerTag: "")
-                        let fakeStoreSettingsResult = StoreSettingsResult(success: false, playerTagValidation: .errorEmpty)
-
-                        interactor.storeSettings(request: request)
-                        workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
-                    }
-
-                    it("should not trigger method on worker")
-                    {
-                        expect(workerSpy.storeSettingsCalled).toNotEventually(beTrue())
-                    }
-
-                    it("should send appropriate response to output")
-                    {
-                        let expected = EditSettings.StoreSettings.Response(success: false, playerTagValidation: .empty)
-                        expect(outputSpy.gotStoreSettingsResponse).toEventually(equal(expected))
-                    }
+                    request = EditSettings.StoreSettings.Request(playerTag: "playerTagDoesntMatter")
+                    fakeStoreSettingsResult = StoreSettingsResult()
                 }
 
-                context("when player tag contains spaces")
+                it("should pass fail when received failure")
                 {
-                    beforeEach
-                    {
-                        let request = EditSettings.StoreSettings.Request(playerTag: "player tag")
-                        let fakeStoreSettingsResult = StoreSettingsResult(success: false, playerTagValidation: .errorContainsSpaces)
+                    fakeStoreSettingsResult.success = false
+                    workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
 
-                        interactor.storeSettings(request: request)
-                        workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
-                    }
+                    interactor.storeSettings(request: request)
 
-                    it("should not trigger method on worker")
-                    {
-                        expect(workerSpy.storeSettingsCalled).toNotEventually(beTrue())
-                    }
+                    expect(outputSpy.gotStoreSettingsResponse.success).toEventually(equal(fakeStoreSettingsResult.success))
+                }
 
-                    it("should send appropriate response to output")
-                    {
-                        let expected = EditSettings.StoreSettings.Response(success: false, playerTagValidation: .containsSpaces)
-                        expect(outputSpy.gotStoreSettingsResponse).toEventually(equal(expected))
-                    }
+                it("should pass success when received success")
+                {
+                    fakeStoreSettingsResult.success = true
+                    workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
+
+                    interactor.storeSettings(request: request)
+
+                    expect(outputSpy.gotStoreSettingsResponse.success).toEventually(equal(fakeStoreSettingsResult.success))
+                }
+            }
+
+            describe("different player tag validations")
+            {
+                var request: EditSettings.StoreSettings.Request!
+                var fakeStoreSettingsResult: StoreSettingsResult!
+                var expected: EditSettings.StoreSettings.StringValidationType!
+
+                beforeEach
+                {
+                    request = EditSettings.StoreSettings.Request(playerTag: "playerTagDoesntMatter")
+                    fakeStoreSettingsResult = StoreSettingsResult()
+                }
+
+                it("should pass empty validation when received empty")
+                {
+                    expected = .empty
+                    fakeStoreSettingsResult.playerTagValidation = .errorEmpty
+                    workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
+
+                    interactor.storeSettings(request: request)
+
+                    expect(outputSpy.gotStoreSettingsResponse.playerTagValidation).toEventually(equal(expected))
+                }
+
+                it("should pass contains spaces validation when received contains spaces")
+                {
+                    expected = .containsSpaces
+                    fakeStoreSettingsResult.playerTagValidation = .errorContainsSpaces
+                    workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
+
+                    interactor.storeSettings(request: request)
+
+                    expect(outputSpy.gotStoreSettingsResponse.playerTagValidation).toEventually(equal(expected))
+                }
+
+                it("should pass valid validation when received valid")
+                {
+                    expected = .valid
+                    fakeStoreSettingsResult.playerTagValidation = .valid
+                    workerSpy.fakeStoreSettingsResult = fakeStoreSettingsResult
+
+                    interactor.storeSettings(request: request)
+
+                    expect(outputSpy.gotStoreSettingsResponse.playerTagValidation).toEventually(equal(expected))
                 }
             }
         }
