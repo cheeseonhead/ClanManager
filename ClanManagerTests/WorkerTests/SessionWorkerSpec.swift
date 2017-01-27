@@ -95,12 +95,12 @@ class SessionStoreSpy: SessionMemStore
         })
     }
 
-    override func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (Bool, Settings?) -> Void)
+    override func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (SessionStore.UpdateResult) -> Void)
     {
         storeSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
         DispatchQueue.main.asyncAfter(deadline: smallDelayAfter, execute: {
-            completionHandler(self.storeSuccess, self.fakeSettings)
+            completionHandler(SessionStore.UpdateResult(success: true))
         })
     }
 }

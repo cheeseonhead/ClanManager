@@ -14,7 +14,7 @@ protocol SessionMemStoreInput
     func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
 
     // Update
-    func storeSettings(settingsToStore: Settings, completionHandler _: @escaping (Bool, Settings?) -> Void)
+    func storeSettings(settingsToStore: Settings, completionHandler: @escaping (SessionStore.UpdateResult) -> Void)
 }
 
 class SessionMemStore: SessionMemStoreInput
@@ -26,9 +26,11 @@ class SessionMemStore: SessionMemStoreInput
         completionHandler(currentSettings)
     }
 
-    func storeSettings(settingsToStore: Settings, completionHandler: @escaping (Bool, Settings?) -> Void)
+    func storeSettings(settingsToStore: Settings, completionHandler: @escaping (SessionStore.UpdateResult) -> Void)
     {
         currentSettings = settingsToStore
-        completionHandler(true, currentSettings)
+
+        let result = SessionStore.UpdateResult(success: true)
+        completionHandler(result)
     }
 }

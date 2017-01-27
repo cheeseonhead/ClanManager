@@ -19,5 +19,5 @@ struct SessionStore
 protocol SessionStoreProtocol
 {
     func fetchSettings(completionHandler _: @escaping (Settings?) -> Void)
-    func storeSettings(settingsToStore: Settings, completionHandler _: @escaping (Bool, Settings?) -> Void)
+    func storeSettings(settingsToStore: Settings, completionHandler _: @escaping (SessionStore.UpdateResult) -> Void)
 }
