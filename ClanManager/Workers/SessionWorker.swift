@@ -25,8 +25,31 @@ class SessionWorker
         }
     }
 
-    func storeSettings(settingsToStore: Settings, completionHandler _: @escaping (StoreSettingsResult) -> Void)
+    func storeSettings(settingsToStore: Settings, completionHandler: @escaping (StoreSettingsResult) -> Void)
     {
+        var result = StoreSettingsResult()
 
+        if settingsToStore.currentPlayerTag.characters.index(of: " ") != nil
+        {
+            result.success = false
+            result.playerTagValidation = .errorContainsSpaces
+        }
+        else if settingsToStore.currentPlayerTag.characters.count == 0 {
+            result.success = false
+            result.playerTagValidation = .errorEmpty
+        }
+
+        guard result.success == true else
+        {
+            completionHandler(result)
+            return
+        }
+
+        store.storeSettings(settingsToStore: settingsToStore)
+        { updateResult in
+            result.success = updateResult.success
+
+            completionHandler(result)
+        }
     }
 }
