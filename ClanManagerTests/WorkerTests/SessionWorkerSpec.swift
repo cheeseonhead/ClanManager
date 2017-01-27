@@ -125,26 +125,49 @@ class SessionWorkerSpec: QuickSpec
                     var expectedPlayerTagValidation: StoreSettingsResult.StringValidation!
                     beforeEach
                     {
-                        fakeSettings = Settings(currentPlayerTag: "helllo this has space")
+                        fakeSettings = Settings(currentPlayerTag: "validPlayerTag")
                         storingResult = StoreSettingsResult(success: false, playerTagValidation: .errorEmpty)
-                        worker.storeSettings(settingsToStore: fakeSettings)
-                        { result in
-                            storingResult = result
-                        }
                     }
 
                     it("should send request to store")
                     {
+                        worker.storeSettings(settingsToStore: fakeSettings)
+                        { result in
+                            storingResult = result
+                        }
+
                         expect(storeSpy.storeSettingsCalled).toEventually(beTrue())
                     }
 
-                    it("should return success")
+                    it("should return success when store returns success")
                     {
+                        storeSpy.storeSuccess = true
+                        worker.storeSettings(settingsToStore: fakeSettings)
+                        { result in
+                            storingResult = result
+                        }
+
                         expect(storingResult.success).toEventually(beTrue(), timeout: timeout)
+                    }
+
+                    it("should return failure when store returns failure")
+                    {
+                        storeSpy.storeSuccess = false
+                        worker.storeSettings(settingsToStore: fakeSettings)
+                        { result in
+                            storingResult = result
+                        }
+
+                        expect(storingResult.success).toEventually(beFalse(), timeout: timeout)
                     }
 
                     it("should have result player tag valid")
                     {
+                        worker.storeSettings(settingsToStore: fakeSettings)
+                        { result in
+                            storingResult = result
+                        }
+
                         expectedPlayerTagValidation = .valid
                         expect(storingResult.playerTagValidation).toEventually(equal(expectedPlayerTagValidation), timeout: timeout)
                     }
@@ -164,7 +187,7 @@ class SessionStoreSpy: SessionMemStore
 
     // Stubs
     var fakeSettings: Settings!
-    var storeSuccess: Bool!
+    var storeSuccess: Bool = true
 
     override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
