@@ -19,8 +19,8 @@ protocol SessionMemStoreInput
 
 class SessionMemStore: SessionMemStoreInput
 {
-    var currentSettings: Settings! = Settings(currentPlayerTag: "jeff")
     static var sharedInstance = SessionMemStore()
+    var currentSettings: Settings!
 
     func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
