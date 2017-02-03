@@ -40,6 +40,18 @@ class EditSettingsPresenter: EditSettingsPresenterInput
         var viewModel = EditSettings.StoreSettings.ViewModel()
 
         viewModel.isReadyToNavigate = response.success
+        viewModel.errorLabelVisible = !response.success
+
+        switch response.playerTagValidation {
+        case .containsSpaces:
+            viewModel.errorLabelText = "Player tags should not contain spaces."
+            break
+        case .empty:
+            viewModel.errorLabelText = "Player tag cannot be empty."
+            break
+        default:
+            break
+        }
 
         output.displayStoreSettings(viewModel: viewModel)
     }
