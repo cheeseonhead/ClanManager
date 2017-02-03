@@ -36,7 +36,7 @@ class EditSettingsRouter: EditSettingsRouterInput
 
     func dismissController()
     {
-
+        viewController.dismiss(animated: true)
     }
 
     // MARK: Communication
