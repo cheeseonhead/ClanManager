@@ -43,15 +43,9 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
 
     // MARK: View lifecycle
 
-    override func viewDidLoad()
-    {
-        super.viewDidLoad()
-        fetchSettingsOnLoad()
-    }
-
     override func viewDidAppear(_: Bool)
     {
-        updateChildViewControllersIfVisible()
+        fetchSettingsOnAppear()
     }
 
     // MARK: Display
@@ -64,7 +58,7 @@ class TabControlViewController: UITabBarController, TabControlViewControllerInpu
 
 fileprivate extension TabControlViewController
 {
-    func fetchSettingsOnLoad()
+    func fetchSettingsOnAppear()
     {
         output.fetchSettings(request: TabControl.FetchSettings.Request())
     }
