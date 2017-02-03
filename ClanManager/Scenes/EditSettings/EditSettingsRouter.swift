@@ -10,7 +10,10 @@
 
 import UIKit
 
-protocol EditSettingsRouterInput {}
+protocol EditSettingsRouterInput
+{
+    func dismissController()
+}
 
 protocol EditSettingsRouterDataSource: class {}
 
@@ -30,6 +33,11 @@ class EditSettingsRouter: EditSettingsRouterInput
     }
 
     // MARK: Navigation
+
+    func dismissController()
+    {
+
+    }
 
     // MARK: Communication
 }

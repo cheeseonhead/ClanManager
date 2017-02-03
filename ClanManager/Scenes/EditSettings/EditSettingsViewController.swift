@@ -105,7 +105,13 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
         self.playerTagTextField.text = viewModel.currentPlayerTag
     }
 
-    func displayStoreSettings(viewModel _: EditSettings.StoreSettings.ViewModel) {}
+    func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
+    {
+        if viewModel.isReadyToNavigate
+        {
+            router.dismissController()
+        }
+    }
 
     override var prefersStatusBarHidden: Bool
     {
