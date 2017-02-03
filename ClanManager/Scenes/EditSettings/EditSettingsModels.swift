@@ -76,6 +76,8 @@ struct EditSettings
         struct ViewModel
         {
             var isReadyToNavigate: Bool = false
+            var errorLabelVisible: Bool = false
+            var errorLabelText = ""
         }
     }
 }
