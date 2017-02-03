@@ -108,7 +108,7 @@ class EditSettingsViewControllerSpec: QuickSpec
                 {
                     func defaultStoreViewModel() -> EditSettings.StoreSettings.ViewModel
                     {
-                        let viewModel = EditSettings.StoreSettings.ViewModel(isReadyToNavigate: true)
+                        let viewModel = EditSettings.StoreSettings.ViewModel(isReadyToNavigate: true, errorLabelVisible: false, errorLabelText: "")
                         return viewModel
                     }
 
@@ -129,6 +129,36 @@ class EditSettingsViewControllerSpec: QuickSpec
                         self.viewController.displayStoreSettings(viewModel: viewModel)
 
                         expect(routerSpy.dismissControllerCalled).toNotEventually(beTrue())
+                    }
+
+                    it("should not show error label when set to not visible")
+                    {
+                        var viewModel = defaultStoreViewModel()
+                        viewModel.errorLabelVisible = false
+
+                        self.viewController.displayStoreSettings(viewModel: viewModel)
+
+                        expect(self.viewController.errorLabel.isHidden).toEventually(beTrue())
+                    }
+
+                    it("should show error label when set to visible")
+                    {
+                        var viewModel = defaultStoreViewModel()
+                        viewModel.errorLabelVisible = true
+
+                        self.viewController.displayStoreSettings(viewModel: viewModel)
+
+                        expect(self.viewController.errorLabel.isHidden).toEventually(beFalse())
+                    }
+
+                    it("should set the text of the errorLabel to the same as viewModel")
+                    {
+                        var viewModel = defaultStoreViewModel()
+                        viewModel.errorLabelText = "Anything can be put here"
+
+                        self.viewController.displayStoreSettings(viewModel: viewModel)
+
+                        expect(self.viewController.errorLabel.text).toEventually(equal(viewModel.errorLabelText))
                     }
                 }
             }
