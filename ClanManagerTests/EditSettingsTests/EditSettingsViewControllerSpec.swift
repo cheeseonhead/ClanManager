@@ -21,12 +21,15 @@ class EditSettingsViewControllerSpec: QuickSpec
         describe("EditSettingsViewController")
         {
             var outputSpy: EditSettingsViewControllerOutputSpy!
+            var routerSpy: RouterSpy!
             beforeEach
             {
                 outputSpy = EditSettingsViewControllerOutputSpy()
-
                 self.setupEditSettingsViewController()
+                routerSpy = RouterSpy(viewController: self.viewController, dataSource: outputSpy, dataDestination: outputSpy)
+
                 self.viewController.output = outputSpy
+                self.viewController.router = routerSpy
             }
 
             it("should not show status bar")
@@ -45,7 +48,8 @@ class EditSettingsViewControllerSpec: QuickSpec
                 })
             })
 
-            describe("after view is loaded", closure: {
+            describe("after view is loaded")
+            {
                 beforeEach
                 {
                     self.loadView()
@@ -99,7 +103,35 @@ class EditSettingsViewControllerSpec: QuickSpec
                         expect(outputSpy.gotStoreSettingsRequest).toEventually(equal(expected))
                     }
                 }
-            })
+
+                describe("Store Settings")
+                {
+                    func defaultStoreViewModel() -> EditSettings.StoreSettings.ViewModel
+                    {
+                        let viewModel = EditSettings.StoreSettings.ViewModel(isReadyToNavigate: true)
+                        return viewModel
+                    }
+
+                    it("should trigger router on dismiss when successful")
+                    {
+                        let viewModel = defaultStoreViewModel()
+
+                        self.viewController.displayStoreSettings(viewModel: viewModel)
+
+                        expect(routerSpy.dismissControllerCalled).toEventually(beTrue())
+                    }
+
+                    it("should not trigger router on dismiss when successful")
+                    {
+                        var viewModel = defaultStoreViewModel()
+                        viewModel.isReadyToNavigate = false
+
+                        self.viewController.displayStoreSettings(viewModel: viewModel)
+
+                        expect(routerSpy.dismissControllerCalled).toNotEventually(beTrue())
+                    }
+                }
+            }
 
             afterEach
             {
@@ -124,7 +156,7 @@ class EditSettingsViewControllerSpec: QuickSpec
     }
 }
 
-fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput
+fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControllerOutput, EditSettingsRouterDataSource, EditSettingsRouterDataDestination
 {
     // Checkers
     var fetchSettingsCalled = false
@@ -140,5 +172,16 @@ fileprivate class EditSettingsViewControllerOutputSpy: EditSettingsViewControlle
     {
         storeSettingsCalled = true
         gotStoreSettingsRequest = request
+    }
+}
+
+fileprivate class RouterSpy: EditSettingsRouter
+{
+    // Checkers
+    var dismissControllerCalled = false
+
+    override func dismissController()
+    {
+        dismissControllerCalled = true
     }
 }
