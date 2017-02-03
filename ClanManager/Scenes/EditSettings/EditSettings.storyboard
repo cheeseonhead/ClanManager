@@ -25,22 +25,28 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="eDd-mx-pMX" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="130"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="133"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Tag" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-nl-efM">
-                                                <rect key="frame" x="26.5" y="50" width="267.5" height="30"/>
+                                                <rect key="frame" x="26.5" y="51.5" width="267.5" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Please enter your player tag below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLF-p6-jEx">
-                                                <rect key="frame" x="26" y="0.0" width="267.5" height="42"/>
+                                                <rect key="frame" x="26" y="5" width="267.5" height="20.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-Ot-D1l">
+                                                <rect key="frame" x="131" y="30.5" width="59" height="13"/>
+                                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
+                                                <color key="textColor" red="0.94901960784313721" green="0.39459372871418302" blue="0.17160206039678388" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7gU-N4-E6f">
-                                                <rect key="frame" x="123" y="88" width="74" height="32"/>
+                                                <rect key="frame" x="123" y="89.5" width="74" height="33.5"/>
                                                 <color key="backgroundColor" red="0.11372549019607843" green="0.49019607843137253" blue="0.94901960784313721" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="74" id="pN8-fz-bar"/>
@@ -56,9 +62,11 @@
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="7gU-N4-E6f" secondAttribute="bottom" constant="10" id="0Hb-L9-Ubl"/>
                                             <constraint firstItem="7gU-N4-E6f" firstAttribute="centerX" secondItem="eDd-mx-pMX" secondAttribute="centerX" id="7cp-WT-uT1"/>
+                                            <constraint firstItem="QDF-Ot-D1l" firstAttribute="top" secondItem="GLF-p6-jEx" secondAttribute="bottom" constant="5" id="J3n-VX-kqC"/>
+                                            <constraint firstItem="iMR-nl-efM" firstAttribute="top" secondItem="QDF-Ot-D1l" secondAttribute="bottom" constant="8" id="Ls2-Sv-HVi"/>
                                             <constraint firstItem="7gU-N4-E6f" firstAttribute="top" secondItem="iMR-nl-efM" secondAttribute="bottom" constant="8" id="QYm-P7-Wl9"/>
-                                            <constraint firstItem="iMR-nl-efM" firstAttribute="top" secondItem="GLF-p6-jEx" secondAttribute="bottom" constant="8" id="Tq8-PW-tA2"/>
-                                            <constraint firstItem="GLF-p6-jEx" firstAttribute="top" secondItem="eDd-mx-pMX" secondAttribute="top" id="aSz-hh-eaf"/>
+                                            <constraint firstItem="QDF-Ot-D1l" firstAttribute="centerX" secondItem="eDd-mx-pMX" secondAttribute="centerX" id="XeT-aD-aWB"/>
+                                            <constraint firstItem="GLF-p6-jEx" firstAttribute="top" secondItem="eDd-mx-pMX" secondAttribute="top" constant="5" id="aSz-hh-eaf"/>
                                             <constraint firstItem="GLF-p6-jEx" firstAttribute="centerX" secondItem="eDd-mx-pMX" secondAttribute="centerX" id="eAy-Vf-TqM"/>
                                             <constraint firstItem="iMR-nl-efM" firstAttribute="centerX" secondItem="eDd-mx-pMX" secondAttribute="centerX" id="eHi-2z-zyl"/>
                                             <constraint firstItem="iMR-nl-efM" firstAttribute="centerY" secondItem="eDd-mx-pMX" secondAttribute="centerY" id="n3y-iI-YCE"/>
@@ -95,7 +103,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="37d-Bc-JB3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="50" y="132"/>
+            <point key="canvasLocation" x="48.75" y="130.98591549295776"/>
         </scene>
     </scenes>
 </document>
