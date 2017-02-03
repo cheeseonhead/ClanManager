@@ -110,6 +110,9 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
     {
+        errorLabel.isHidden = !viewModel.errorLabelVisible
+        errorLabel.text = viewModel.errorLabelText
+
         if viewModel.isReadyToNavigate
         {
             router.dismissController()
