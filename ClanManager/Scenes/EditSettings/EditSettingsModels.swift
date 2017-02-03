@@ -73,6 +73,9 @@ struct EditSettings
             }
         }
 
-        struct ViewModel {}
+        struct ViewModel
+        {
+            var isReadyToNavigate: Bool = false
+        }
     }
 }

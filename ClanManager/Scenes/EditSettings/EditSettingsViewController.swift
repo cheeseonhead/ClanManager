@@ -13,6 +13,7 @@ import UIKit
 protocol EditSettingsViewControllerInput
 {
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
+    func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
 }
 
 protocol EditSettingsViewControllerOutput
@@ -103,6 +104,8 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     {
         self.playerTagTextField.text = viewModel.currentPlayerTag
     }
+
+    func displayStoreSettings(viewModel _: EditSettings.StoreSettings.ViewModel) {}
 
     override var prefersStatusBarHidden: Bool
     {

@@ -61,10 +61,18 @@ fileprivate class EditSettingsPresenterOutputSpy: EditSettingsPresenterOutput
     // Checks
     var displaySettingsCalled = false
     var resultViewModel: EditSettings.FetchSettings.ViewModel!
+    var displayStoreSettingsCalled = false
+    var storeViewModelGiven: EditSettings.StoreSettings.ViewModel!
 
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
     {
         displaySettingsCalled = true
         resultViewModel = viewModel
+    }
+
+    func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
+    {
+        displayStoreSettingsCalled = true
+        storeViewModelGiven = viewModel
     }
 }

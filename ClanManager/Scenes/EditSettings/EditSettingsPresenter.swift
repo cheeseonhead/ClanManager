@@ -19,6 +19,7 @@ protocol EditSettingsPresenterInput
 protocol EditSettingsPresenterOutput: class
 {
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
+    func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
 }
 
 class EditSettingsPresenter: EditSettingsPresenterInput
@@ -34,8 +35,10 @@ class EditSettingsPresenter: EditSettingsPresenterInput
         output.displaySettings(viewModel: viewModel)
     }
 
-    func presentStoreSettingsResult(response _: EditSettings.StoreSettings.Response)
+    func presentStoreSettingsResult(response: EditSettings.StoreSettings.Response)
     {
+        var viewModel = EditSettings.StoreSettings.ViewModel()
 
+        viewModel.isReadyToNavigate = response.success
     }
 }
