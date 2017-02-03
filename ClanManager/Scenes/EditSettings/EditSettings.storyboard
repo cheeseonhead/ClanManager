@@ -96,6 +96,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="contentView" destination="eDd-mx-pMX" id="aCn-aP-EvL"/>
+                        <outlet property="errorLabel" destination="QDF-Ot-D1l" id="ljg-RW-nzP"/>
                         <outlet property="playerTagTextField" destination="iMR-nl-efM" id="mWD-fm-gbB"/>
                         <outlet property="saveButton" destination="7gU-N4-E6f" id="lsc-nm-BEB"/>
                         <outlet property="scrollView" destination="pLO-hH-skn" id="hbK-n1-qdY"/>

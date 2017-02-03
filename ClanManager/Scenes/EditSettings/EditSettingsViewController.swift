@@ -32,6 +32,7 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
 
     // MARK: Object lifecycle
 
