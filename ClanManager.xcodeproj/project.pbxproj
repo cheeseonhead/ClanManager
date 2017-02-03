@@ -9,21 +9,6 @@
 /* Begin PBXBuildFile section */
 		216CAC671DCD8EDA67123399 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */; };
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
-		348EF8CD1E444803009BEE0D /* Oswald-Extra-LightItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A79369B4F2045BC45AC5 /* Oswald-Extra-LightItalic.ttf */; };
-		348EF8CE1E444803009BEE0D /* Oswald-Heavy.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05AD8B1620C030B1578228 /* Oswald-Heavy.ttf */; };
-		348EF8CF1E444803009BEE0D /* Oswald-ExtraLight.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A49FCDEA465339546683 /* Oswald-ExtraLight.ttf */; };
-		348EF8D01E444803009BEE0D /* Oswald-Demi-BoldItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A4910585A940CC4060DF /* Oswald-Demi-BoldItalic.ttf */; };
-		348EF8D11E444803009BEE0D /* Oswald-Bold.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A414C75E0FADD43D72B8 /* Oswald-Bold.ttf */; };
-		348EF8D21E444803009BEE0D /* Oswald-HeavyItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05AC495AB8E2CA80DCA15B /* Oswald-HeavyItalic.ttf */; };
-		348EF8D31E444803009BEE0D /* Oswald-MediumItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A6E0881D470D517AE681 /* Oswald-MediumItalic.ttf */; };
-		348EF8D41E444803009BEE0D /* Oswald-LightItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A5DA2798E803039236D1 /* Oswald-LightItalic.ttf */; };
-		348EF8D51E444803009BEE0D /* Oswald-Regular.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A13525F54C2F207ADCF6 /* Oswald-Regular.ttf */; };
-		348EF8D61E444803009BEE0D /* Oswald-Light.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A8CD295DF59F18795DE3 /* Oswald-Light.ttf */; };
-		348EF8D71E444803009BEE0D /* Oswald-DemiBold.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A7707A190259DC29276F /* Oswald-DemiBold.ttf */; };
-		348EF8D81E444803009BEE0D /* Oswald-RegularItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A138C840A72F978293F6 /* Oswald-RegularItalic.ttf */; };
-		348EF8D91E444803009BEE0D /* Oswald-Stencil.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A57CE575D06510EA238C /* Oswald-Stencil.ttf */; };
-		348EF8DA1E444803009BEE0D /* Oswald-BoldItalic.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3E46E07027ED5EFB712 /* Oswald-BoldItalic.ttf */; };
-		348EF8DB1E444803009BEE0D /* Oswald-Medium.ttf in Sources */ = {isa = PBXBuildFile; fileRef = AD05ABFE38033439AF7C5CE6 /* Oswald-Medium.ttf */; };
 		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
 		34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */; };
 		34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */; };
@@ -748,21 +733,6 @@
 				8405C5011FB219B9A034278C /* EditSettingsPresenterSpec.swift in Sources */,
 				AD05A386D3D80159BB591944 /* TabControlViewControllerSpec.swift in Sources */,
 				AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorSpec.swift in Sources */,
-				348EF8CD1E444803009BEE0D /* Oswald-Extra-LightItalic.ttf in Sources */,
-				348EF8CE1E444803009BEE0D /* Oswald-Heavy.ttf in Sources */,
-				348EF8CF1E444803009BEE0D /* Oswald-ExtraLight.ttf in Sources */,
-				348EF8D01E444803009BEE0D /* Oswald-Demi-BoldItalic.ttf in Sources */,
-				348EF8D11E444803009BEE0D /* Oswald-Bold.ttf in Sources */,
-				348EF8D21E444803009BEE0D /* Oswald-HeavyItalic.ttf in Sources */,
-				348EF8D31E444803009BEE0D /* Oswald-MediumItalic.ttf in Sources */,
-				348EF8D41E444803009BEE0D /* Oswald-LightItalic.ttf in Sources */,
-				348EF8D51E444803009BEE0D /* Oswald-Regular.ttf in Sources */,
-				348EF8D61E444803009BEE0D /* Oswald-Light.ttf in Sources */,
-				348EF8D71E444803009BEE0D /* Oswald-DemiBold.ttf in Sources */,
-				348EF8D81E444803009BEE0D /* Oswald-RegularItalic.ttf in Sources */,
-				348EF8D91E444803009BEE0D /* Oswald-Stencil.ttf in Sources */,
-				348EF8DA1E444803009BEE0D /* Oswald-BoldItalic.ttf in Sources */,
-				348EF8DB1E444803009BEE0D /* Oswald-Medium.ttf in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
