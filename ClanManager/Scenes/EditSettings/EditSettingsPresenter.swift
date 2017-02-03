@@ -40,5 +40,7 @@ class EditSettingsPresenter: EditSettingsPresenterInput
         var viewModel = EditSettings.StoreSettings.ViewModel()
 
         viewModel.isReadyToNavigate = response.success
+
+        output.displayStoreSettings(viewModel: viewModel)
     }
 }
