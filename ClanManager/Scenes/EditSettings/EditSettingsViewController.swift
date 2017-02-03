@@ -33,6 +33,7 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var errorLabelHeightConstraint: NSLayoutConstraint!
 
     // MARK: Object lifecycle
 
@@ -110,6 +111,7 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
     {
+        errorLabelHeightConstraint.constant = (viewModel.errorLabelVisible) ? 15 : 0
         errorLabel.isHidden = !viewModel.errorLabelVisible
         errorLabel.text = viewModel.errorLabelText
 
