@@ -177,7 +177,7 @@ class SessionWorkerSpec: QuickSpec
     }
 }
 
-class SessionStoreSpy: SessionMemStore
+class SessionStoreSpy: SessionStoreProtocol
 {
     var asyncDelayMilliseconds = TestGlobals.ASYNC_DELAY_MILLISECONDS
 
@@ -189,7 +189,7 @@ class SessionStoreSpy: SessionMemStore
     var fakeSettings: Settings!
     var storeSuccess: Bool = true
 
-    override func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
+    func fetchSettings(completionHandler: @escaping (Settings?) -> Void)
     {
         fetchSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
@@ -198,7 +198,7 @@ class SessionStoreSpy: SessionMemStore
         })
     }
 
-    override func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (SessionStore.UpdateResult) -> Void)
+    func storeSettings(settingsToStore _: Settings, completionHandler: @escaping (SessionStore.UpdateResult) -> Void)
     {
         storeSettingsCalled = true
         let smallDelayAfter = DispatchTime.now() + DispatchTimeInterval.milliseconds(asyncDelayMilliseconds)
