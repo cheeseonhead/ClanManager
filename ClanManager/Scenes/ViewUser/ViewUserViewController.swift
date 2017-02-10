@@ -66,3 +66,11 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
         infoLabel.text = viewModel.info
     }
 }
+
+extension ViewUserViewController
+{
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
+}
