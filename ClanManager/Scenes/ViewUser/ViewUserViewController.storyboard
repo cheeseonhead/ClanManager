@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-DemiBold.ttf">
+            <string>Oswald-DemiBold</string>
+        </array>
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View User View Controller-->
+        <scene sceneID="STU-YT-3bD">
+            <objects>
+                <viewController storyboardIdentifier="ViewUserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FrS-pf-Mqy" userLabel="View User View Controller" customClass="ViewUserViewController" customModule="ClanManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6FD-eV-Xje"/>
+                        <viewControllerLayoutGuide type="bottom" id="iQX-mE-zCf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ugI-mq-0Ck">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7W-vb-xzb" userLabel="Center Holder">
+                                <rect key="frame" x="65" y="293.5" width="246.5" height="80.5"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EuA-05-TJo">
+                                        <rect key="frame" x="0.0" y="0.0" width="246.5" height="49"/>
+                                        <fontDescription key="fontDescription" name="Oswald-DemiBold" family="Oswald" pointSize="36"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="This scene is for viewing the user info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h65-X6-5ry">
+                                        <rect key="frame" x="0.0" y="57" width="246.5" height="23.5"/>
+                                        <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EuA-05-TJo" firstAttribute="top" secondItem="k7W-vb-xzb" secondAttribute="top" id="7aS-wh-g7a"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="h65-X6-5ry" secondAttribute="width" id="FXi-KC-Ueb"/>
+                                    <constraint firstItem="h65-X6-5ry" firstAttribute="top" secondItem="EuA-05-TJo" secondAttribute="bottom" constant="8" id="OKT-4h-f2M"/>
+                                    <constraint firstItem="EuA-05-TJo" firstAttribute="centerX" secondItem="k7W-vb-xzb" secondAttribute="centerX" id="UqZ-IE-ehf"/>
+                                    <constraint firstAttribute="bottom" secondItem="h65-X6-5ry" secondAttribute="bottom" id="YtE-mS-7Gn"/>
+                                    <constraint firstAttribute="width" priority="999" id="bRD-iu-AHF"/>
+                                    <constraint firstItem="h65-X6-5ry" firstAttribute="centerX" secondItem="k7W-vb-xzb" secondAttribute="centerX" id="bUr-ZP-r9W"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="EuA-05-TJo" secondAttribute="width" id="rv3-Gg-C0X"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.47450980392156861" green="0.52156862745098043" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="k7W-vb-xzb" firstAttribute="centerY" secondItem="ugI-mq-0Ck" secondAttribute="centerY" id="GKN-fw-8kx"/>
+                            <constraint firstItem="k7W-vb-xzb" firstAttribute="centerX" secondItem="ugI-mq-0Ck" secondAttribute="centerX" id="SvP-bm-tS0"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User" image="first" id="zSs-zt-7F0"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="infoLabel" destination="h65-X6-5ry" id="47L-CG-w0A"/>
+                        <outlet property="nameLabel" destination="EuA-05-TJo" id="gdb-cQ-J40"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sV-eb-AqO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="-508"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+    </resources>
+</document>

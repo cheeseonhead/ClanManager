@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		216CAC671DCD8EDA67123399 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7B2D3AE8605AEA5B3CA1F74F /* AVFoundation.framework */; };
 		227011FF47470A27AFCC667A /* BuddyBuildSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8F2CC0C2B21D1E39EDB5ED90 /* BuddyBuildSDK.framework */; };
+		348EF8EA1E4D5D6E009BEE0D /* ViewUserViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 348EF8E91E4D5D6E009BEE0D /* ViewUserViewController.storyboard */; };
 		34C3FDA91E2DE17C009AE284 /* UserWorkerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */; };
 		34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */; };
 		34C3FDAD1E2F4595009AE284 /* SessionWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */; };
@@ -102,6 +103,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		348EF8E91E4D5D6E009BEE0D /* ViewUserViewController.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewUserViewController.storyboard; sourceTree = "<group>"; };
 		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
 		34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorSpec.swift; sourceTree = "<group>"; };
 		34C3FDAC1E2F4595009AE284 /* SessionWorker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionWorker.swift; sourceTree = "<group>"; };
@@ -304,6 +306,7 @@
 				564A82171E29A0A4007B3E45 /* ViewUserPresenter.swift */,
 				564A82181E29A0A4007B3E45 /* ViewUserRouter.swift */,
 				564A82191E29A0A4007B3E45 /* ViewUserViewController.swift */,
+				348EF8E91E4D5D6E009BEE0D /* ViewUserViewController.storyboard */,
 			);
 			path = ViewUser;
 			sourceTree = "<group>";
@@ -609,6 +612,7 @@
 				AD05A11CDACC1BF06D851B8F /* Oswald-Stencil.ttf in Resources */,
 				AD05AE82D1AD08523353103E /* Oswald-BoldItalic.ttf in Resources */,
 				AD05A4CA8A07A10765821981 /* Oswald-Medium.ttf in Resources */,
+				348EF8EA1E4D5D6E009BEE0D /* ViewUserViewController.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
