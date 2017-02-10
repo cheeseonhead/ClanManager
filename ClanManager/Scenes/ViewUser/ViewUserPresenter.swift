@@ -29,10 +29,10 @@ class ViewUserPresenter: ViewUserPresenterInput
 
     func presentUser(response: ViewUser.FetchUser.Response)
     {
-        _ = response.firstName + " " + response.lastName
         _ = "Town Hall level \(response.townHallLevel)"
 
-        let viewModel = ViewUser.FetchUser.ViewModel()
+        var viewModel = ViewUser.FetchUser.ViewModel()
+        viewModel.name = response.firstName + " " + response.lastName
         output.displayUser(viewModel: viewModel)
     }
 }
