@@ -37,12 +37,12 @@ struct ViewUser
 
         struct ViewModel
         {
-            var name: String
-            var experience: String
-            var townHallDescription: String
-            var leagueIcon: UIImage
-            var leagueName: String
-            var trophyDescription: String
+            var name: String = ""
+            var experience: String = ""
+            var townHallDescription: String = ""
+            var leagueIcon: UIImage!
+            var leagueName: String = ""
+            var trophyDescription: String = ""
         }
     }
 }
