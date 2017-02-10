@@ -39,12 +39,29 @@ class ViewUserViewControllerTests: QuickSpec
                 expect(outputSpy.fetchUserCalled).to(beTrue())
             }
         }
+
+        describe("Display Fetch User")
+        {
+            var defaultViewModel = ViewUser.FetchUser.ViewModel()
+
+            describe("Name Label")
+            {
+                it("should have same text as view model")
+                {
+                    defaultViewModel.name = "Just a test name"
+
+                    viewController.displayUser(viewModel: defaultViewModel)
+
+                    expect(viewController.nameLabel.text).to(equal(defaultViewModel.name))
+                }
+            }
+        }
     }
 
     func createViewController() -> ViewUserViewController
     {
         let bundle = Bundle.main
-        let storyboard = UIStoryboard(name: "ViewUserController", bundle: bundle)
+        let storyboard = UIStoryboard(name: "ViewUser", bundle: bundle)
         return storyboard.instantiateViewController(withIdentifier: "ViewUserViewController") as! ViewUserViewController
     }
 
