@@ -67,6 +67,11 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
     func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
         nameLabel.text = viewModel.name
+        townHallLabel.text = viewModel.townHallDescription
+        experienceLabel.text = viewModel.experience
+        leagueNameLabel.text = viewModel.leagueName
+        leagueIconImage.image = viewModel.leagueIcon
+        trophiesLabel.text = viewModel.trophyDescription
     }
 }
 
