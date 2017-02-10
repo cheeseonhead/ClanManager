@@ -123,7 +123,7 @@
                         <outlet property="leagueIconImage" destination="0eZ-vf-HeB" id="8Ws-x3-eHN"/>
                         <outlet property="leagueNameLabel" destination="Tq2-2T-A4q" id="76Z-94-gLa"/>
                         <outlet property="nameLabel" destination="EuA-05-TJo" id="gdb-cQ-J40"/>
-                        <outlet property="trohpiesLabel" destination="VtM-Ub-daT" id="vfl-YS-r9j"/>
+                        <outlet property="trophiesLabel" destination="VtM-Ub-daT" id="Ra7-IL-eJF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sV-eb-AqO" sceneMemberID="firstResponder"/>
