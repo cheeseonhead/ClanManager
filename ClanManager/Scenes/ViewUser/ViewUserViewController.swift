@@ -36,7 +36,7 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
     @IBOutlet weak var experienceLabel: UILabel!
     @IBOutlet weak var leagueIconImage: UIImageView!
     @IBOutlet weak var leagueNameLabel: UILabel!
-    @IBOutlet weak var trohpiesLabel: UILabel!
+    @IBOutlet weak var trophiesLabel: UILabel!
 
     // MARK: - Object lifecycle
 
@@ -67,7 +67,6 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
     func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
         nameLabel.text = viewModel.name
-        infoLabel.text = viewModel.info
     }
 }
 
