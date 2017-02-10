@@ -57,7 +57,7 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="TDx-Pp-Y2d" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="Z6M-Mf-Gk8"/>
                             <constraint firstItem="TDx-Pp-Y2d" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="fDH-0Q-W4b"/>

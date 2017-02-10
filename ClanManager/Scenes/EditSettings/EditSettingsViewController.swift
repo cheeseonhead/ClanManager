@@ -13,6 +13,7 @@ import UIKit
 protocol EditSettingsViewControllerInput
 {
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
+    func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
 }
 
 protocol EditSettingsViewControllerOutput
@@ -31,6 +32,8 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var errorLabelHeightConstraint: NSLayoutConstraint!
 
     // MARK: Object lifecycle
 
@@ -91,6 +94,8 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
 
     @IBAction func saveButtonPressed(_: UIButton)
     {
+        view.endEditing(true)
+
         var request = EditSettings.StoreSettings.Request()
         request.playerTag = self.playerTagTextField.text!
 
@@ -102,6 +107,18 @@ class EditSettingsViewController: UIViewController, EditSettingsViewControllerIn
     func displaySettings(viewModel: EditSettings.FetchSettings.ViewModel)
     {
         self.playerTagTextField.text = viewModel.currentPlayerTag
+    }
+
+    func displayStoreSettings(viewModel: EditSettings.StoreSettings.ViewModel)
+    {
+        errorLabelHeightConstraint.constant = (viewModel.errorLabelVisible) ? 15 : 0
+        errorLabel.isHidden = !viewModel.errorLabelVisible
+        errorLabel.text = viewModel.errorLabelText
+
+        if viewModel.isReadyToNavigate
+        {
+            router.dismissController()
+        }
     }
 
     override var prefersStatusBarHidden: Bool

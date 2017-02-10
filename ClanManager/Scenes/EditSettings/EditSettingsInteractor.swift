@@ -36,7 +36,7 @@ class EditSettingsInteractor: EditSettingsInteractorInput, EditSettingsDataSourc
 {
 
     var output: EditSettingsInteractorOutput!
-    var sessionWorker: SessionWorker! = SessionWorker(store: SessionMemStore())
+    var sessionWorker: SessionWorker! = SessionWorker(store: SessionMemStore.sharedInstance)
 
     // MARK: Business logic
 

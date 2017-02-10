@@ -21,7 +21,7 @@ class EditSettingsInteractorSpec: QuickSpec
             var outputSpy: EditSettingsInteractorOutputSpy!
             beforeEach
             {
-                workerSpy = SessionWorkerSpy(store: SessionMemStore())
+                workerSpy = SessionWorkerSpy(store: SessionMemStore.sharedInstance)
                 outputSpy = EditSettingsInteractorOutputSpy()
                 interactor = EditSettingsInteractor()
                 interactor.sessionWorker = workerSpy

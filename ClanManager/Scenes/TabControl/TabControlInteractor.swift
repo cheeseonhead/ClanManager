@@ -30,7 +30,7 @@ protocol TabControlDataReceiver {}
 class TabControlInteractor: TabControlInteractorInput, TabControlDataProvider, TabControlDataReceiver
 {
     var output: TabControlInteractorOutput!
-    var sessionWorker: SessionWorker! = SessionWorker(store: SessionMemStore())
+    var sessionWorker: SessionWorker! = SessionWorker(store: SessionMemStore.sharedInstance)
 
     var currentPlayerTag: String?
 
