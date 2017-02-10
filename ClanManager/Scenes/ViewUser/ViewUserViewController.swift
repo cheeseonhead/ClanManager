@@ -33,6 +33,10 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var experienceLabel: UILabel!
+    @IBOutlet weak var leagueIconImage: UIImageView!
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    @IBOutlet weak var trohpiesLabel: UILabel!
 
     // MARK: - Object lifecycle
 
