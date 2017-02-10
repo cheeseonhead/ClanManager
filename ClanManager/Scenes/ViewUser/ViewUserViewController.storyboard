@@ -6,6 +6,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -30,18 +32,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k7W-vb-xzb" userLabel="Center Holder">
-                                <rect key="frame" x="65" y="293.5" width="246.5" height="80.5"/>
+                                <rect key="frame" x="64" y="293" width="247" height="81"/>
                                 <subviews>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EuA-05-TJo">
-                                        <rect key="frame" x="0.0" y="0.0" width="246.5" height="49"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="247" height="49"/>
                                         <fontDescription key="fontDescription" name="Oswald-DemiBold" family="Oswald" pointSize="36"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="This scene is for viewing the user info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h65-X6-5ry">
-                                        <rect key="frame" x="0.0" y="57" width="246.5" height="23.5"/>
+                                        <rect key="frame" x="0.0" y="57" width="247" height="24"/>
                                         <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -56,11 +58,20 @@
                                     <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="EuA-05-TJo" secondAttribute="width" id="rv3-Gg-C0X"/>
                                 </constraints>
                             </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_league_gold_ii" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-vf-HeB">
+                                <rect key="frame" x="16" y="20" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="hgg-h0-zah"/>
+                                    <constraint firstAttribute="width" secondItem="0eZ-vf-HeB" secondAttribute="height" multiplier="1:1" id="nBH-fk-StC"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" red="0.47450980392156861" green="0.52156862745098043" blue="0.61960784313725492" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.60784313725490191" green="0.69019607843137254" blue="0.80000000000000004" alpha="0.28444840604026844" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="k7W-vb-xzb" firstAttribute="centerY" secondItem="ugI-mq-0Ck" secondAttribute="centerY" id="GKN-fw-8kx"/>
                             <constraint firstItem="k7W-vb-xzb" firstAttribute="centerX" secondItem="ugI-mq-0Ck" secondAttribute="centerX" id="SvP-bm-tS0"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0eZ-vf-HeB" secondAttribute="leading" id="ZAP-Gr-w8u"/>
+                            <constraint firstItem="0eZ-vf-HeB" firstAttribute="top" secondItem="6FD-eV-Xje" secondAttribute="bottom" constant="20" id="c03-ke-F60"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="User" image="first" id="zSs-zt-7F0"/>
@@ -73,10 +84,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4sV-eb-AqO" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1838" y="-508"/>
+            <point key="canvasLocation" x="1837.5999999999999" y="-508.69565217391306"/>
         </scene>
     </scenes>
     <resources>
         <image name="first" width="30" height="30"/>
+        <image name="icon_league_gold_ii" width="288" height="288"/>
     </resources>
 </document>
