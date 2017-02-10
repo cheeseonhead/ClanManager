@@ -36,19 +36,19 @@
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="121.5"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Player Tag" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="iMR-nl-efM">
-                                                <rect key="frame" x="40.5" y="38.5" width="239" height="30"/>
+                                                <rect key="frame" x="41" y="38.5" width="239" height="30"/>
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="17"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Please enter your player tag below:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GLF-p6-jEx">
-                                                <rect key="frame" x="41" y="5" width="239" height="23.5"/>
+                                                <rect key="frame" x="40.5" y="5" width="239" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="Oswald-DemiBold" family="Oswald" pointSize="17"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QDF-Ot-D1l">
-                                                <rect key="frame" x="137.5" y="30.5" width="46.5" height="0.0"/>
+                                                <rect key="frame" x="137" y="30.5" width="46.5" height="0.0"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" id="WVE-Zw-UWZ"/>
                                                 </constraints>

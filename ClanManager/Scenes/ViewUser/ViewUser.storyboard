@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Oswald-DemiBold.ttf">
+            <string>Oswald-DemiBold</string>
+        </array>
+        <array key="Oswald-Heavy.ttf">
+            <string>Oswald-Heavy</string>
+        </array>
+        <array key="Oswald-Medium.ttf">
+            <string>Oswald-Medium</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View User View Controller-->
+        <scene sceneID="STU-YT-3bD">
+            <objects>
+                <viewController storyboardIdentifier="ViewUserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FrS-pf-Mqy" userLabel="View User View Controller" customClass="ViewUserViewController" customModule="ClanManager" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6FD-eV-Xje"/>
+                        <viewControllerLayoutGuide type="bottom" id="iQX-mE-zCf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ugI-mq-0Ck">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_league_gold_ii" translatesAutoresizingMaskIntoConstraints="NO" id="0eZ-vf-HeB" userLabel="League Icon">
+                                <rect key="frame" x="16" y="108" width="98" height="98"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="0eZ-vf-HeB" secondAttribute="height" multiplier="1:1" id="QU3-G0-2t7"/>
+                                    <constraint firstAttribute="width" constant="98" id="tR3-Oh-Z7a"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="128" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="6H0-e4-Uuh" userLabel="Exp Label">
+                                <rect key="frame" x="16" y="20" width="132" height="74"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="74" id="3M1-qV-qrb"/>
+                                    <constraint firstAttribute="width" constant="132" id="Jmf-du-iJB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Oswald-Heavy" family="Oswald" pointSize="80"/>
+                                <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2e2-kK-ucP">
+                                <rect key="frame" x="147.5" y="16" width="211.5" height="82"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Jeff Wu" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="EuA-05-TJo">
+                                        <rect key="frame" x="51.5" y="0.0" width="108.5" height="52"/>
+                                        <fontDescription key="fontDescription" name="Oswald-DemiBold" family="Oswald" pointSize="38"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Townhall Level 10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h65-X6-5ry">
+                                        <rect key="frame" x="31" y="52" width="150.5" height="30"/>
+                                        <fontDescription key="fontDescription" name="Oswald-Medium" family="Oswald" pointSize="22"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="EuA-05-TJo" firstAttribute="top" secondItem="2e2-kK-ucP" secondAttribute="top" id="TK8-Tp-1ZD"/>
+                                    <constraint firstItem="EuA-05-TJo" firstAttribute="centerX" secondItem="2e2-kK-ucP" secondAttribute="centerX" id="b1k-Xw-2wz"/>
+                                    <constraint firstItem="h65-X6-5ry" firstAttribute="top" secondItem="EuA-05-TJo" secondAttribute="bottom" id="dN9-Af-hZp"/>
+                                    <constraint firstItem="h65-X6-5ry" firstAttribute="centerX" secondItem="2e2-kK-ucP" secondAttribute="centerX" id="hAe-l4-sqm"/>
+                                    <constraint firstAttribute="bottom" secondItem="h65-X6-5ry" secondAttribute="bottom" id="nts-bd-mIM"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tdj-WA-W9h">
+                                <rect key="frame" x="114" y="118.5" width="245" height="77"/>
+                                <subviews>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Gold League II" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Tq2-2T-A4q" userLabel="League Name Label">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Oswald-DemiBold" family="Oswald" pointSize="28"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Trohphies: 1313" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="VtM-Ub-daT" userLabel="League Name Label">
+                                        <rect key="frame" x="0.0" y="38.5" width="180.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="Oswald-DemiBold" family="Oswald" pointSize="28"/>
+                                        <color key="textColor" red="0.47450980390000003" green="0.52156862749999999" blue="0.61960784310000006" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VtM-Ub-daT" firstAttribute="top" secondItem="Tq2-2T-A4q" secondAttribute="bottom" id="6mv-fO-Yva"/>
+                                    <constraint firstAttribute="bottom" secondItem="VtM-Ub-daT" secondAttribute="bottom" id="AHc-ka-F5B"/>
+                                    <constraint firstItem="VtM-Ub-daT" firstAttribute="leading" secondItem="tdj-WA-W9h" secondAttribute="leading" id="Azi-bO-Ojn"/>
+                                    <constraint firstItem="Tq2-2T-A4q" firstAttribute="leading" secondItem="tdj-WA-W9h" secondAttribute="leading" id="GFB-qN-mBb"/>
+                                    <constraint firstItem="Tq2-2T-A4q" firstAttribute="top" secondItem="tdj-WA-W9h" secondAttribute="top" id="hmK-nC-bZE"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.82745098039215681" green="0.87450980392156863" blue="0.97254901960784312" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="6H0-e4-Uuh" secondAttribute="leading" id="0Ho-UO-Z4F"/>
+                            <constraint firstItem="6H0-e4-Uuh" firstAttribute="top" secondItem="6FD-eV-Xje" secondAttribute="bottom" constant="20" id="1Cr-Q6-htB"/>
+                            <constraint firstItem="tdj-WA-W9h" firstAttribute="centerY" secondItem="0eZ-vf-HeB" secondAttribute="centerY" id="3gQ-Vm-3Zo"/>
+                            <constraint firstItem="2e2-kK-ucP" firstAttribute="leading" secondItem="6H0-e4-Uuh" secondAttribute="trailing" id="6Zg-d0-p1b"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="tdj-WA-W9h" secondAttribute="trailing" id="9EH-t1-aum"/>
+                            <constraint firstItem="2e2-kK-ucP" firstAttribute="centerY" secondItem="6H0-e4-Uuh" secondAttribute="centerY" id="CcQ-XP-yN9"/>
+                            <constraint firstItem="0eZ-vf-HeB" firstAttribute="top" secondItem="6H0-e4-Uuh" secondAttribute="bottom" constant="14" id="H9W-R9-O6U"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="0eZ-vf-HeB" secondAttribute="leading" id="VKb-PP-cCg"/>
+                            <constraint firstItem="tdj-WA-W9h" firstAttribute="leading" secondItem="0eZ-vf-HeB" secondAttribute="trailing" id="cLc-eb-5gJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2e2-kK-ucP" secondAttribute="trailing" id="sqx-0L-iFa"/>
+                        </constraints>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="User" image="first" id="zSs-zt-7F0"/>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="experienceLabel" destination="6H0-e4-Uuh" id="1YD-bS-L8I"/>
+                        <outlet property="leagueIconImage" destination="0eZ-vf-HeB" id="8Ws-x3-eHN"/>
+                        <outlet property="leagueNameLabel" destination="Tq2-2T-A4q" id="76Z-94-gLa"/>
+                        <outlet property="nameLabel" destination="EuA-05-TJo" id="gdb-cQ-J40"/>
+                        <outlet property="townHallLabel" destination="h65-X6-5ry" id="CBa-0P-7Tu"/>
+                        <outlet property="trophiesLabel" destination="VtM-Ub-daT" id="Ra7-IL-eJF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4sV-eb-AqO" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1837.5999999999999" y="-508.69565217391306"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="first" width="30" height="30"/>
+        <image name="icon_league_gold_ii" width="288" height="288"/>
+    </resources>
+</document>

@@ -79,3 +79,11 @@ fileprivate extension TabControlViewController
         }
     }
 }
+
+extension TabControlViewController
+{
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
+    }
+}

@@ -32,7 +32,11 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
     // MARK: - Outlets
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var townHallLabel: UILabel!
+    @IBOutlet weak var experienceLabel: UILabel!
+    @IBOutlet weak var leagueIconImage: UIImageView!
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    @IBOutlet weak var trophiesLabel: UILabel!
 
     // MARK: - Object lifecycle
 
@@ -63,6 +67,18 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
     func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
         nameLabel.text = viewModel.name
-        infoLabel.text = viewModel.info
+        townHallLabel.text = viewModel.townHallDescription
+        experienceLabel.text = viewModel.experience
+        leagueNameLabel.text = viewModel.leagueName
+        leagueIconImage.image = viewModel.leagueIcon
+        trophiesLabel.text = viewModel.trophyDescription
+    }
+}
+
+extension ViewUserViewController
+{
+    override var prefersStatusBarHidden: Bool
+    {
+        return true
     }
 }

@@ -61,7 +61,6 @@ class ViewUserPresenterTests: XCTestCase
         // Then
         let result = outputSpy.viewUser_fetchUser_viewModel!
         XCTAssertEqual(result.name, "John Doe")
-        XCTAssertEqual(result.info, "Town Hall level 4")
     }
 }
 

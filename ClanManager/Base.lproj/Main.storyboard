@@ -17,62 +17,15 @@
             </objects>
             <point key="canvasLocation" x="728" y="-529"/>
         </scene>
-        <!--View User View Controller-->
-        <scene sceneID="hNz-n2-bh7">
+        <!--ViewUserViewController-->
+        <scene sceneID="PrE-1u-85m">
             <objects>
-                <viewController storyboardIdentifier="ViewUserViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="9pv-A4-QxB" userLabel="View User View Controller" customClass="ViewUserViewController" customModule="ClanManager" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ia1-K6-d13"/>
-                        <viewControllerLayoutGuide type="bottom" id="4ug-Mw-9AY"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TDx-Pp-Y2d" userLabel="Center Holder">
-                                <rect key="frame" x="38.5" y="250.5" width="243.5" height="67"/>
-                                <subviews>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Name" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="KQZ-1w-vlD">
-                                        <rect key="frame" x="0.0" y="0.0" width="243.5" height="42"/>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="This scene is for viewing the user info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A5M-7J-77L">
-                                        <rect key="frame" x="0.0" y="50" width="243.5" height="17"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" secondItem="A5M-7J-77L" secondAttribute="width" id="7dn-Ix-Dno"/>
-                                    <constraint firstAttribute="width" priority="999" id="GyJ-yk-67R"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="top" secondItem="TDx-Pp-Y2d" secondAttribute="top" id="gmj-Mv-mx7"/>
-                                    <constraint firstItem="A5M-7J-77L" firstAttribute="top" secondItem="KQZ-1w-vlD" secondAttribute="bottom" constant="8" id="hhI-Ro-Cih"/>
-                                    <constraint firstAttribute="bottom" secondItem="A5M-7J-77L" secondAttribute="bottom" id="lSV-7A-jYS"/>
-                                    <constraint firstItem="A5M-7J-77L" firstAttribute="centerX" secondItem="TDx-Pp-Y2d" secondAttribute="centerX" id="oAt-jN-6X0"/>
-                                    <constraint firstItem="KQZ-1w-vlD" firstAttribute="centerX" secondItem="TDx-Pp-Y2d" secondAttribute="centerX" id="qbp-TJ-kyk"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="KQZ-1w-vlD" secondAttribute="width" id="vP6-Z2-tVl"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" red="0.85490196078431369" green="0.85490196078431369" blue="0.85490196078431369" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="TDx-Pp-Y2d" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="Z6M-Mf-Gk8"/>
-                            <constraint firstItem="TDx-Pp-Y2d" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="fDH-0Q-W4b"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="User" image="first" id="acW-dT-cKf"/>
-                    <nil key="simulatedStatusBarMetrics"/>
-                    <connections>
-                        <outlet property="infoLabel" destination="A5M-7J-77L" id="MBm-KY-JKv"/>
-                        <outlet property="nameLabel" destination="KQZ-1w-vlD" id="ZkY-FW-d4z"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardIdentifier="ViewUserViewController" storyboardName="ViewUser" referencedIdentifier="ViewUserViewController" id="2c3-HK-qgA" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="aZx-Ph-Bd9"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVS-nN-U28" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1790.625" y="-490.42968749999994"/>
+            <point key="canvasLocation" x="1196" y="-108"/>
         </scene>
         <!--Second-->
         <scene sceneID="wg7-f3-ORb">
@@ -123,12 +76,11 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
-                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                         <segue destination="8Lc-a0-NIR" kind="presentation" identifier="presentEditSettingsViewController" modalPresentationStyle="formSheet" modalTransitionStyle="coverVertical" id="0Or-cq-B1u"/>
+                        <segue destination="2c3-HK-qgA" kind="relationship" relationship="viewControllers" id="v1x-e7-Xsl"/>
+                        <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
@@ -137,7 +89,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="first" width="30" height="30"/>
         <image name="second" width="30" height="30"/>
     </resources>
 </document>
