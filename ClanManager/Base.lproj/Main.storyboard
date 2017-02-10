@@ -20,7 +20,7 @@
         <!--ViewUserViewController-->
         <scene sceneID="PrE-1u-85m">
             <objects>
-                <viewControllerPlaceholder storyboardIdentifier="ViewUserViewController" storyboardName="ViewUserViewController" referencedIdentifier="ViewUserViewController" id="2c3-HK-qgA" sceneMemberID="viewController">
+                <viewControllerPlaceholder storyboardIdentifier="ViewUserViewController" storyboardName="ViewUser" referencedIdentifier="ViewUserViewController" id="2c3-HK-qgA" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="aZx-Ph-Bd9"/>
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JVS-nN-U28" userLabel="First Responder" sceneMemberID="firstResponder"/>
