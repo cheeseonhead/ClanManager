@@ -32,7 +32,7 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
     // MARK: - Outlets
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var townHallLabel: UILabel!
     @IBOutlet weak var experienceLabel: UILabel!
     @IBOutlet weak var leagueIconImage: UIImageView!
     @IBOutlet weak var leagueNameLabel: UILabel!

@@ -119,10 +119,10 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="experienceLabel" destination="6H0-e4-Uuh" id="1YD-bS-L8I"/>
-                        <outlet property="infoLabel" destination="h65-X6-5ry" id="47L-CG-w0A"/>
                         <outlet property="leagueIconImage" destination="0eZ-vf-HeB" id="8Ws-x3-eHN"/>
                         <outlet property="leagueNameLabel" destination="Tq2-2T-A4q" id="76Z-94-gLa"/>
                         <outlet property="nameLabel" destination="EuA-05-TJo" id="gdb-cQ-J40"/>
+                        <outlet property="townHallLabel" destination="h65-X6-5ry" id="CBa-0P-7Tu"/>
                         <outlet property="trophiesLabel" destination="VtM-Ub-daT" id="Ra7-IL-eJF"/>
                     </connections>
                 </viewController>
