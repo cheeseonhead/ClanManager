@@ -31,6 +31,8 @@ class ViewUserPresenter: ViewUserPresenterInput
     {
         let name = response.firstName + " " + response.lastName
         let info = "Town Hall level \(response.townHallLevel)"
-        output.displayUser(viewModel: ViewUser.FetchUser.ViewModel(name: name, info: info))
+
+        var viewModel = ViewUser.FetchUser.ViewModel()
+        output.displayUser(viewModel: viewModel)
     }
 }
