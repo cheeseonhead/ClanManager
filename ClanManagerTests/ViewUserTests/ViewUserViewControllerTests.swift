@@ -55,6 +55,66 @@ class ViewUserViewControllerTests: QuickSpec
                     expect(viewController.nameLabel.text).to(equal(defaultViewModel.name))
                 }
             }
+
+            describe("Town Hall Label")
+            {
+                it("should have same text as view model")
+                {
+                    defaultViewModel.townHallDescription = "Toooooooownhall 10"
+
+                    viewController.displayUser(viewModel: defaultViewModel)
+
+                    expect(viewController.townHallLabel.text).to(equal(defaultViewModel.townHallDescription))
+                }
+            }
+
+            describe("Experience Label")
+            {
+                it("should have the same text as view model")
+                {
+                    defaultViewModel.experience = "128"
+
+                    viewController.displayUser(viewModel: defaultViewModel)
+
+                    expect(viewController.experienceLabel.text).to(equal(defaultViewModel.experience))
+                }
+            }
+
+            describe("League Icon")
+            {
+                it("should have the same image as the view model")
+                {
+                    defaultViewModel.leagueIcon = UIImage()
+
+                    viewController.displayUser(viewModel: defaultViewModel)
+
+                    expect(viewController.leagueIconImage.image).to(equal(defaultViewModel.leagueIcon))
+                }
+            }
+
+            describe("League Name")
+            {
+                it("should have the same text as the view model")
+                {
+                    defaultViewModel.leagueName = "Gold II"
+
+                    viewController.displayUser(viewModel: defaultViewModel)
+
+                    expect(viewController.leagueNameLabel.text).to(equal(defaultViewModel.leagueName))
+                }
+            }
+
+            describe("Trophies Label")
+            {
+                it("should have the same text as the view model")
+                {
+                    defaultViewModel.trophyDescription = "Trohpies: 12392"
+
+                    viewController.displayUser(viewModel: defaultViewModel)
+
+                    expect(viewController.trophiesLabel.text).to(equal(defaultViewModel.trophyDescription))
+                }
+            }
         }
     }
 
