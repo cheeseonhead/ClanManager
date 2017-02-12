@@ -12,6 +12,8 @@ if [ $# -eq 0 ]
         TARGET_BRANCH="$1"
 fi
 
+git push -v --tags --set-upstream origin refs/heads/$TARGET_BRANCH:refs/heads/$TARGET_BRANCH
+
 # get current branch
 CUR_BRANCH=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 CUR_BRANCH_LONG=$(git symbolic-ref HEAD | sed 's!refs\/heads\/!!')
@@ -24,6 +26,5 @@ Item         | Status  | Build Status
 ------------ | ------- | ------------
 [IOS-$CUR_BRANCH](https://github.com/cheeseonhead/ClanManager/issues/$CUR_BRANCH) | Done    | [![ISSUE-$CUR_BRANCH](https://dashboard.buddybuild.com/api/statusImage?appID=5879f9377457550100e35017&branch=$CUR_BRANCH_LONG&build=latest)](https://dashboard.buddybuild.com/apps/5879f9377457550100e35017/build/latest?branch=$CUR_BRANCH_LONG)" > testfile
 
- -v --tags --set-upstream origin refs/heads/$TARGET_BRANCH:refs/heads/$TARGET_BRANCH
 hub pull-request -F testFile -b cheeseonhead:$TARGET_BRANCH
 rm testFile
