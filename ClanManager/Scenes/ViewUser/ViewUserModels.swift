@@ -25,6 +25,7 @@ struct ViewUser
         {
             var firstName: String = ""
             var lastName: String = ""
+            var experienceLevel: Int = 0
             var townHallLevel: Int = 0
             var leagueIconURL: String?
             var leagueName: String = ""
