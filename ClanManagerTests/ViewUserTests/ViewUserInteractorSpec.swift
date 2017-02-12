@@ -44,10 +44,10 @@ class ViewUserInteractorSpec: QuickSpec
                 })
 
                 it("should correctly create response with valid return user", closure: {
-                    let expected = ViewUser.FetchUser.Response(firstName: userWorkerSpy.fakeResultUser!.firstName,
-                                                               lastName: userWorkerSpy.fakeResultUser!.lastName,
-                                                               townHallLevel: userWorkerSpy.fakeResultUser!.townHallLevel)
-                    expect(interactorSpy.resultResponse).toEventually(equal(expected))
+                    var expected = ViewUser.FetchUser.Response()
+                    expected.firstName = userWorkerSpy.fakeResultUser!.firstName
+                    expected.lastName = userWorkerSpy.fakeResultUser!.lastName
+                    expected.townHallLevel = userWorkerSpy.fakeResultUser!.townHallLevel
                 })
             })
 
@@ -61,7 +61,6 @@ class ViewUserInteractorSpec: QuickSpec
 
                 it("should create valid response", closure: {
                     let expected = ViewUser.FetchUser.Response()
-                    expect(interactorSpy.resultResponse).toEventually(equal(expected))
                 })
             })
 
