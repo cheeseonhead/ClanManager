@@ -10,9 +10,10 @@
 //
 
 @testable import ClanManager
-import XCTest
+import Quick
+import Nimble
 
-class ViewUserPresenterTests: XCTestCase
+class ViewUserPresenterTests: QuickSpec
 {
     // MARK: - Subject under test
 
@@ -42,7 +43,7 @@ class ViewUserPresenterTests: XCTestCase
         presenter.output = outputSpy
 
         // When
-        presenter.presentUser(response: ViewUser.FetchUser.Response(firstName: "", lastName: "", townHallLevel: 0))
+        presenter.presentUser(response: ViewUser.FetchUser.Response())
 
         // Then
         XCTAssertTrue(outputSpy.displayUserCalled, "Should trigger display user on the output")
@@ -52,7 +53,7 @@ class ViewUserPresenterTests: XCTestCase
     {
         // Given
         let outputSpy = ViewUserPresenterOutputSpy()
-        let response = ViewUser.FetchUser.Response(firstName: "John", lastName: "Doe", townHallLevel: 4)
+        let response = ViewUser.FetchUser.Response()
         presenter.output = outputSpy
 
         // When
