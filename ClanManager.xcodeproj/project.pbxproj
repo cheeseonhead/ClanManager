@@ -267,6 +267,7 @@
 				56407BB81E29864000970F81 /* LaunchScreen.storyboard */,
 				56407BBB1E29864000970F81 /* Info.plist */,
 				8405C803961ECF44AB678F0A /* Services */,
+				AD05A8F5CFCDC3D2B5923AEC /* Resource */,
 			);
 			path = ClanManager;
 			sourceTree = "<group>";
@@ -419,6 +420,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AD05A08892CCAA348745A902 /* LocalizableStrings */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalizableStrings;
+			sourceTree = "<group>";
+		};
 		AD05A227BAFDD4C5E5F22074 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -468,6 +476,14 @@
 				AD05A4AC73DE61BED681F50B /* BaseViewController.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		AD05A8F5CFCDC3D2B5923AEC /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				AD05A08892CCAA348745A902 /* LocalizableStrings */,
+			);
+			path = Resource;
 			sourceTree = "<group>";
 		};
 		AD05ADF609803FEEEA9CA849 /* TabControlTests */ = {
