@@ -70,15 +70,13 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
         townHallLabel.text = viewModel.townHallDescription
         experienceLabel.text = viewModel.experience
         leagueNameLabel.text = viewModel.leagueName
-        leagueIconImage.image = viewModel.leagueIcon
         trophiesLabel.text = viewModel.trophyDescription
-    }
-}
 
-extension ViewUserViewController
-{
-    override var prefersStatusBarHidden: Bool
-    {
-        return true
+        guard viewModel.leagueIconURL != nil else { return }
+        let iconURL = URL(string: viewModel.leagueIconURL!)
+        if let iconURL = iconURL
+        {
+            leagueIconImage.loadFromURL(url: iconURL)
+        }
     }
 }

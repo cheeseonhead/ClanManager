@@ -12,6 +12,8 @@ if [ $# -eq 0 ]
         TARGET_BRANCH="$1"
 fi
 
+git push -v --tags --set-upstream origin refs/heads/$TARGET_BRANCH:refs/heads/$TARGET_BRANCH
+
 # get current branch
 CUR_BRANCH=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
 CUR_BRANCH_LONG=$(git symbolic-ref HEAD | sed 's!refs\/heads\/!!')

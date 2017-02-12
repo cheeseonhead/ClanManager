@@ -36,7 +36,7 @@ struct ViewUser
             var name: String = ""
             var experience: String = ""
             var townHallDescription: String = ""
-            var leagueIcon: UIImage!
+            var leagueIconURL: String?
             var leagueName: String = ""
             var trophyDescription: String = ""
         }
