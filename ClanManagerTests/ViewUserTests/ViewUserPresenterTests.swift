@@ -9,63 +9,31 @@
 //  clean architecture to your iOS and Mac projects, see http://clean-swift.com
 //
 
-@testable import ClanManager
 import Quick
+@testable import ClanManager
 import Nimble
 
 class ViewUserPresenterTests: QuickSpec
 {
-    // MARK: - Subject under test
-
-    var presenter: ViewUserPresenter!
-
-    // MARK: - Test lifecycle
-
-    override func setUp()
+    override func spec()
     {
-        super.setUp()
-        setupViewUserPresenter()
-    }
+        var presenter: ViewUserPresenter!
+        var outputSpy: OutputSpy!
 
-    // MARK: - Test setup
+        beforeEach
+        {
+            present = ViewUserPresenter()
+            outputSpy = OutputSpy()
+        }
 
-    func setupViewUserPresenter()
-    {
-        presenter = ViewUserPresenter()
-    }
+        describe("Fetch User")
+        {
 
-    // MARK: - Tests
-
-    func testPresentUserTriggersDisplayUser()
-    {
-        // Given
-        let outputSpy = ViewUserPresenterOutputSpy()
-        presenter.output = outputSpy
-
-        // When
-        presenter.presentUser(response: ViewUser.FetchUser.Response())
-
-        // Then
-        XCTAssertTrue(outputSpy.displayUserCalled, "Should trigger display user on the output")
-    }
-
-    func testPresenterSendsCorrectViewModel()
-    {
-        // Given
-        let outputSpy = ViewUserPresenterOutputSpy()
-        let response = ViewUser.FetchUser.Response()
-        presenter.output = outputSpy
-
-        // When
-        presenter.presentUser(response: response)
-
-        // Then
-        let result = outputSpy.viewUser_fetchUser_viewModel!
-        XCTAssertEqual(result.name, "John Doe")
+        }
     }
 }
 
-fileprivate class ViewUserPresenterOutputSpy: ViewUserPresenterOutput
+fileprivate class OutputSpy: ViewUserPresenterOutput
 {
     var displayUserCalled = false
     var viewUser_fetchUser_viewModel: ViewUser.FetchUser.ViewModel!
