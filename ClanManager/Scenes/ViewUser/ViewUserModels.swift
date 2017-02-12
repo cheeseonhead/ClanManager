@@ -21,18 +21,14 @@ struct ViewUser
             var id: String
         }
 
-        struct Response: Equatable
+        struct Response
         {
             var firstName: String = ""
             var lastName: String = ""
             var townHallLevel: Int = 0
-
-            static func ==(lhs: Response, rhs: Response) -> Bool
-            {
-                return lhs.firstName == rhs.firstName &&
-                    lhs.lastName == rhs.lastName &&
-                    lhs.townHallLevel == rhs.townHallLevel
-            }
+            var leagueIconURL: String?
+            var leagueName: String = ""
+            var trophyCount: Int = 0
         }
 
         struct ViewModel
