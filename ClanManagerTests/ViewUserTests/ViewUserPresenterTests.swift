@@ -56,6 +56,56 @@ class ViewUserPresenterTests: QuickSpec
                     expect(outputSpy.userViewModelGiven.townHallDescription).to(equal(expected))
                 }
             }
+
+            describe("Experience")
+            {
+                it("should be from the experience")
+                {
+                    defaultResponse.experienceLevel = 123
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    var expected = "\(defaultResponse.experienceLevel)"
+                    expect(outputSpy.userViewModelGiven.experience).to(equal(expected))
+                }
+            }
+
+            describe("League Icon URL")
+            {
+                it("should be the same as whatever given")
+                {
+                    defaultResponse.leagueIconURL = "This is beautiful URL"
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    expect(outputSpy.userViewModelGiven.leagueIconURL).to(equal(defaultResponse.leagueIconURL))
+                }
+            }
+
+            describe("League Name")
+            {
+                it("should have the correct league name")
+                {
+                    defaultResponse.leagueName = "Gold League II"
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    expect(outputSpy.userViewModelGiven.leagueName).to(equal(defaultResponse.leagueName))
+                }
+            }
+
+            describe("Trophies Description")
+            {
+                it("should derive from trohpy count")
+                {
+                    defaultResponse.trophyCount = 2139
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    let expected = String.localizedStringWithFormat(NSLocalizedString("Trophies_Description", comment: ""), defaultResponse.trophyCount)
+                    expect(outputSpy.userViewModelGiven.trophyDescription).to(equal(expected))
+                }
+            }
         }
     }
 }
