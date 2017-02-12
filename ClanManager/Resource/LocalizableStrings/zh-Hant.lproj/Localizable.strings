@@ -6,4 +6,4 @@
   Copyright © 2017 Cheeseonhead. All rights reserved.
 */
 
-TownHall_Level_Description = "Townhall Level %d"
+TownHall_Level_Description = "大本營%d級";
