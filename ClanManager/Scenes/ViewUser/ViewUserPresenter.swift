@@ -34,6 +34,7 @@ class ViewUserPresenter: ViewUserPresenterInput
         var viewModel = ViewUser.FetchUser.ViewModel()
         viewModel.name = response.firstName + " " + response.lastName
         viewModel.leagueIconURL = "https://api-assets.clashofclans.com/leagues/288/Y6CveuHmPM_oiOic2Yet0rYL9AFRYW0WA0u2e44-YbM.png"
+        viewModel.townHallDescription = String.localizedStringWithFormat(NSLocalizedString("TownHall_Level_Description", comment: ""), response.townHallLevel)
         output.displayUser(viewModel: viewModel)
     }
 }
