@@ -22,13 +22,40 @@ class ViewUserPresenterTests: QuickSpec
 
         beforeEach
         {
-            present = ViewUserPresenter()
+            presenter = ViewUserPresenter()
             outputSpy = OutputSpy()
+            presenter.output = outputSpy
         }
 
         describe("Fetch User")
         {
+            var defaultResponse = ViewUser.FetchUser.Response()
 
+            describe("Name")
+            {
+                it("should be combination of first name and last name")
+                {
+                    defaultResponse.firstName = "John"
+                    defaultResponse.lastName = "Cena"
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    expect(outputSpy.userViewModelGiven.name).to(equal("John Cena"))
+                }
+            }
+
+            describe("Town Hall Description")
+            {
+                it("should use the town hall level")
+                {
+                    defaultResponse.townHallLevel = 5
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    var expected = String.localizedStringWithFormat(NSLocalizedString("TownHall_Level_Description", comment: ""), defaultResponse.townHallLevel)
+                    expect(outputSpy.userViewModelGiven.townHallDescription).to(equal(expected))
+                }
+            }
         }
     }
 }
@@ -36,11 +63,11 @@ class ViewUserPresenterTests: QuickSpec
 fileprivate class OutputSpy: ViewUserPresenterOutput
 {
     var displayUserCalled = false
-    var viewUser_fetchUser_viewModel: ViewUser.FetchUser.ViewModel!
+    var userViewModelGiven: ViewUser.FetchUser.ViewModel!
 
     func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
         displayUserCalled = true
-        viewUser_fetchUser_viewModel = viewModel
+        userViewModelGiven = viewModel
     }
 }
