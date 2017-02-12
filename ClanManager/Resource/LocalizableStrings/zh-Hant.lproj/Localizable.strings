@@ -1,0 +1,11 @@
+/*
+  Localizable.strings
+  ClanManager
+
+  Created by Cheese Onhead on 2/12/17.
+  Copyright © 2017 Cheeseonhead. All rights reserved.
+*/
+
+TownHall_Level_Description = "大本營%d級";
+
+"Trophies_Description" = "Trophies_Description";

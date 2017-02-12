@@ -58,7 +58,7 @@ fileprivate extension ViewUserInteractor
                 self.output.presentUser(response: ViewUser.FetchUser.Response())
                 return
             }
-            let response = ViewUser.FetchUser.Response(firstName: user.firstName, lastName: user.lastName, townHallLevel: user.townHallLevel)
+            let response = ViewUser.FetchUser.Response()
             self.output.presentUser(response: response)
         })
     }

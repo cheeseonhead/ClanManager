@@ -9,69 +9,115 @@
 //  clean architecture to your iOS and Mac projects, see http://clean-swift.com
 //
 
+import Quick
 @testable import ClanManager
-import XCTest
+import Nimble
 
-class ViewUserPresenterTests: XCTestCase
+class ViewUserPresenterTests: QuickSpec
 {
-    // MARK: - Subject under test
-
-    var presenter: ViewUserPresenter!
-
-    // MARK: - Test lifecycle
-
-    override func setUp()
+    override func spec()
     {
-        super.setUp()
-        setupViewUserPresenter()
-    }
+        var presenter: ViewUserPresenter!
+        var outputSpy: OutputSpy!
 
-    // MARK: - Test setup
+        beforeEach
+        {
+            presenter = ViewUserPresenter()
+            outputSpy = OutputSpy()
+            presenter.output = outputSpy
+        }
 
-    func setupViewUserPresenter()
-    {
-        presenter = ViewUserPresenter()
-    }
+        describe("Fetch User")
+        {
+            var defaultResponse = ViewUser.FetchUser.Response()
 
-    // MARK: - Tests
+            describe("Name")
+            {
+                it("should be combination of first name and last name")
+                {
+                    defaultResponse.firstName = "John"
+                    defaultResponse.lastName = "Cena"
 
-    func testPresentUserTriggersDisplayUser()
-    {
-        // Given
-        let outputSpy = ViewUserPresenterOutputSpy()
-        presenter.output = outputSpy
+                    presenter.presentUser(response: defaultResponse)
 
-        // When
-        presenter.presentUser(response: ViewUser.FetchUser.Response(firstName: "", lastName: "", townHallLevel: 0))
+                    expect(outputSpy.userViewModelGiven.name).to(equal("John Cena"))
+                }
+            }
 
-        // Then
-        XCTAssertTrue(outputSpy.displayUserCalled, "Should trigger display user on the output")
-    }
+            describe("Town Hall Description")
+            {
+                it("should use the town hall level")
+                {
+                    defaultResponse.townHallLevel = 5
 
-    func testPresenterSendsCorrectViewModel()
-    {
-        // Given
-        let outputSpy = ViewUserPresenterOutputSpy()
-        let response = ViewUser.FetchUser.Response(firstName: "John", lastName: "Doe", townHallLevel: 4)
-        presenter.output = outputSpy
+                    presenter.presentUser(response: defaultResponse)
 
-        // When
-        presenter.presentUser(response: response)
+                    var expected = String.localizedStringWithFormat(NSLocalizedString("TownHall_Level_Description", comment: ""), defaultResponse.townHallLevel)
+                    expect(outputSpy.userViewModelGiven.townHallDescription).to(equal(expected))
+                }
+            }
 
-        // Then
-        let result = outputSpy.viewUser_fetchUser_viewModel!
-        XCTAssertEqual(result.name, "John Doe")
+            describe("Experience")
+            {
+                it("should be from the experience")
+                {
+                    defaultResponse.experienceLevel = 123
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    var expected = "\(defaultResponse.experienceLevel)"
+                    expect(outputSpy.userViewModelGiven.experience).to(equal(expected))
+                }
+            }
+
+            describe("League Icon URL")
+            {
+                it("should be the same as whatever given")
+                {
+                    defaultResponse.leagueIconURL = "This is beautiful URL"
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    expect(outputSpy.userViewModelGiven.leagueIconURL).to(equal(defaultResponse.leagueIconURL))
+                }
+            }
+
+            describe("League Name")
+            {
+                it("should have the correct league name")
+                {
+                    defaultResponse.leagueName = "Gold League II"
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    expect(outputSpy.userViewModelGiven.leagueName).to(equal(defaultResponse.leagueName))
+                }
+            }
+
+            describe("Trophies Description")
+            {
+                it("should derive from trohpy count")
+                {
+                    defaultResponse.trophyCount = 2139
+
+                    presenter.presentUser(response: defaultResponse)
+
+                    let expected = String.localizedStringWithFormat(NSLocalizedString("Trophies_Description", comment: ""), defaultResponse.trophyCount)
+                    expect(outputSpy.userViewModelGiven.trophyDescription).to(equal(expected))
+                }
+            }
+        }
     }
 }
 
-fileprivate class ViewUserPresenterOutputSpy: ViewUserPresenterOutput
+fileprivate class OutputSpy: ViewUserPresenterOutput
 {
     var displayUserCalled = false
-    var viewUser_fetchUser_viewModel: ViewUser.FetchUser.ViewModel!
+    var userViewModelGiven: ViewUser.FetchUser.ViewModel!
 
     func displayUser(viewModel: ViewUser.FetchUser.ViewModel)
     {
         displayUserCalled = true
-        viewUser_fetchUser_viewModel = viewModel
+        userViewModelGiven = viewModel
     }
 }
