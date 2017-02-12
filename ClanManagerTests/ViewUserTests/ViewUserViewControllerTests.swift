@@ -82,13 +82,34 @@ class ViewUserViewControllerTests: QuickSpec
 
             describe("League Icon")
             {
-                it("should have the same image as the view model")
+                var imageViewSpy: UIImageViewSpy!
+
+                beforeEach
                 {
-                    defaultViewModel.leagueIcon = UIImage()
+                    imageViewSpy = UIImageViewSpy()
+                    viewController.leagueIconImage = imageViewSpy
+                }
 
-                    viewController.displayUser(viewModel: defaultViewModel)
+                context("URL string is valid")
+                {
+                    beforeEach
+                    {
+                        defaultViewModel.leagueIconURL = "https://api-assets.clashofclans.com/leagues/288/Y6CveuHmPM_oiOic2Yet0rYL9AFRYW0WA0u2e44-YbM.png"
+                    }
 
-                    expect(viewController.leagueIconImage.image).to(equal(defaultViewModel.leagueIcon))
+                    it("should call loadImageFrom")
+                    {
+                        viewController.displayUser(viewModel: defaultViewModel)
+
+                        expect(imageViewSpy.loadFromURLCalled).to(beTrue())
+                    }
+
+                    it("should pass the correct URL")
+                    {
+                        viewController.displayUser(viewModel: defaultViewModel)
+
+                        expect(imageViewSpy.loadURLGiven.absoluteString).to(equal(defaultViewModel.leagueIconURL))
+                    }
                 }
             }
 
@@ -134,10 +155,22 @@ class ViewUserViewControllerTests: QuickSpec
 
 fileprivate class OutputSpy: ViewUserViewControllerOutput
 {
-    fileprivate var fetchUserCalled = false
+    var fetchUserCalled = false
 
     func fetchUser(request _: ViewUser.FetchUser.Request)
     {
         fetchUserCalled = true
+    }
+}
+
+fileprivate class UIImageViewSpy: UIImageView
+{
+    var loadFromURLCalled = false
+    var loadURLGiven: URL!
+
+    override func loadFromURL(url: URL)
+    {
+        loadFromURLCalled = true
+        loadURLGiven = url
     }
 }

@@ -75,9 +75,11 @@
 		AD05A4CA8A07A10765821981 /* Oswald-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05ABFE38033439AF7C5CE6 /* Oswald-Medium.ttf */; };
 		AD05A50232E353F266F27B58 /* Oswald-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05AD8B1620C030B1578228 /* Oswald-Heavy.ttf */; };
 		AD05A543CB57B99A257086D1 /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A49FCDEA465339546683 /* Oswald-ExtraLight.ttf */; };
+		AD05A55454CB9EDD8162524C /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A4AC73DE61BED681F50B /* BaseViewController.swift */; };
 		AD05A5741CAA680FAB03051D /* Oswald-Demi-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A4910585A940CC4060DF /* Oswald-Demi-BoldItalic.ttf */; };
 		AD05A6CBEFE6E7CC670C95C2 /* Oswald-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A8CD295DF59F18795DE3 /* Oswald-Light.ttf */; };
 		AD05A6F84B60FAFC46E264BB /* Oswald-Extra-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A79369B4F2045BC45AC5 /* Oswald-Extra-LightItalic.ttf */; };
+		AD05A7494B3EAB25E571BBCC /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A355E1646C67AA8EA0EB /* UIImage+Additions.swift */; };
 		AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ADBD44941EFEBEE1EC6A /* Router.swift */; };
 		AD05A8223AA155C69B3F0A64 /* Oswald-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A6E0881D470D517AE681 /* Oswald-MediumItalic.ttf */; };
 		AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */; };
@@ -166,10 +168,12 @@
 		AD05A13525F54C2F207ADCF6 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		AD05A138C840A72F978293F6 /* Oswald-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-RegularItalic.ttf"; sourceTree = "<group>"; };
 		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorSpec.swift; sourceTree = "<group>"; };
+		AD05A355E1646C67AA8EA0EB /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		AD05A3E46E07027ED5EFB712 /* Oswald-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AD05A414C75E0FADD43D72B8 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		AD05A4910585A940CC4060DF /* Oswald-Demi-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Demi-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AD05A49FCDEA465339546683 /* Oswald-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-ExtraLight.ttf"; sourceTree = "<group>"; };
+		AD05A4AC73DE61BED681F50B /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlViewControllerSpec.swift; sourceTree = "<group>"; };
 		AD05A57CE575D06510EA238C /* Oswald-Stencil.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Stencil.ttf"; sourceTree = "<group>"; };
 		AD05A5DA2798E803039236D1 /* Oswald-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-LightItalic.ttf"; sourceTree = "<group>"; };
@@ -460,6 +464,8 @@
 			children = (
 				AD05ADBD44941EFEBEE1EC6A /* Router.swift */,
 				562922681E37436200FB165C /* ViewController.swift */,
+				AD05A355E1646C67AA8EA0EB /* UIImage+Additions.swift */,
+				AD05A4AC73DE61BED681F50B /* BaseViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -721,6 +727,8 @@
 				56E5E8C01E3481E100AA7429 /* TabControlConfigurator.swift in Sources */,
 				56D4AE061E2ECE55007FCF7D /* EditSettingsPresenter.swift in Sources */,
 				AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */,
+				AD05A7494B3EAB25E571BBCC /* UIImage+Additions.swift in Sources */,
+				AD05A55454CB9EDD8162524C /* BaseViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
