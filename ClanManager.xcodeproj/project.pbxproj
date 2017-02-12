@@ -107,6 +107,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		346846371E5045E400B2AFCF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Main.strings"; sourceTree = "<group>"; };
+		346846381E5045E400B2AFCF /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		348EF8E91E4D5D6E009BEE0D /* ViewUser.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ViewUser.storyboard; sourceTree = "<group>"; };
 		34C3FDA81E2DE17C009AE284 /* UserWorkerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserWorkerSpec.swift; sourceTree = "<group>"; };
 		34C3FDAA1E2F4472009AE284 /* EditSettingsInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditSettingsInteractorSpec.swift; sourceTree = "<group>"; };
@@ -798,6 +800,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				56407BB41E29864000970F81 /* Base */,
+				346846371E5045E400B2AFCF /* zh-Hant */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -806,6 +809,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				56407BB91E29864000970F81 /* Base */,
+				346846381E5045E400B2AFCF /* zh-Hant */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -817,6 +821,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -867,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
