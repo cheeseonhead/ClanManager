@@ -15,15 +15,15 @@ class ViewUserInteractorTests: QuickSpec
         describe("ViewUserInteractor")
         {
             var interactor: ViewUserInteractor!
-            var interactorSpy: ViewUserInteractorSpy!
+            var outputSpy: Output!
             var userWorkerSpy: UserWorkerSpy!
             beforeEach
             {
                 interactor = ViewUserInteractor()
-                interactorSpy = ViewUserInteractorSpy()
+                outputSpy = Output()
                 userWorkerSpy = UserWorkerSpy(userStore: UserMemStore())
 
-                interactor.output = interactorSpy
+                interactor.output = outputSpy
                 interactor.worker = userWorkerSpy
             }
 
@@ -31,12 +31,16 @@ class ViewUserInteractorTests: QuickSpec
             {
                 var request = ViewUser.FetchUser.Request(playerTag: "#averyvalidtag")
 
+                it("should send request to user worker fetch user")
+                {
+                    userWorkerSpy
+                }
             }
         }
     }
 }
 
-fileprivate class ViewUserInteractorSpy: ViewUserInteractorOutput
+fileprivate class Output: ViewUserInteractorOutput
 {
     var presentUserCalled = false
     var resultResponse: ViewUser.FetchUser.Response!
@@ -54,7 +58,7 @@ fileprivate class UserWorkerSpy: UserWorker
     var fetchUserCalled = false
     var fakeResultUser: User?
 
-    override func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
+    override func fetchUser(id: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
     {
         requestID = id
         fetchUserCalled = true
