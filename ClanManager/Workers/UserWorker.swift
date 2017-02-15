@@ -5,6 +5,12 @@
 
 import Foundation
 
+struct UserWorkerFetchResult
+{
+    var success: Bool
+    var user: User
+}
+
 class UserWorker
 {
     private var users: [String: User] = [
@@ -12,7 +18,7 @@ class UserWorker
         "tracy": User(id: "tracy", firstName: "Tracy", lastName: "Yang", townHallLevel: 5),
     ]
 
-    func fetchUser(id _: String, completionHandler _: @escaping (_: User?) -> Void)
+    func fetchUser(id _: String, completionHandler _: @escaping (_: UserWorkerFetchResult?) -> Void)
     {
 
     }
