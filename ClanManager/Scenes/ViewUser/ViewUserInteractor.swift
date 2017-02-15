@@ -53,13 +53,31 @@ fileprivate extension ViewUserInteractor
     func fetchUserWith(id: String)
     {
         worker.fetchUser(playerTag: id, completionHandler: { result in
-            guard let _ = result else
+            guard result.success else
             {
-                self.output.presentUser(response: ViewUser.FetchUser.Response())
                 return
             }
-            let response = ViewUser.FetchUser.Response()
+
+            let response = self.convertUserIntoResponse(user: result.user!)
+
             self.output.presentUser(response: response)
         })
+    }
+}
+
+fileprivate extension ViewUserInteractor
+{
+    func convertUserIntoResponse(user: User) -> ViewUser.FetchUser.Response
+    {
+        var response = ViewUser.FetchUser.Response()
+        response.firstName = user.firstName
+        response.lastName = user.lastName
+        response.leagueName = user.leagueName
+        response.experienceLevel = user.experienceLevel
+        response.trophyCount = user.trophyCount
+        response.townHallLevel = user.townHallLevel
+        response.leagueIconURL = user.leagueIconURL
+
+        return response
     }
 }
