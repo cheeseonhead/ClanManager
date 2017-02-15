@@ -33,7 +33,9 @@ class ViewUserInteractorTests: QuickSpec
 
                 it("should send request to user worker fetch user")
                 {
-                    userWorkerSpy
+                    interactor.fetchUser(request: request)
+
+                    userWorkerSpy.
                 }
             }
         }
@@ -54,14 +56,14 @@ fileprivate class Output: ViewUserInteractorOutput
 
 fileprivate class UserWorkerSpy: UserWorker
 {
-    var requestID: String!
+    var fetchPlayerTagGiven: String!
     var fetchUserCalled = false
-    var fakeResultUser: User?
+    var fetchResultGiven: UserWorkerFetchResult?
 
     override func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
     {
-        requestID = id
+        fetchPlayerTagGiven = playerTag
         fetchUserCalled = true
-        completionHandler(fakeResultUser)
+        completionHandler(fetchResultGiven)
     }
 }
