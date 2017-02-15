@@ -5,15 +5,10 @@
 
 import Foundation
 
-struct User: Equatable
+struct User
 {
     var id: String = ""
     var firstName: String = ""
     var lastName: String = ""
     var townHallLevel: Int = 0
-
-    static func ==(lhs: User, rhs: User) -> Bool
-    {
-        return lhs.id == rhs.id
-    }
 }
