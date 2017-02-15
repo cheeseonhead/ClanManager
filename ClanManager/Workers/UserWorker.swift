@@ -5,25 +5,28 @@
 
 import Foundation
 
-protocol UserStoreProtocol
+struct UserWorkerFetchResult
 {
-    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
+    var success: Bool = false
+    var user: User?
 }
 
 class UserWorker
 {
-    var userStore: UserStoreProtocol
+    private var users: [String: User] = [
+        "jeff": User(playerTag: "#jeffwu", firstName: "Jeff", lastName: "Woo", townHallLevel: 10,
+                     experienceLevel: 182, leagueIconURL: nil, leagueName: "Gold II", trophyCount: 1992),
+        "tracy": User(playerTag: "#tracyyang", firstName: "Tracy", lastName: "Yang", townHallLevel: 5,
+                      experienceLevel: 88, leagueIconURL: nil, leagueName: "Crystal II", trophyCount: 2193),
+    ]
 
-    init(userStore: UserStoreProtocol)
+    func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult) -> Void)
     {
-        self.userStore = userStore
-    }
+        var result = UserWorkerFetchResult()
 
-    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
-    {
-        userStore.fetchUser(id: id)
-        { user in
-            completionHandler(user)
-        }
+        result.success = true
+        result.user = users[playerTag]
+
+        completionHandler(result)
     }
 }

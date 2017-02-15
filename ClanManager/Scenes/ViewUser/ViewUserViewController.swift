@@ -58,7 +58,7 @@ class ViewUserViewController: UIViewController, ViewUserViewControllerInput
 
     func fetchUserOnLoad()
     {
-        let request = ViewUser.FetchUser.Request(id: "")
+        let request = ViewUser.FetchUser.Request(playerTag: "")
         output.fetchUser(request: request)
     }
 

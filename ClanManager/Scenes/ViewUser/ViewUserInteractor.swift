@@ -31,12 +31,12 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
 {
 
     var output: ViewUserInteractorOutput!
-    var worker: UserWorker! = UserWorker(userStore: UserMemStore())
+    var worker: UserWorker! = UserWorker()
 
     var playerTag: String! {
         didSet
         {
-            self.fetchUserWith(Id: playerTag)
+            self.fetchUserWith(id: playerTag)
         }
     }
 
@@ -44,24 +44,40 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
 
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        self.fetchUserWith(Id: request.id)
+        self.fetchUserWith(id: request.playerTag)
     }
 }
 
 fileprivate extension ViewUserInteractor
 {
-    func fetchUserWith(Id id: String)
+    func fetchUserWith(id: String)
     {
-        worker.fetchUser(id: id, completionHandler: { user in
-            guard let user = user else
+        worker.fetchUser(playerTag: id, completionHandler: { result in
+            guard result.success else
             {
-                self.output.presentUser(response: ViewUser.FetchUser.Response())
                 return
             }
-            let response = ViewUser.FetchUser.Response()
+
+            let response = self.convertUserIntoResponse(user: result.user!)
+
             self.output.presentUser(response: response)
         })
     }
 }
 
-extension UserMemStore: UserStoreProtocol {}
+fileprivate extension ViewUserInteractor
+{
+    func convertUserIntoResponse(user: User) -> ViewUser.FetchUser.Response
+    {
+        var response = ViewUser.FetchUser.Response()
+        response.firstName = user.firstName
+        response.lastName = user.lastName
+        response.leagueName = user.leagueName
+        response.experienceLevel = user.experienceLevel
+        response.trophyCount = user.trophyCount
+        response.townHallLevel = user.townHallLevel
+        response.leagueIconURL = user.leagueIconURL
+
+        return response
+    }
+}
