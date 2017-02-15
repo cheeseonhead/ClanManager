@@ -36,7 +36,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
     var playerTag: String! {
         didSet
         {
-            self.fetchUserWith(Id: playerTag)
+            self.fetchUserWith(id: playerTag)
         }
     }
 
@@ -44,16 +44,16 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
 
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        self.fetchUserWith(Id: request.id)
+        self.fetchUserWith(id: request.id)
     }
 }
 
 fileprivate extension ViewUserInteractor
 {
-    func fetchUserWith(Id id: String)
+    func fetchUserWith(id: String)
     {
-        worker.fetchUser(id: id, completionHandler: { user in
-            guard let user = user else
+        worker.fetchUser(id: id, completionHandler: { result in
+            guard let _ = result else
             {
                 self.output.presentUser(response: ViewUser.FetchUser.Response())
                 return
