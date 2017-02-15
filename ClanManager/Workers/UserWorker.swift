@@ -14,8 +14,10 @@ struct UserWorkerFetchResult
 class UserWorker
 {
     private var users: [String: User] = [
-        "jeff": User(id: "jeff", firstName: "Jeff", lastName: "Woo", townHallLevel: 10),
-        "tracy": User(id: "tracy", firstName: "Tracy", lastName: "Yang", townHallLevel: 5),
+        "jeff": User(playerTag: "#jeffwu", firstName: "Jeff", lastName: "Woo", townHallLevel: 10,
+                     experienceLevel: 182, leagueIconURL: nil, leagueName: "Gold II", trophyCount: 1992),
+        "tracy": User(playerTag: "#tracyyang", firstName: "Tracy", lastName: "Yang", townHallLevel: 5,
+                      experienceLevel: 88, leagueIconURL: nil, leagueName: "Crystal II", trophyCount: 2193),
     ]
 
     func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
