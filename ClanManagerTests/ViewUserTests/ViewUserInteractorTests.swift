@@ -27,59 +27,10 @@ class ViewUserInteractorTests: QuickSpec
                 interactor.worker = userWorkerSpy
             }
 
-            context("when asked to fetch user", {
-                beforeEach
-                {
-                    userWorkerSpy.fakeResultUser = User(id: "thisIdExists", firstName: "Allen", lastName: "Chan", townHallLevel: 5)
-
-                    interactor.fetchUser(request: ViewUser.FetchUser.Request(id: "barryAllen321"))
-                }
-
-                it("should trigger present user on output", closure: {
-                    expect(interactorSpy.presentUserCalled).toEventually(beTrue())
-                })
-
-                it("should request for the user with correct id from request", closure: {
-                    expect(userWorkerSpy.requestID).toEventually(equal("barryAllen321"))
-                })
-
-                it("should correctly create response with valid return user", closure: {
-                    var expected = ViewUser.FetchUser.Response()
-                    expected.firstName = userWorkerSpy.fakeResultUser!.firstName
-                    expected.lastName = userWorkerSpy.fakeResultUser!.lastName
-                    expected.townHallLevel = userWorkerSpy.fakeResultUser!.townHallLevel
-                })
-            })
-
-            context("when asked to fetch invalid user", {
-                beforeEach
-                {
-                    userWorkerSpy.fakeResultUser = nil
-
-                    interactor.fetchUser(request: ViewUser.FetchUser.Request(id: ""))
-                }
-
-                it("should create valid response", closure: {
-                    let expected = ViewUser.FetchUser.Response()
-                })
-            })
-
-            context("when player tag is set")
+            context("Fetch User")
             {
-                beforeEach
-                {
-                    interactor.playerTag = "playerTag"
-                }
+                var request = ViewUser.FetchUser.Request(playerTag: "#averyvalidtag")
 
-                it("should send request to worker")
-                {
-                    expect(userWorkerSpy.fetchUserCalled).toEventually(beTrue())
-                }
-
-                it("should send correct request to worker")
-                {
-                    expect(userWorkerSpy.requestID).toEventually(equal("playerTag"))
-                }
             }
         }
     }
