@@ -96,7 +96,7 @@ class ViewUserPresenterTests: QuickSpec
 
             describe("Trophies Description")
             {
-                it("should derive from trohpy count")
+                it("should derive from trophy count")
                 {
                     defaultResponse.trophyCount = 2139
 
