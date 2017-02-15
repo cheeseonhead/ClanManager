@@ -58,7 +58,7 @@ fileprivate class UserWorkerSpy: UserWorker
     var fetchUserCalled = false
     var fakeResultUser: User?
 
-    override func fetchUser(id: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
+    override func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
     {
         requestID = id
         fetchUserCalled = true

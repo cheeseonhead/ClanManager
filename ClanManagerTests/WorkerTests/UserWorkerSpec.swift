@@ -31,7 +31,7 @@ class UserWorkerSpec: QuickSpec
                 var resultUser: User!
                 beforeEach
                 {
-                    userWorker.fetchUser(id: "thisIdDoesntExist", completionHandler: { user in
+                    userWorker.fetchUser(playerTag: "thisIdDoesntExist", completionHandler: { user in
                         resultUser = user
                     })
                 }

@@ -52,7 +52,7 @@ fileprivate extension ViewUserInteractor
 {
     func fetchUserWith(id: String)
     {
-        worker.fetchUser(id: id, completionHandler: { result in
+        worker.fetchUser(playerTag: id, completionHandler: { result in
             guard let _ = result else
             {
                 self.output.presentUser(response: ViewUser.FetchUser.Response())
