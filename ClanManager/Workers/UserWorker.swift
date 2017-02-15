@@ -7,8 +7,8 @@ import Foundation
 
 struct UserWorkerFetchResult
 {
-    var success: Bool
-    var user: User
+    var success: Bool = false
+    var user: User?
 }
 
 class UserWorker
@@ -18,8 +18,13 @@ class UserWorker
         "tracy": User(id: "tracy", firstName: "Tracy", lastName: "Yang", townHallLevel: 5),
     ]
 
-    func fetchUser(id _: String, completionHandler _: @escaping (_: UserWorkerFetchResult?) -> Void)
+    func fetchUser(id: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
     {
+        var result = UserWorkerFetchResult()
 
+        result.success = true
+        result.user = users[id]
+
+        completionHandler(user)
     }
 }
