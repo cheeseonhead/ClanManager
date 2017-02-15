@@ -8,7 +8,7 @@ import Foundation
 import Quick
 import Nimble
 
-class ViewUserInteractorSpec: QuickSpec
+class ViewUserInteractorTests: QuickSpec
 {
     override func spec()
     {

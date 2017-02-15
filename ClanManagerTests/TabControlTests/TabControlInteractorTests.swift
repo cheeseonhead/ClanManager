@@ -7,7 +7,7 @@
 import Quick
 import Nimble
 
-class TabControlInteractorSpec: QuickSpec
+class TabControlInteractorTests: QuickSpec
 {
     override func spec()
     {

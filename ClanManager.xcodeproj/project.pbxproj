@@ -67,7 +67,7 @@
 		8405CAF07B7E1C6F4A13E35E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8405C810D46350FC56BB6766 /* User.swift */; };
 		A169465DE92190C8146505AB /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E2EFCE084D54EFA2E2580A /* AssetsLibrary.framework */; };
 		A852B167F21F1865D726AD51 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C914C43E0C961F56D936C7C1 /* CoreMedia.framework */; };
-		AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */; };
+		AD05A015A23A3E137F63C7C5 /* ViewUserInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorTests.swift */; };
 		AD05A0A436495AD06119BC83 /* Oswald-RegularItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A138C840A72F978293F6 /* Oswald-RegularItalic.ttf */; };
 		AD05A11CDACC1BF06D851B8F /* Oswald-Stencil.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A57CE575D06510EA238C /* Oswald-Stencil.ttf */; };
 		AD05A28515FB0745FC0265D8 /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A414C75E0FADD43D72B8 /* Oswald-Bold.ttf */; };
@@ -83,7 +83,7 @@
 		AD05A7494B3EAB25E571BBCC /* UIImage+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05A355E1646C67AA8EA0EB /* UIImage+Additions.swift */; };
 		AD05A7D55A8E6DEF4E30A6E7 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ADBD44941EFEBEE1EC6A /* Router.swift */; };
 		AD05A8223AA155C69B3F0A64 /* Oswald-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A6E0881D470D517AE681 /* Oswald-MediumItalic.ttf */; };
-		AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */; };
+		AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD05ABA6071FE771EEC9E70F /* TabControlInteractorTests.swift */; };
 		AD05AB8B2D9A8A5BA7A0302C /* Oswald-DemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A7707A190259DC29276F /* Oswald-DemiBold.ttf */; };
 		AD05AC1EE2E8DD89E24C2949 /* Oswald-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05A13525F54C2F207ADCF6 /* Oswald-Regular.ttf */; };
 		AD05AE21B09EFC78EB7C59F8 /* Oswald-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD05AC495AB8E2CA80DCA15B /* Oswald-HeavyItalic.ttf */; };
@@ -172,7 +172,7 @@
 		A46136DD4041771032D65A8B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		AD05A13525F54C2F207ADCF6 /* Oswald-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Regular.ttf"; sourceTree = "<group>"; };
 		AD05A138C840A72F978293F6 /* Oswald-RegularItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-RegularItalic.ttf"; sourceTree = "<group>"; };
-		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorSpec.swift; sourceTree = "<group>"; };
+		AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewUserInteractorTests.swift; sourceTree = "<group>"; };
 		AD05A355E1646C67AA8EA0EB /* UIImage+Additions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Additions.swift"; sourceTree = "<group>"; };
 		AD05A3E46E07027ED5EFB712 /* Oswald-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-BoldItalic.ttf"; sourceTree = "<group>"; };
 		AD05A414C75E0FADD43D72B8 /* Oswald-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Bold.ttf"; sourceTree = "<group>"; };
@@ -186,7 +186,7 @@
 		AD05A7707A190259DC29276F /* Oswald-DemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-DemiBold.ttf"; sourceTree = "<group>"; };
 		AD05A79369B4F2045BC45AC5 /* Oswald-Extra-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Extra-LightItalic.ttf"; sourceTree = "<group>"; };
 		AD05A8CD295DF59F18795DE3 /* Oswald-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Light.ttf"; sourceTree = "<group>"; };
-		AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlInteractorSpec.swift; sourceTree = "<group>"; };
+		AD05ABA6071FE771EEC9E70F /* TabControlInteractorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabControlInteractorTests.swift; sourceTree = "<group>"; };
 		AD05ABFE38033439AF7C5CE6 /* Oswald-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		AD05AC495AB8E2CA80DCA15B /* Oswald-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-HeavyItalic.ttf"; sourceTree = "<group>"; };
 		AD05AD8B1620C030B1578228 /* Oswald-Heavy.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Oswald-Heavy.ttf"; sourceTree = "<group>"; };
@@ -384,7 +384,7 @@
 			children = (
 				8405CDE4331F74804BC466B5 /* ViewUserPresenterTests.swift */,
 				8405C0BA59D4C44F1D5E77D6 /* ViewUserViewControllerTests.swift */,
-				AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorSpec.swift */,
+				AD05A3559F7BB4D0DF47CD91 /* ViewUserInteractorTests.swift */,
 			);
 			path = ViewUserTests;
 			sourceTree = "<group>";
@@ -496,7 +496,7 @@
 			isa = PBXGroup;
 			children = (
 				AD05A518CEA7B8C1F3AA3E67 /* TabControlViewControllerSpec.swift */,
-				AD05ABA6071FE771EEC9E70F /* TabControlInteractorSpec.swift */,
+				AD05ABA6071FE771EEC9E70F /* TabControlInteractorTests.swift */,
 				562922661E36AD5700FB165C /* TabControlPresenterSpec.swift */,
 				56C7C0B71E38FB77002569D7 /* TabControlRouterSpec.swift */,
 			);
@@ -767,13 +767,13 @@
 				56D4AE121E2ED177007FCF7D /* EditSettingsViewControllerSpec.swift in Sources */,
 				8405C4BD03167466023941C5 /* UserMemStoreSpec.swift in Sources */,
 				56C7C0B81E38FB77002569D7 /* TabControlRouterSpec.swift in Sources */,
-				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorSpec.swift in Sources */,
+				AD05A015A23A3E137F63C7C5 /* ViewUserInteractorTests.swift in Sources */,
 				34C3FDAB1E2F4472009AE284 /* EditSettingsInteractorSpec.swift in Sources */,
 				562922671E36AD5700FB165C /* TabControlPresenterSpec.swift in Sources */,
 				56D4AE1B1E314754007FCF7D /* SessionMemStoreSpec.swift in Sources */,
 				8405C5011FB219B9A034278C /* EditSettingsPresenterSpec.swift in Sources */,
 				AD05A386D3D80159BB591944 /* TabControlViewControllerSpec.swift in Sources */,
-				AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorSpec.swift in Sources */,
+				AD05A8F2F1CB77CB8DC31E0E /* TabControlInteractorTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
