@@ -31,7 +31,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
 {
 
     var output: ViewUserInteractorOutput!
-    var worker: UserWorker! = UserWorker(userStore: UserMemStore())
+    var worker: UserWorker! = UserWorker()
 
     var playerTag: String! {
         didSet
@@ -63,5 +63,3 @@ fileprivate extension ViewUserInteractor
         })
     }
 }
-
-extension UserMemStore: UserStoreProtocol {}

@@ -5,25 +5,15 @@
 
 import Foundation
 
-protocol UserStoreProtocol
-{
-    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
-}
-
 class UserWorker
 {
-    var userStore: UserStoreProtocol
+    private var users: [String: User] = [
+        "jeff": User(id: "jeff", firstName: "Jeff", lastName: "Woo", townHallLevel: 10),
+        "tracy": User(id: "tracy", firstName: "Tracy", lastName: "Yang", townHallLevel: 5),
+    ]
 
-    init(userStore: UserStoreProtocol)
+    func fetchUser(id _: String, completionHandler _: @escaping (_: User?) -> Void)
     {
-        self.userStore = userStore
-    }
 
-    func fetchUser(id: String, completionHandler: @escaping (_: User?) -> Void)
-    {
-        userStore.fetchUser(id: id)
-        { user in
-            completionHandler(user)
-        }
     }
 }
