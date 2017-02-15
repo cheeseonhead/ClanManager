@@ -18,12 +18,12 @@ class UserWorker
         "tracy": User(id: "tracy", firstName: "Tracy", lastName: "Yang", townHallLevel: 5),
     ]
 
-    func fetchUser(playerTag _: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
+    func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
     {
         var result = UserWorkerFetchResult()
 
         result.success = true
-        result.user = users[id]
+        result.user = users[playerTag]
 
         completionHandler(result)
     }

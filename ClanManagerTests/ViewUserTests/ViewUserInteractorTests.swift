@@ -21,7 +21,7 @@ class ViewUserInteractorTests: QuickSpec
             {
                 interactor = ViewUserInteractor()
                 outputSpy = Output()
-                userWorkerSpy = UserWorkerSpy(userStore: UserMemStore())
+                userWorkerSpy = UserWorkerSpy()
 
                 interactor.output = outputSpy
                 interactor.worker = userWorkerSpy
@@ -35,7 +35,7 @@ class ViewUserInteractorTests: QuickSpec
                 {
                     interactor.fetchUser(request: request)
 
-                    userWorkerSpy.
+                    expect(userWorkerSpy.fetchPlayerTagGiven).to(equal(request.playerTag))
                 }
             }
         }
