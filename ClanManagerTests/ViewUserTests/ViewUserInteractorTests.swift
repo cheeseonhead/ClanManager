@@ -58,6 +58,8 @@ class ViewUserInteractorTests: QuickSpec
                 {
                     it("should send response to output")
                     {
+                        interactor.fetchUser(request: request)
+
                         expect(outputSpy.presentUserCalled).to(beTrue())
                     }
 
@@ -91,11 +93,8 @@ class ViewUserInteractorTests: QuickSpec
 
     func createDefaultUser() -> User
     {
-        var user = User()
-        user.playerTag = "#someplayertag"
-        user.firstName = "FirstName"
-        user.lastName = "LastName"
-        user.townHallLevel = 5
+        var user = User(playerTag: "#someplayertag", firstName: "FirstName", lastName: "LastName",
+                        townHallLevel: 5, experienceLevel: 128, leagueIconURL: "someurl", leagueName: "Gold League II", trophyCount: 1345)
 
         return user
     }
@@ -119,10 +118,10 @@ fileprivate class UserWorkerSpy: UserWorker
     var fetchUserCalled = false
     var fakeFetchResult: UserWorkerFetchResult?
 
-    override func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
+    override func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult) -> Void)
     {
         fetchPlayerTagGiven = playerTag
         fetchUserCalled = true
-        completionHandler(fakeFetchResult)
+        completionHandler(fakeFetchResult!)
     }
 }

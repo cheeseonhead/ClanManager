@@ -20,7 +20,7 @@ class UserWorker
                       experienceLevel: 88, leagueIconURL: nil, leagueName: "Crystal II", trophyCount: 2193),
     ]
 
-    func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult?) -> Void)
+    func fetchUser(playerTag: String, completionHandler: @escaping (_: UserWorkerFetchResult) -> Void)
     {
         var result = UserWorkerFetchResult()
 
