@@ -44,7 +44,7 @@ class ViewUserInteractor: ViewUserInteractorInput, ViewUserDataProvider, ViewUse
 
     func fetchUser(request: ViewUser.FetchUser.Request)
     {
-        self.fetchUserWith(id: request.id)
+        self.fetchUserWith(id: request.playerTag)
     }
 }
 

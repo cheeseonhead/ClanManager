@@ -18,7 +18,7 @@ struct ViewUser
 
         struct Request
         {
-            var id: String
+            var playerTag: String
         }
 
         struct Response
