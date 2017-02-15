@@ -25,6 +25,6 @@ class UserWorker
         result.success = true
         result.user = users[id]
 
-        completionHandler(user)
+        completionHandler(result)
     }
 }
